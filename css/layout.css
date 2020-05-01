@@ -729,14 +729,14 @@ ul.features li:nth-child(even) { }
 footer {
    padding-top: 84px;
    margin-bottom: 60px;
-   color: #8c939b;
+   color: #dde3e9;
    font-size: 13px;
    line-height: 24px;
    position: relative;   
 }
 
-footer a, footer a:visited { color: #0A6567; }
-footer a:hover, footer a:focus { color: #fff; }
+footer a, footer a:visited { color: rgb(43, 143, 145); }
+footer a:hover, footer a:focus { color: rgb(250, 244, 244); }
 
 footer .info { padding-right: 90px; }
 
