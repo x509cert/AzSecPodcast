@@ -1,0 +1,18 @@
+
+      <div class="row add-bottom">
+         <div class="twelve columns add-bottom">
+            <h3>Episode 002</h3>
+            <p>
+		Recorded 22 of May, 292 with Michael Howard, Sarah Young, Gladys Rodriguez and Mark Simos and guest
+		<br>
+		In this episode..
+		<br><br>
+               	<b>Recording Link</b> 
+               	<br><a href='https://rss.com/podcasts/azsecpodcast/42739'>Episode #2</a>
+               	<br>
+               	<br><b>Show Links</b>
+		<br><a href'''></a>
+            </p>
+         </div>  
+      </div>
+		
