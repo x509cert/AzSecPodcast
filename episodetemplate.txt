@@ -3,12 +3,14 @@
          <div class="nine columns add-bottom offset-2">
             <h3 id="Ep0002">Episode 002</h3>
             <p>
-		Recorded 22 of May, 292 with Michael Howard, Sarah Young, Gladys Rodriguez and Mark Simos and guest
-		<br>
-		In this episode..
-               	<h5>Links</h5> 
-               	<li><a href='https://rss.com/podcasts/azsecpodcast/nnnnn'>Episode #nnn</a>&nbsp;&nbsp;<i class="fa fa-rss"></i>
-				<li><a href'''></a>
+               Recorded 22 of May, 2020 with Michael Howard, Sarah Young, Gladys Rodriguez and Mark Simos and guest
+               <br>
+               In this episode..
+               <h5>Links</h5> 
+               <ul>
+                  <li><a href='https://rss.com/podcasts/azsecpodcast/nnnnn'>Episode #nnn</a>&nbsp;&nbsp;<i class="fa fa-rss"></i></li>
+                  <li><a href'''></a></li>
+               <ul>
             </p>
          </div>  
       </div>
