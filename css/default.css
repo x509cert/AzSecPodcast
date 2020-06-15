@@ -479,8 +479,14 @@ object {
    max-width: 100%;
    height: auto;
 }
+
 img.pull-right { margin: 12px 0px 0px 18px; }
 img.pull-left { margin: 12px 18px 0px 0px; }
+
+img.resize23 {
+   max-width:23%;
+   max-height:23%;
+ }
 
 /* 6. Buttons  --------------------------------------------------------- */
 
