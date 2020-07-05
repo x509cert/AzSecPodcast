@@ -15,7 +15,7 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
-<!-- code to hide/show older episodes-->
+<!-- code to hide/show episodes-->
 <script>
    $(document).ready(function() {
       $("div.EpisodeContent").hide();
@@ -27,16 +27,18 @@
       // Handle click on a title 
       $("h3.Heading").click(function(){
          const delay = 300;
+         
          var h = "#Content-" + $(this).attr("id");
-         if ($(h).is(":hidden")) 
-            $(h).slideDown(delay);
-         else 
-            $(h).slideUp(delay);
-       })
+         var ec = "ColExp-"+ $(this).attr("id");
 
-       // Handle double-click on a title
-       $("h3.Heading").dblclick(function(){
-         $("div.EpisodeContent").slideUp();
+         if ($(h).is(":hidden")) {
+            $(h).slideDown(delay);
+            document.getElementById(ec).src="images/Collapse.png";
+         }
+         else { 
+            $(h).slideUp(delay);
+            document.getElementById(ec).src="images/Expand.png";
+         }
        })
    });
 </script>
@@ -83,7 +85,7 @@
 
       <div class="row add-bottom">
          <div class="nine columns offset-2">
-            <h3 class="Heading" id="Ep005">Episode 5 - June 24th, 2020 [Azure Security Questions]</h3>
+            <h3 class="Heading" id="Ep005">&nbsp;<img id="ColExp-Ep005" width=16 height=16 src="images/Collapse.png"> Episode 5 - June 24th, 2020 [Azure Security Questions]</h3>
             <div class="EpisodeContent" id="Content-Ep005">
                Michael Howard, Sarah Young, Gladys Rodriguez and Mark Simos with guest David Sanchez&nbsp;
                (<a href='https://www.linkedin.com/in/david-sánchez-963b7b13/'><i class="fa fa-linkedin"></i></a>)
@@ -117,7 +119,7 @@
 
       <div class="row add-bottom">
          <div class="nine columns offset-2">
-            <h3 class="Heading" id="Ep004">Episode 4 - June 10th, 2020 [CosmosDB Security]</h3>
+            <h3 class="Heading" id="Ep004">&nbsp;<img id="ColExp-Ep004" width=16 height=16 src="images/Expand.png"> Episode 4 - June 10th, 2020 [CosmosDB Security]</h3>
             <div class="EpisodeContent" id="Content-Ep004">
                Michael Howard, Sarah Young and Mark Simos with guests Thomas Weiss&nbsp;
                (
@@ -167,7 +169,7 @@
 
       <div class="row add-bottom">
          <div class="nine columns offset-2">
-            <h3 class="Heading" id="Ep003">Episode 3 - May 27th, 2020 [Azure Security Center]</h3>
+            <h3 class="Heading" id="Ep003">&nbsp;<img id="ColExp-Ep003" width=16 height=16 src="images/Expand.png"> Episode 3 - May 27th, 2020 [Azure Security Center]</h3>
             <div class="EpisodeContent" id="Content-Ep003">            
                Michael Howard, Sarah Young, Gladys Rodriguez and Mark Simos and guest Yuri Diogenese.&nbsp;
                (
@@ -204,7 +206,7 @@
 
       <div class="row add-bottom">
          <div class="nine columns offset-2">
-            <h3 class="Heading" id="Ep002">Episode 2 - May 13th, 2020 [Container Security]</h3>
+            <h3 class="Heading" id="Ep002">&nbsp;<img id="ColExp-Ep002" width=16 height=16 src="images/Expand.png"> Episode 2 - May 13th, 2020 [Container Security]</h3>
             <div class="EpisodeContent" id="Content-Ep002">
                Michael Howard, Sarah Young, Gladys Rodriguez and Mark Simos and guest Michael Withrow.
                <br>
@@ -239,7 +241,7 @@
 
       <div class="row add-bottom">
 		    <div class="nine columns offset-2">
-            <h3 class="Heading" id="Ep001">Episode 1 - April 30th, 2020  [Hello, World!]</h3>
+            <h3 class="Heading" id="Ep001">&nbsp;<img id="ColExp-Ep001" width=16 height=16 src="images/Expand.png"> Episode 1 - April 30th, 2020  [Hello, World!]</h3>
             <div class="EpisodeContent" id="Content-Ep001">
                Michael Howard, Sarah Young, Gladys Rodriguez and Mark Simos.
                <br>
