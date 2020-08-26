@@ -12,14 +12,13 @@
         const episode = urlParams.get('ep');
         let name = "https://azsecuritypodcast.net/transcripts/transcript" + episode.toString() + ".txt";
 
-        $("#md").load(name);
-        var converter = new showdown.Converter();
-        var text =  $("#md").text();
-        alert(text);
-        
-        var html = converter.makeHtml(text);
-
-        document.getElementById('root').innerHTML = html;
+        $("#md").load(name, function(rsponseText, statusTxt, xhr) {
+            if (statusTxt == "success") {
+                var converter = new showdown.Converter();
+                var html = converter.makeHtml(responseTxt);
+                document.getElementById('root').innerHTML = html;
+            }
+        });
     });
 
 </script>
