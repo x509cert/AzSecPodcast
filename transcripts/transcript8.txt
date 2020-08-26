@@ -6,7 +6,7 @@ Welcome to the Azure Security podcast where we discuss topics relating to securi
 
 ## Michael
 
-Hey, welcome to episode #8. We have the gang here this week. We also have a special guest, Randy Campbell to talk to us about network isolation and private endpoints in Azure. But before that let's go to the news. Sarah, what we got.
+Hey, welcome to episode #8. We have the gang here this week. We also have a special guest, Randy Campbell to talk to us about network isolation and private endpoints in Azure. But before that let's go to the news. Sarah, what we got?
 
 ## Sarah
 
