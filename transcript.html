@@ -11,10 +11,9 @@
     const episode = urlParams.get('ep');
     let name = "https://azsecuritypodcast.net/transcripts/transcript" + episode.toString() + ".txt";
 
-    var text;
-    $("#md").load(name, text);
+    $("#md").load(name);
     var converter = new showdown.Converter(),
-    html      = converter.makeHtml(text);
+    html      = converter.makeHtml($("#md").text());
 
     document.getElementById('root').innerHTML = html;
 
