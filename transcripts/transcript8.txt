@@ -3,6 +3,9 @@
 ## Intro
 
 Welcome to the Azure Security podcast where we discuss topics relating to security, privacy, reliability and compliance on the Microsoft Cloud platform.
+
+## Michael
+
 Hey, welcome to episode #8. We have the gang here this week. We also have a special guest, Randy Campbell to talk to us about network isolation and private endpoints in Azure. But before that let's go to the news. Sarah, what we got.
 
 ## Sarah
@@ -12,20 +15,33 @@ App service in Azure functions. If you don't want to use Azure ADI would ask you
 You can actually deny an audit requests into a pod, so the 16 in Bell Options you can with those particular settings, you can either put them on audit or you can put them on deny so you can really really lock down the security of the pod and actually what happens within that pod? Because it's always about AK S with me as well. You can also now get managed Azure AD support that's generally available in AK S, which means you don't have to create client apps or service apps.
 It's all managed for you, so again, just making AK S well doing the right thing. Authentication wide with AK S Way way easier which is again I sound like a broken record but very cool and they're all my news bits this week. The first one I selected for this week is related to watch your monitor extending their support to containers.
 Azure Monitor is now able to monitor containers, CPU, memory, this usage and many others in terms of security. This provide another opportunity to detect security issues since they often cause performance impact.
+
 Please give us the opportunity to correlate those performance indicators with information from services like Azure Security Center sent in on defender, ATP etc. The next news that I'm really excited about is that Microsoft is launching a tech community page for Microsoft threat protection.
-In previous podcasts, you may have heard me talking about the ability that our services have to interconnect and interoperate with other Microsoft Services and 3rd party vendors, and that this provide protection at the door an enable the infrastructure necessary for strategies like zero trust, security, orchestration, automation and response, or sore. Before going further, I want to come in.
+In previous podcasts, you may have heard me talking about the ability that our services have to interconnect and interoperate with other Microsoft Services and 3rd party vendors, and that this provide protection at the door an enable the infrastructure necessary for strategies like zero trust, security, orchestration, automation and response, or sore.
+
+Before going further, I want to come in.
+
 To explain what I mean with provide protection at the door since I've been asked that question before.
+
 When users and processes are authenticate and get authorized to perform some task only the information available to the identity provider is what is used to make the authentication and authorization decisions.
+
 But what about if they are entity provider? Had a way to get more information than what is store in the directory itself. Basically by interconnecting services data from other services could be available in be utilized to determine how risky as connection maybe and then use as part of the authentication authorization process.
+
 In other words, it allows data to be available in almost real time. Hence this is what I mean when I said it allows protection at the door. So going back to Microsoft threat protection, it builds, opened our interconnection and Inter operation or services story by allowing the aggregation of signals gather by the different threat protection services into a single pane of glass.
+
 Microsoft threat protection, or NTP, has an incident tab that shows a list of detection, so detector incidents and includes a summary of the extent of the impact caused by the incident in the environment. For example, if you see a credential theft in, make sure the users that device is the data that it was impacted throughout the environment and that information will come from the different services such as.
+
 Azure advanced threat protection, or Azure ATP, Microsoft defender ATP, Microsoft Cloud app security Orem cast and others. In addition, the NTP Action Center has the capability to allowing that information to the Mitre attack framework.
-Enable because I have seen customers that own certain services and they don't have it enabled. The other cool thing about empty P is that it helps streamline the time to Adknowledge and remediation incidents. Since now you have all the information centralized and more automation can be used to deal with the all the attacks that are commonly seen in the environment. The last thing I want to talk about.
+Enable because I have seen customers that own certain services and they don't have it enabled. The other cool thing about empty P is that it helps streamline the time to acknowledge and remediation incidents. Since now you have all the information centralized and more automation can be used to deal with the all the attacks that are commonly seen in the environment. The last thing I want to talk about.
+
 Is this cool skilling initiative that Microsoft has put together to help people get the financial fluency needed in this day and age?
 Specially important now that people have lost their jobs due to the to Cobit 19 financial impact in the more jobs required technology related skills. As part of this initiative Microsoft has enabled many LinkedIn training and there are available for free through March 2021 or so. Microsoft certification exams are being provided at a cost of $15.00 so model rolls path.
+
 Included through the training and the certification is data analyst. Itsupport IT administrator an others. So if you guys are interested, please visit AKA dot Ms slash job seeker.
-So a couple of slight leads Azure related things caught my eye this week. The first one I thought was really cool. Kind of just geeking out on non Azure topics, but Microsoft's really focused on kind of getting to zero waste and so we did. Some pilot programs. Can we take all the stuff that comes out of our data centers and you know find another use for it. So I thought this was pretty neat so got a little article there for folks to check out. The other thing that drop that's somewhat related to Azure is the windows baselines. Actually, just.
-Recently released for the latest versions of Windows Server and Windows 10 and a couple of interesting things in there. Some adjustments to the new password length controls. Keep in mind that we really are pushing for passwordless future, but we recognize that there is an interim state of having to strengthen what you can do on the password side, but it's not necessarily always, you know passwords that you have to change all the time. You know if it's not changing, excuse me if it's not been compromised, we don't want to change it, but strong longer passwords can be stronger.
+
+So a couple of slight leads Azure related things caught my eye this week. The first one I thought was really cool. Kind of just geeking out on non Azure topics, but Microsoft's really focused on kind of getting to zero waste and so we did. Some pilot programs. Can we take all the stuff that comes out of our data centers and you know find another use for it. So I thought this was pretty neat so got a little article there for folks to check out. The other thing that drop that's somewhat related to Azure is the windows baselines.
+
+Actually, just recently released for the latest versions of Windows Server and Windows 10 and a couple of interesting things in there. Some adjustments to the new password length controls. Keep in mind that we really are pushing for passwordless future, but we recognize that there is an interim state of having to strengthen what you can do on the password side, but it's not necessarily always, you know passwords that you have to change all the time. You know if it's not changing, excuse me if it's not been compromised, we don't want to change it, but strong longer passwords can be stronger.
 So a couple of different weeks and tuning in there let you let you all kind of read through that in the Azure world. I've been working a lot on the new version of the Azure security baselines. With that team and one of the things that we're really looking for feedback on. Very interested and find me on LinkedIn and Twitter is kind of how you're using Azure baselines and benchmarks. If you are already and any anything that we can do to improve it, Annie scenarios where it's where you know. Hey, this is helpful, but it's been really hard to apply these.
 Settings recommendations. Really looking to kind of tweak and refine that. We've gotten really good solid feedback from customers, but always looking for how do we tune it a little bit better so that we're giving the guidance that people can kind of just go with.
 Another thing is we recently bought a company named Cyber X IoT, an operational technology security. So Internet of Things, an operational technology OT OT and really really cool technology. Amazing capabilities to give you operational insights, but much more important. Cybersecurity insights on are we dealing with vulnerable devices? Generally, yes. Are we seeing any active threats? Are we seeing you know attack? You know how do we link that together in a timeline? What are the?
