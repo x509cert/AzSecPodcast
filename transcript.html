@@ -15,8 +15,9 @@
         $("#md").load(name);
         var converter = new showdown.Converter();
         var text =  $("#md").text();
+        alert(text);
+        
         var html = converter.makeHtml(text);
-        alert($("#md").text());
 
         document.getElementById('root').innerHTML = html;
     });
