@@ -2,38 +2,44 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <html>
-    body {
-        background: #fff;
-        font-family: 'opensans-regular', sans-serif;
-        font-weight: normal;
-        font-size: 15px;
-        line-height: 30px;
-         color: #838C95;
-     
-        -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
-         -webkit-text-size-adjust: 100%;
-     }
+    <head>
+        <style>
+            body {
+                background: #fff;
+                font-family: 'opensans-regular', sans-serif;
+                font-weight: normal;
+                font-size: 15px;
+                line-height: 30px;
+                color: #838C95;
+            
+                -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+                -webkit-text-size-adjust: 100%;
+            }
+        </style>
+    </head>
 
-    <div id='root'></div>
+    <body>
 
-    <script>
-        $(document).ready(function() {
+        <div id='root'></div>
 
-            const queryString = window.location.search;
-            const urlParams = new URLSearchParams(queryString);
-            const episode = urlParams.get('ep');
-            let name = "https://azsecuritypodcast.net/transcripts/transcript" + episode.toString() + ".txt";
+        <script>
+            $(document).ready(function() {
 
-            $("#root").load(name, function(rsponseText, statusTxt, xhr) {
-                if (statusTxt == "success") {
-                    var converter = new showdown.Converter();
-                    var html = converter.makeHtml(rsponseText);
-                    document.getElementById('root').innerHTML = html;
-                }
+                const queryString = window.location.search;
+                const urlParams = new URLSearchParams(queryString);
+                const episode = urlParams.get('ep');
+                let name = "https://azsecuritypodcast.net/transcripts/transcript" + episode.toString() + ".txt";
+
+                $("#root").load(name, function(rsponseText, statusTxt, xhr) {
+                    if (statusTxt == "success") {
+                        var converter = new showdown.Converter();
+                        var html = converter.makeHtml(rsponseText);
+                        document.getElementById('root').innerHTML = html;
+                    }
+                });
             });
-        });
 
-    </script>
+        </script>
 
-
+    </body>
 </html>
