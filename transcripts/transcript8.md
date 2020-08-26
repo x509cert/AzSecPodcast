@@ -1,4 +1,4 @@
-#Episode 8
+# Episode 8
 
 Welcome to the Azure Security podcast where we discussed topics relating to security, privacy, reliability and compliance on the Microsoft Cloud platform.
 Hey, welcome to episode #8. We have the gang here this week. We also have a special guest Randy Campbell to talk to us about network isolation, an private endpoints in Azure. But before that let's go to the news. Sarah, what we got. So I've got a couple of things this week to talk about. Firstly, in preview is open ID connect, support for Azure app services and functions. So that means if you're using an open ID connect provider for authentication, you can now integrate that into Azure.
