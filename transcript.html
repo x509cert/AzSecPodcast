@@ -12,9 +12,12 @@
     let name = "https://azsecuritypodcast.net/transcripts/transcript" + episode.toString() + ".txt";
 
     $("#md").load(name);
-    var converter = new showdown.Converter(),
-    html      = converter.makeHtml($("#md").text());
+    var converter = new showdown.Converter();
+    var text =  $("#md").text();
+    var html = converter.makeHtml(text);
+    alert(text);
+    alert(html);
 
-    document.getElementById('root').innerHTML = html;
+    $("root").html()= html;
 
 </script>
