@@ -1,3 +1,5 @@
+#Episode 8
+
 Welcome to the Azure Security podcast where we discussed topics relating to security, privacy, reliability and compliance on the Microsoft Cloud platform.
 Hey, welcome to episode #8. We have the gang here this week. We also have a special guest Randy Campbell to talk to us about network isolation, an private endpoints in Azure. But before that let's go to the news. Sarah, what we got. So I've got a couple of things this week to talk about. Firstly, in preview is open ID connect, support for Azure app services and functions. So that means if you're using an open ID connect provider for authentication, you can now integrate that into Azure.
 App service in Azure functions. If you don't want to use Azure ADI would ask you why you don't want to use Azure AD 'cause it's great but for some reason you need to use another open ID connect provider. You can now do that which is really cool. Next I'm going back to my favorite 'cause we always have things to talk about in this space. We're talking about AK, S and now you can get secure AK S pods using policy. So it means that like Azure Policy in the rest of Azure.
