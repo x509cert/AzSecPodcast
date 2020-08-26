@@ -5,18 +5,20 @@
 <div id='md'></div>
 
 <script>
+    $(document).ready(function() {
 
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const episode = urlParams.get('ep');
-    let name = "https://azsecuritypodcast.net/transcripts/transcript" + episode.toString() + ".txt";
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const episode = urlParams.get('ep');
+        let name = "https://azsecuritypodcast.net/transcripts/transcript" + episode.toString() + ".txt";
 
-    $("#md").load(name);
-    var converter = new showdown.Converter();
-    var text =  $("#md").text();
-    var html = converter.makeHtml(text);
-    alert($("#md").text);
+        $("#md").load(name);
+        var converter = new showdown.Converter();
+        var text =  $("#md").text();
+        var html = converter.makeHtml(text);
+        alert($("#md").text());
 
-    $("#root").html() = html;
+        $("#root").html() = html;
+    }
 
 </script>
