@@ -15,7 +15,7 @@
         $("#md").load(name, function(rsponseText, statusTxt, xhr) {
             if (statusTxt == "success") {
                 var converter = new showdown.Converter();
-                var html = converter.makeHtml(responseTxt);
+                var html = converter.makeHtml(rsponseText);
                 document.getElementById('root').innerHTML = html;
             }
         });
