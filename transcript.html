@@ -9,7 +9,7 @@
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const episode = urlParams.get('ep');
-    let name = "https://azsecuritypodcast.net/transcripts/transcript" + episode.toString(); // + ".txt";
+    let name = "https://azsecuritypodcast.net/transcripts/transcript" + episode.toString() + ".txt";
 
     var text;
     $("#md").load(name, text);
