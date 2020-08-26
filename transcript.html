@@ -9,12 +9,11 @@
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const episode = urlParams.get('ep');
-    let name = "https://azsecuritypodcast.net/transcripts/transcript" + episode.toString() + ".txt";
+    let name = "https://azsecuritypodcast.net/transcripts/transcript" + episode.toString(); // + ".txt";
 
-    $("#md").load(name);
-
+    var text;
+    $("#md").load(name, text);
     var converter = new showdown.Converter(),
-    text      = '# hello, markdown!' + name;
     html      = converter.makeHtml(text);
 
     document.getElementById('root').innerHTML = html;
