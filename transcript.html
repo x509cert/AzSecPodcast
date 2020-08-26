@@ -5,7 +5,7 @@
 <div id='md'></div>
 
 <script>
-                $(document).ready(function() {
+    $(document).ready(function() {
 
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
@@ -18,7 +18,7 @@
         var html = converter.makeHtml(text);
         alert($("#md").text());
 
-        $("#root").html() = html;
+        document.getElementById('root').innerHTML = html;
     });
 
 </script>
