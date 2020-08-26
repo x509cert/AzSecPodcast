@@ -1,0 +1,22 @@
+<script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<div id='root'></div>
+<div id='md'></div>
+
+<script>
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const episode = urlParams.get('ep');
+    let name = "transcripts/transcript" + episode.toString() + ".md";
+
+    $("#md").load(name);
+
+    var converter = new showdown.Converter(),
+    text      = '# hello, markdown!' + name;
+    html      = converter.makeHtml(text);
+
+    document.getElementById('root').innerHTML = html;
+
+</script>
