@@ -6,12 +6,14 @@ Welcome to the Azure Security podcast where we discuss topics relating to securi
 
 ## Michael
 
-Hey, welcome to episode #8. We have the gang here this week. We also have a special guest, Randy Campbell to talk to us about network isolation and private endpoints in Azure. But before that let's go to the news. Sarah, what we got?
+Hey, welcome to Episode #8. We have the gang here this week. We also have a special guest, Randy Campbell to talk to us about network isolation and private endpoints in Azure. But before that let's go to the news. Sarah, what we got?
 
 ## Sarah
 
-So I've got a couple of things this week to talk about. Firstly, in preview is open ID connect, support for Azure app services and functions. So that means if you're using an open ID connect provider for authentication, you can now integrate that into Azure.
-App service in Azure functions. If you don't want to use Azure ADI would ask you why you don't want to use Azure AD 'cause it's great but for some reason you need to use another open ID connect provider. You can now do that which is really cool. Next I'm going back to my favorite 'cause we always have things to talk about in this space. We're talking about AKS and now you can get secure AK S pods using policy. So it means that like Azure Policy in the rest of Azure.
+So I've got a couple of things this week to talk about. Firstly, in preview is OpenID Connect support for Azure App Services and Functions. So that means if you're using an OpenID Connect provider for authentication, you can now integrate that into Azure App service and Azure Functions. If you don't want to use Azure AAD (Azure Active Directory) I would ask you why you don't want to use Azure AD 'cause it's great but for some reason you need to use another OpenID Connect provider, you can now do that which is really cool. 
+
+Next I'm going back to my favorite 'cause we always have things to talk about in this space. We're talking about AKS and now you can get secure AK S pods using policy. So it means that like Azure Policy in the rest of Azure.
+
 You can actually deny an audit requests into a pod, so the 16 in Bell Options you can with those particular settings, you can either put them on audit or you can put them on deny so you can really really lock down the security of the pod and actually what happens within that pod? Because it's always about AK S with me as well. You can also now get managed Azure AD support that's generally available in AK S, which means you don't have to create client apps or service apps.
 It's all managed for you, so again, just making AK S well doing the right thing. Authentication wide with AK S Way way easier which is again I sound like a broken record but very cool and they're all my news bits this week. The first one I selected for this week is related to watch your monitor extending their support to containers.
 Azure Monitor is now able to monitor containers, CPU, memory, this usage and many others in terms of security. This provide another opportunity to detect security issues since they often cause performance impact.
