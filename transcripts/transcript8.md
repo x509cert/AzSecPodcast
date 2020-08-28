@@ -10,7 +10,7 @@ Hey, welcome to Episode #8. We have the gang here this week. We also have a spec
 
 ## Sarah
 
-I've got a couple of things this week to talk about. Firstly, in preview is OpenID Connect support for Azure App Services and Functions. So that means if you're using an OpenID Connect provider for authentication, you can now integrate that into Azure App service and Azure Functions. If you don't want to use Azure AAD (Azure Active Directory) I would ask you why you don't want to use Azure AD 'cause it's great but for some reason you need to use another OpenID Connect provider, you can now do that which is really cool. 
+I've got a couple of things this week to talk about. Firstly, in preview is OpenID Connect support for Azure App Services and Functions. So that means if you're using an OpenID Connect provider for authentication, you can now integrate that into Azure App service and Azure Functions. If you don't want to use Azure AAD (Azure Active Directory) I would ask you why you don't want to use Azure AD 'cause it's great but for some reason you need to use another OpenID Connect provider, you can now do that which is really cool.
 
 Next I'm going back to my favorite 'cause we always have things to talk about in this space. We're talking about Azure Kubernetes Service (AKS) and now you can get secure AKS pods using policy. So it means that like Azure Policy in the rest of Azure.
 
@@ -42,7 +42,7 @@ Enable because I have seen customers that own certain services and they don't ha
 Is this cool skilling initiative that Microsoft has put together to help people get the financial fluency needed in this day and age?
 Specially important now that people have lost their jobs due to the to Cobit 19 financial impact in the more jobs required technology related skills. As part of this initiative Microsoft has enabled many LinkedIn training and there are available for free through March 2021 or so. Microsoft certification exams are being provided at a cost of $15.00 so model rolls path.
 
-Included through the training and the certification is data analyst. Itsupport IT administrator an others. So if you guys are interested, please visit https://aka.ms/jobseeker.
+Included through the training and the certification is data analyst. Itsupport IT administrator an others. So if you guys are interested, please visit <https://aka.ms/jobseeker>.
 
 ## Mark
 
@@ -86,7 +86,7 @@ So the moral of the story is that if your insecurity and you run scanning tools,
 
 ## Michael
 
-And with that, let's change tax and talk to our guest this week we have Randy Campbell who works for Microsoft Services. Welcome Randy, you want to give us a quick blurb on what you do, how long you been Microsoft? 
+And with that, let's change tax and talk to our guest this week we have Randy Campbell who works for Microsoft Services. Welcome Randy, you want to give us a quick blurb on what you do, how long you been Microsoft?
 
 ## Randy
 
@@ -132,7 +132,7 @@ Last few months in the company in question actually has a policy right that says
 
 That's right, that's right. It's it's coming along that we're we've actually, I think, deployed a few apps if I'm not mistaken. More on the data analytics side of the of the house, but they are utilizing private endpoints for some of those features where they're going to have any type of sensitive data in a database or in a storage account.
 
-So I'm gonna be honest with you. I have looked at the private endpoint stuff. You know my background is not networking, it is mainly application development and I do find it. I'm not confusing but there are a few things that I sort of have to come to grips with. So one of the common issues that we see with private endpoints. But what would you expect customers possibly to run into in terms of resistance deploying private endpoints, I would say the biggest hurdle that a customer will need to overcome is correctly setting up DNS for name resolution because a lot of times you may have an app or.
+So I'm gonna be honest with you. I have looked at the private endpoint stuff. You know my background is not networking, it is mainly application development and I do find it, it's not confusing but there are a few things that I sort of have to come to grips with. So one of the common issues that we see with private endpoints. But what would you expect customers possibly to run into in terms of resistance deploying private endpoints, I would say the biggest hurdle that a customer will need to overcome is correctly setting up DNS for name resolution because a lot of times you may have an app or.
 
 Or or something like that that needs to connect via FQDN And if that if that storage account with its FQDN now has private endpoint enabled, it has a private IP so we need to be able to correctly, you know resolve that name so having DNS setup correctly, specially when it comes to a hybrid model like we were talking about. If you need to access some of those resources from on Prem then there is a little bit of work to do with on Prem DNS connecting to.
 
@@ -143,12 +143,12 @@ And this is any like in a typical hub and spoke type of architecture running in 
 Peer to your hub network. That's fantastic stuff I mean.
 I'm really excited to see so many more pairs offerings move towards private endpoints. I think it gives a lot of customers greater degree of confidence that these services are essentially accessible as an extension of their own, their own infrastructure, which again just brings extra level of confidence running running services in the cloud. So random we always finish podcast by asking people one simple question, which is if you have to leave customers. Just thinking about one thing.
 With relation to private endpoints, what would that be?
-I would say if if the customer if customers have made the decision, you know if they're deciding between service endpoints are private endpoints and they've made the decision to go with private endpoints. I'm going to harp on it again. I'm going to say go to our article that we're going to provide that talks about DNS configuration. It has all the information that you'll need in there. We've relied on it with this customer that Michael and I have working on.
+
+I would say if the customer has made the decision, you know if they're deciding between service endpoints or private endpoints and they've made the decision to go with private endpoints. I'm going to harp on it again. I'm going to say go to our article that we're going to provide that talks about DNS configuration. It has all the information that you'll need in there. We've relied on it with this customer that Michael and I have working on.
 And it's a very important article, specially in a hybrid scenario. You'll want to follow that guidance very closely and then do some proper testing.
 
-Well, Randy, thank you so much for coming on the podcast this week. I know I learned quite a few things along the way. Thank you everyone for listening, we'll make sure notes available on the on the website on azsecuritypodcast.net and with that thank you very much and we will see you next time.
+Well, Randy, thank you so much for coming on the podcast this week. I know I learned quite a few things along the way. Thank you everyone for listening, we'll make sure notes available on the on the website on <https://azsecuritypodcast.net> and with that thank you very much and we will see you next time.
 
 ## Outro
 
-Thanks for listening to the Azure Security podcast. You can find show notes and other resources at our website. azsecuritypodcast.net. If you have any questions, please find us on Twitter @azsecpod. Background music is from ccmixter.com and licensed under the Creative Commons license.
-
+Thanks for listening to the Azure Security podcast. You can find show notes and other resources at our website <https://azsecuritypodcast.net>. If you have any questions, please find us on Twitter @azsecpod. Background music is from ccmixter.com and licensed under the Creative Commons license.
