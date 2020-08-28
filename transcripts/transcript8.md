@@ -1,38 +1,68 @@
-# Episode 8
+# Episode 8 [Randy Johnson]
 
 ## Intro
 
 Welcome to the Azure Security podcast where we discuss topics relating to security, privacy, reliability and compliance on the Microsoft Cloud platform.
-Hey, welcome to episode #8. We have the gang here this week. We also have a special guest, Randy Campbell to talk to us about network isolation and private endpoints in Azure. But before that let's go to the news. Sarah, what we got.
+
+## Michael
+
+Hey, welcome to Episode #8. We have the gang here this week. We also have a special guest, Randy Campbell to talk to us about network isolation and private endpoints in Azure. But before that let's go to the news. Sarah, what we got?
 
 ## Sarah
 
-So I've got a couple of things this week to talk about. Firstly, in preview is open ID connect, support for Azure app services and functions. So that means if you're using an open ID connect provider for authentication, you can now integrate that into Azure.
-App service in Azure functions. If you don't want to use Azure ADI would ask you why you don't want to use Azure AD 'cause it's great but for some reason you need to use another open ID connect provider. You can now do that which is really cool. Next I'm going back to my favorite 'cause we always have things to talk about in this space. We're talking about AKS and now you can get secure AK S pods using policy. So it means that like Azure Policy in the rest of Azure.
-You can actually deny an audit requests into a pod, so the 16 in Bell Options you can with those particular settings, you can either put them on audit or you can put them on deny so you can really really lock down the security of the pod and actually what happens within that pod? Because it's always about AK S with me as well. You can also now get managed Azure AD support that's generally available in AK S, which means you don't have to create client apps or service apps.
+I've got a couple of things this week to talk about. Firstly, in preview is OpenID Connect support for Azure App Services and Functions. So that means if you're using an OpenID Connect provider for authentication, you can now integrate that into Azure App service and Azure Functions. If you don't want to use Azure AAD (Azure Active Directory) I would ask you why you don't want to use Azure AD 'cause it's great but for some reason you need to use another OpenID Connect provider, you can now do that which is really cool. 
+
+Next I'm going back to my favorite 'cause we always have things to talk about in this space. We're talking about Azure Kubernetes Service (AKS) and now you can get secure AKS pods using policy. So it means that like Azure Policy in the rest of Azure.
+
+You can actually deny on audit requests into a pod, so the 16 in Bell Options you can with those particular settings, you can either put them on audit or you can put them on deny so you can really really lock down the security of the pod and actually what happens within that pod? Because it's always about AK S with me as well. You can also now get managed Azure AD support that's generally available in AK S, which means you don't have to create client apps or service apps.
+
 It's all managed for you, so again, just making AK S well doing the right thing. Authentication wide with AK S Way way easier which is again I sound like a broken record but very cool and they're all my news bits this week. The first one I selected for this week is related to watch your monitor extending their support to containers.
+
 Azure Monitor is now able to monitor containers, CPU, memory, this usage and many others in terms of security. This provide another opportunity to detect security issues since they often cause performance impact.
+
 Please give us the opportunity to correlate those performance indicators with information from services like Azure Security Center sent in on defender, ATP etc. The next news that I'm really excited about is that Microsoft is launching a tech community page for Microsoft threat protection.
-In previous podcasts, you may have heard me talking about the ability that our services have to interconnect and interoperate with other Microsoft Services and 3rd party vendors, and that this provide protection at the door an enable the infrastructure necessary for strategies like zero trust, security, orchestration, automation and response, or sore. Before going further, I want to come in.
+
+In previous podcasts, you may have heard me talking about the ability that our services have to interconnect and interoperate with other Microsoft Services and 3rd party vendors, and that this provide protection at the door an enable the infrastructure necessary for strategies like zero trust, security, orchestration, automation and response, or sore.
+
+Before going further, I want to come in.
+
 To explain what I mean with provide protection at the door since I've been asked that question before.
+
 When users and processes are authenticate and get authorized to perform some task only the information available to the identity provider is what is used to make the authentication and authorization decisions.
+
 But what about if they are entity provider? Had a way to get more information than what is store in the directory itself. Basically by interconnecting services data from other services could be available in be utilized to determine how risky as connection maybe and then use as part of the authentication authorization process.
+
 In other words, it allows data to be available in almost real time. Hence this is what I mean when I said it allows protection at the door. So going back to Microsoft threat protection, it builds, opened our interconnection and Inter operation or services story by allowing the aggregation of signals gather by the different threat protection services into a single pane of glass.
+
 Microsoft threat protection, or NTP, has an incident tab that shows a list of detection, so detector incidents and includes a summary of the extent of the impact caused by the incident in the environment. For example, if you see a credential theft in, make sure the users that device is the data that it was impacted throughout the environment and that information will come from the different services such as.
+
 Azure advanced threat protection, or Azure ATP, Microsoft defender ATP, Microsoft Cloud app security Orem cast and others. In addition, the NTP Action Center has the capability to allowing that information to the Mitre attack framework.
-Enable because I have seen customers that own certain services and they don't have it enabled. The other cool thing about empty P is that it helps streamline the time to Adknowledge and remediation incidents. Since now you have all the information centralized and more automation can be used to deal with the all the attacks that are commonly seen in the environment. The last thing I want to talk about.
+Enable because I have seen customers that own certain services and they don't have it enabled. The other cool thing about empty P is that it helps streamline the time to acknowledge and remediation incidents. Since now you have all the information centralized and more automation can be used to deal with the all the attacks that are commonly seen in the environment. The last thing I want to talk about.
+
 Is this cool skilling initiative that Microsoft has put together to help people get the financial fluency needed in this day and age?
 Specially important now that people have lost their jobs due to the to Cobit 19 financial impact in the more jobs required technology related skills. As part of this initiative Microsoft has enabled many LinkedIn training and there are available for free through March 2021 or so. Microsoft certification exams are being provided at a cost of $15.00 so model rolls path.
-Included through the training and the certification is data analyst. Itsupport IT administrator an others. So if you guys are interested, please visit AKA dot Ms slash job seeker.
-So a couple of slight leads Azure related things caught my eye this week. The first one I thought was really cool. Kind of just geeking out on non Azure topics, but Microsoft's really focused on kind of getting to zero waste and so we did. Some pilot programs. Can we take all the stuff that comes out of our data centers and you know find another use for it. So I thought this was pretty neat so got a little article there for folks to check out. The other thing that drop that's somewhat related to Azure is the windows baselines. Actually, just.
-Recently released for the latest versions of Windows Server and Windows 10 and a couple of interesting things in there. Some adjustments to the new password length controls. Keep in mind that we really are pushing for passwordless future, but we recognize that there is an interim state of having to strengthen what you can do on the password side, but it's not necessarily always, you know passwords that you have to change all the time. You know if it's not changing, excuse me if it's not been compromised, we don't want to change it, but strong longer passwords can be stronger.
+
+Included through the training and the certification is data analyst. Itsupport IT administrator an others. So if you guys are interested, please visit https://aka.ms/jobseeker.
+
+## Mark
+
+So a couple of Azure related things caught my eye this week. The first one I thought was really cool. Kind of just geeking out on non Azure topics, but Microsoft's really focused on kind of getting to zero waste and so we did. Some pilot programs. Can we take all the stuff that comes out of our data centers and you know find another use for it. So I thought this was pretty neat so got a little article there for folks to check out. The other thing that drop that's somewhat related to Azure is the windows baselines.
+
+Actually, just recently released for the latest versions of Windows Server and Windows 10 and a couple of interesting things in there. Some adjustments to the new password length controls. Keep in mind that we really are pushing for passwordless future, but we recognize that there is an interim state of having to strengthen what you can do on the password side, but it's not necessarily always, you know passwords that you have to change all the time. You know if it's not changing, excuse me if it's not been compromised, we don't want to change it, but strong longer passwords can be stronger.
+
 So a couple of different weeks and tuning in there let you let you all kind of read through that in the Azure world. I've been working a lot on the new version of the Azure security baselines. With that team and one of the things that we're really looking for feedback on. Very interested and find me on LinkedIn and Twitter is kind of how you're using Azure baselines and benchmarks. If you are already and any anything that we can do to improve it, Annie scenarios where it's where you know. Hey, this is helpful, but it's been really hard to apply these.
+
 Settings recommendations. Really looking to kind of tweak and refine that. We've gotten really good solid feedback from customers, but always looking for how do we tune it a little bit better so that we're giving the guidance that people can kind of just go with.
 Another thing is we recently bought a company named Cyber X IoT, an operational technology security. So Internet of Things, an operational technology OT OT and really really cool technology. Amazing capabilities to give you operational insights, but much more important. Cybersecurity insights on are we dealing with vulnerable devices? Generally, yes. Are we seeing any active threats? Are we seeing you know attack? You know how do we link that together in a timeline? What are the?
+
 As an attacker could get in to our io, TN OT environments, so really some amazing stuff there and we know this is going to be a big learning curve as organizations kind of converged their IoT and it in OT practice is so very interested. Also in feedback you know what are the kind of things that you would want, you know as an IT person or an OT person or IoT person with that kind of background.
 You know what are the what are the things that you would be interested in learning, and as you kind of go on that journey to learn how all these things come together so very interested in that. And then last on Azure Security Center, Bunch of different cool enhancements. Gotta couple links in there. Feel first is some enhancements to Azure threat protection for Azure storage. For those who are not familiar with it. Essentially machine learning based rules heavily that identify when things are going weird. Anomalous, you know potential risk, alert type of things.
 In your storage accounts that hey, these things shouldn't be happening. These users don't normally do this, etc, so there's some enhancements to those rules. Also, the adaptive application controls in Azure Security Center also got some new recommendations and wild card support, and for those of you that aren't familiar with what that is, again, machine learning based very heavily, essentially application allow listing that is generated based on the actual behavior of the VMS in the processes on them to help you write those rules to make sure that you're allowing the right applications so.
-Very very cool technology that.
+
+Very very cool technology.
+
+## Michael
+
 And a couple things sort of peaked my interest this week. This one was the use of double key encryption for Microsoft 365. This applies to sensitive or the labeling documents so that a second key can be applied to that document. So there's a key managed by Microsoft, and there's a key that's managed by the tenants. And the nice thing there is that you apply it to a specific sensitivity level and automatically the policy engine applies double key encryption.
 Really good to see this alot of customers asking for more control over the keys rather than just keep it that are managed by Azure. The other thing that peaked my interest was as your Active Directory directory registration service will be ending support for TLS 1.0 and 114 government cloud that will be in August an for the rest of the commercial cloud that will be in October. As you can see, just about every service in Azure is moving to either totally deprecating prior versions of TLS.
 Older than 1.2 or allowing you to at least configure TLS 1.11 dot 1.01 dot one and 1.2.

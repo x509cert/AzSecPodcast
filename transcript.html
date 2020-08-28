@@ -22,18 +22,22 @@
         <script>
             $(document).ready(function() {
 
-                const queryString = window.location.search;
-                const urlParams = new URLSearchParams(queryString);
-                const episode = urlParams.get('ep');
-                let name = "https://azsecuritypodcast.net/transcripts/transcript" + episode.toString() + ".txt";
+                var queryString = window.location.search;
+                var urlParams = new URLSearchParams(queryString);
+                var episode = urlParams.get('ep');
 
-                $("#root").load(name, function(rsponseText, statusTxt, xhr) {
-                    if (statusTxt == "success") {
-                        var converter = new showdown.Converter();
-                        var html = converter.makeHtml(rsponseText);
-                        document.getElementById('root').innerHTML = html;
-                    }
-                });
+                if (Number.isInteger(episode) && episode >= 1) {
+
+                    var name = "https://azsecuritypodcast.net/transcripts/transcript" + episode.toString() + ".md";
+
+                    $("#root").load(name, function(rsponseText, statusTxt, xhr) {
+                        if (statusTxt == "success") {
+                            var converter = new showdown.Converter();
+                            var html = converter.makeHtml(rsponseText);
+                            document.getElementById('root').innerHTML = html;
+                        }
+                    });
+                }
             });
 
         </script>
