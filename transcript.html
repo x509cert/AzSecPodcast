@@ -26,7 +26,7 @@
                 var urlParams = new URLSearchParams(queryString);
                 var episode = urlParams.get('ep');
 
-                if (Number.isInteger(episode) && episode >= 1) {
+                if (Number.isInteger(episode) ) {
 
                     var name = "https://azsecuritypodcast.net/transcripts/transcript" + episode.toString() + ".md";
 
