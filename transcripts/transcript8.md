@@ -63,7 +63,7 @@ Very very cool technology.
 
 ## Michael
 
-And a couple things sort of peaked my interest this week. This one was the use of double key encryption for Microsoft 365. This applies to sensitive or the labeling documents so that a second key can be applied to that document. So there's a key managed by Microsoft, and there's a key that's managed by the tenants. And the nice thing there is that you apply it to a specific sensitivity level and automatically the policy engine applies double key encryption.
+And a couple things sort of piqued my interest this week. This one was the use of double key encryption for Microsoft 365. This applies to sensitive or the labeling documents so that a second key can be applied to that document. So there's a key managed by Microsoft, and there's a key that's managed by the tenants. And the nice thing there is that you apply it to a specific sensitivity level and automatically the policy engine applies double key encryption.
 Really good to see this alot of customers asking for more control over the keys rather than just keep it that are managed by Azure. The other thing that peaked my interest was as your Active Directory directory registration service will be ending support for TLS 1.0 and 114 government cloud that will be in August an for the rest of the commercial cloud that will be in October. As you can see, just about every service in Azure is moving to either totally deprecating prior versions of TLS.
 Older than 1.2 or allowing you to at least configure TLS 1.11 dot 1.01 dot one and 1.2.
 Interesting thing happened to me this week that I want to share with you guys. 'cause I've seen this kind of thing before.
@@ -86,12 +86,16 @@ So the moral of the story is that if your insecurity and you run scanning tools,
 
 ## Michael
 
-And with that, let's change tax and talk to our guest this week we have Randy Campbell who works for Microsoft Services. Welcome Randy, you want to give us a quick blurb on what you do, how long you been Microsoft?
+And with that, let's change tack and talk to our guest; this week we have Randy Campbell who works for Microsoft Services. Welcome Randy, you want to give us a quick blurb on what you do, how long you been Microsoft?
 
 ## Randy
 
 Hello Michael, thanks for having me. I've been with Microsoft for May 23rd year, which is ranged from Technical Support, dedicated support, an now consulting for about the last 13 years.
-Nice so your your main area of expertise is is networking right specifically today anyway, as your networking Azure infrastructure as a whole, I do have a good bit of networking experience, yes.
+
+Nice so your your main area of expertise is networking right? Specifically today anyway, is networking Azure infrastructure as a whole, I do have a good bit of networking experience, yes.
+
+## Michael
+
 So one of the big topics that comes up constantly with customers is that of network isolation. I mean, obviously Azure is a public cloud and that means public endpoints, public IP addresses, services that are technically can be exposed to the Internet. Therefore potentially untrusted users. So one of the buzzwords were here thrown around quite often is this notion of network isolation. So from your perspective, what the customers want.
 
 When they're talking about network isolation in the context of a cloud environment.
