@@ -14,35 +14,39 @@ I've got a couple of things this week to talk about. Firstly, in preview is Open
 
 Next I'm going back to my favorite 'cause we always have things to talk about in this space. We're talking about Azure Kubernetes Service (AKS) and now you can get secure AKS pods using policy. So it means that like Azure Policy in the rest of Azure.
 
-You can actually deny on audit requests into a pod, so the 16 in Bell Options you can with those particular settings, you can either put them on audit or you can put them on deny so you can really really lock down the security of the pod and actually what happens within that pod? Because it's always about AK S with me as well. You can also now get managed Azure AD support that's generally available in AK S, which means you don't have to create client apps or service apps.
+You can actually deny on audit requests into a pod, so the 16 in-built options you can with those particular settings, you can either put them on audit or you can put them on deny so you can really really lock down the security of the pod and actually what happens within that pod. Because it's always about AKS with me as well. You can also now get managed Azure AD support that's generally available in AKS, which means you don't have to create client apps or service apps. It's all managed for you, so again, just making AK S well doing the right thing authentication-wise with AKS. Way, way easier which is again, I sound like a broken record, but very cool. And they're all my news bits this week.
 
-It's all managed for you, so again, just making AK S well doing the right thing. Authentication wide with AK S Way way easier which is again I sound like a broken record but very cool and they're all my news bits this week. The first one I selected for this week is related to watch your monitor extending their support to containers.
+## Gladys
 
-Azure Monitor is now able to monitor containers, CPU, memory, this usage and many others in terms of security. This provide another opportunity to detect security issues since they often cause performance impact.
+The first one I selected for this week is related to Azure Monitor extending their support to containers.
 
-Please give us the opportunity to correlate those performance indicators with information from services like Azure Security Center sent in on defender, ATP etc. The next news that I'm really excited about is that Microsoft is launching a tech community page for Microsoft threat protection.
+Azure Monitor is now able to monitor containers' CPU, memory, disk usage and many others; in terms of security this provide another opportunity to detect security issues since they often cause performance impact.
 
-In previous podcasts, you may have heard me talking about the ability that our services have to interconnect and interoperate with other Microsoft Services and 3rd party vendors, and that this provide protection at the door an enable the infrastructure necessary for strategies like zero trust, security, orchestration, automation and response, or sore.
+This give us the opportunity to correlate those performance indicators with information from services like Azure Security Center, Sentinel, Defender ATP etc.
 
-Before going further, I want to come in.
+The next news that I'm really excited about is that Microsoft is launching a tech community page for Microsoft threat protection.
 
-To explain what I mean with provide protection at the door since I've been asked that question before.
+In previous podcasts, you may have heard me talking about the ability that our services have to interconnect and interoperate with other Microsoft Services and 3rd-party vendors, and that this provide protection at the door an enable the infrastructure necessary for strategies like Zero-trust, security, orchestration, automation and response, or SOAR.
 
-When users and processes are authenticate and get authorized to perform some task only the information available to the identity provider is what is used to make the authentication and authorization decisions.
+Before going further, I want to come in to explain what I mean with "provide protection at the door" since I've been asked that question before.
 
-But what about if they are entity provider? Had a way to get more information than what is store in the directory itself. Basically by interconnecting services data from other services could be available in be utilized to determine how risky as connection maybe and then use as part of the authentication authorization process.
+When users and processes are authenticated and get authorized to perform some task only the information available to the identity provider is what is used to make the authentication and authorization decisions.
 
-In other words, it allows data to be available in almost real time. Hence this is what I mean when I said it allows protection at the door. So going back to Microsoft threat protection, it builds, opened our interconnection and Inter operation or services story by allowing the aggregation of signals gather by the different threat protection services into a single pane of glass.
+But what about if the entity provider had a way to get more information than what is stored in the directory itself. Basically by interconnecting data from other services could be available to be utilized to determine how risky a connection may be and then used as part of the authentication/authorization process.
 
-Microsoft threat protection, or NTP, has an incident tab that shows a list of detection, so detector incidents and includes a summary of the extent of the impact caused by the incident in the environment. For example, if you see a credential theft in, make sure the users that device is the data that it was impacted throughout the environment and that information will come from the different services such as.
+In other words, it allows data to be available in almost real time. Hence this is what I mean when I said "it allows protection at the door." So going back to Microsoft threat protection, it builds upon our interconnection and inter-operation services story by allowing the aggregation of signals gathered by the different threat protection services into a single pane of glass.
 
-Azure advanced threat protection, or Azure ATP, Microsoft defender ATP, Microsoft Cloud app security Orem cast and others. In addition, the NTP Action Center has the capability to allowing that information to the Mitre attack framework.
-Enable because I have seen customers that own certain services and they don't have it enabled. The other cool thing about empty P is that it helps streamline the time to acknowledge and remediation incidents. Since now you have all the information centralized and more automation can be used to deal with the all the attacks that are commonly seen in the environment. The last thing I want to talk about.
+Microsoft threat protection, or MTP, has an incident tab that shows a list of detection, so detected incidents and includes a summary of the extent of the impact caused by the incident in the environment. For example, if you see a credential theft, make sure the users that device is the data that was impacted throughout the environment and that information will come from the different services such as Azure advanced threat protection, or Azure ATP, Microsoft Defender ATP, Microsoft Cloud app security or EMCAS and others. In addition, the NTP Action Center has the capability to allowing that information to the Mitre attack framework.
 
-Is this cool skilling initiative that Microsoft has put together to help people get the financial fluency needed in this day and age?
-Specially important now that people have lost their jobs due to the to Cobit 19 financial impact in the more jobs required technology related skills. As part of this initiative Microsoft has enabled many LinkedIn training and there are available for free through March 2021 or so. Microsoft certification exams are being provided at a cost of $15.00 so model rolls path.
+Enable this because I have seen customers that own certain services and they don't have it enabled. 
 
-Included through the training and the certification is data analyst. Itsupport IT administrator an others. So if you guys are interested, please visit <https://aka.ms/jobseeker>.
+The other cool thing about MTP is that it helps streamline the time to acknowledge and remediate incidents. Since now you have all the information centralized and more automation can be used to deal with all the attacks that are commonly seen in the environment. 
+
+The last thing I want to talk about is this cool skilling initiative that Microsoft has put together to help people get the financial fluency needed in this day and age!
+
+This is especially important now that people have lost their jobs due to the to COVID-19 financial impact and the more jobs required technology related skills. As part of this initiative Microsoft has enabled many LinkedIn training and there are available for free through March 2021. Also, Microsoft certification exams are being provided at a cost of $15.00.
+
+Some of the role paths included through the training and the certification is data analyst, IT support, IT administrator and others. So if you guys are interested, please visit <https://aka.ms/jobseeker>.
 
 ## Mark
 
@@ -57,44 +61,51 @@ Another thing is we recently bought a company named Cyber X IoT, an operational 
 
 As an attacker could get in to our io, TN OT environments, so really some amazing stuff there and we know this is going to be a big learning curve as organizations kind of converged their IoT and it in OT practice is so very interested. Also in feedback you know what are the kind of things that you would want, you know as an IT person or an OT person or IoT person with that kind of background.
 You know what are the what are the things that you would be interested in learning, and as you kind of go on that journey to learn how all these things come together so very interested in that. And then last on Azure Security Center, Bunch of different cool enhancements. Gotta couple links in there. Feel first is some enhancements to Azure threat protection for Azure storage. For those who are not familiar with it. Essentially machine learning based rules heavily that identify when things are going weird. Anomalous, you know potential risk, alert type of things.
-In your storage accounts that hey, these things shouldn't be happening. These users don't normally do this, etc, so there's some enhancements to those rules. Also, the adaptive application controls in Azure Security Center also got some new recommendations and wild card support, and for those of you that aren't familiar with what that is, again, machine learning based very heavily, essentially application allow listing that is generated based on the actual behavior of the VMS in the processes on them to help you write those rules to make sure that you're allowing the right applications so.
+In your storage accounts that hey, these things shouldn't be happening. These users don't normally do this, etc, so there's some enhancements to those rules. Also, the adaptive application controls in Azure Security Center also got some new recommendations and wild card support, and for those of you that aren't familiar with what that is, again, machine learning based very heavily, essentially application allow-listing that is generated based on the actual behavior of the VMs in the processes on them to help you write those rules to make sure that you're allowing the right applications.
 
-Very very cool technology.
-
-## Michael
-
-And a couple things sort of peaked my interest this week. This one was the use of double key encryption for Microsoft 365. This applies to sensitive or the labeling documents so that a second key can be applied to that document. So there's a key managed by Microsoft, and there's a key that's managed by the tenants. And the nice thing there is that you apply it to a specific sensitivity level and automatically the policy engine applies double key encryption.
-Really good to see this alot of customers asking for more control over the keys rather than just keep it that are managed by Azure. The other thing that peaked my interest was as your Active Directory directory registration service will be ending support for TLS 1.0 and 114 government cloud that will be in August an for the rest of the commercial cloud that will be in October. As you can see, just about every service in Azure is moving to either totally deprecating prior versions of TLS.
-Older than 1.2 or allowing you to at least configure TLS 1.11 dot 1.01 dot one and 1.2.
-Interesting thing happened to me this week that I want to share with you guys. 'cause I've seen this kind of thing before.
-Back in the day when I was working on the Microsoft Security Development Lifecycle on the HDL, we had this rule, which was if we ran a security tool over some code, say static analysis tool. We wouldn't just hand the developers list of all the warnings be cause you really need to triage those warnings 1st. And frankly, if you give a developer 250 warnings and five of them are serious and the rest are not, the developers going to lose any interest in even listening to your little learn any trust in that particular tool.
-So I've always sort of live by that idea for many, many years and never hand a list of bugs to somebody to look at that gonna happen this week. Actually, where the customer it was really interesting. The customer approached me and asked me for my opinion on some bugs and essentially what happened was the customer security team had run a scanning tool against an AK S Azure Kubernetes service installation and it was running Ubuntu 1604 LTS. The long term support and they found some bugs.
-
-Some unfixed vulnerabilities, and I use the word vulnerabilities very loosely.
-
-To be honest, we looking at the list. It looked pretty bad. You look like there's quite a few vulnerabilities in there, but on closer inspection they they really weren't. So one of them was actually rated what's called the CVS. The common vulnerability scoring system, which goes on sort of a range of 1 to 10 where one is low antennas.
-
-Basically the slow heat death of the universe tennis catastrophic. I mean 10 is drop what you're doing and you need to go and fix this now. Well there was one bug in there that was against a set of tools called binutils and they were command line tools that was raised at 9.4 and this immediately set off alarm bells.
-
-So I started looking at this issue and like this is in command line tools. How can this be in nine point 4 mean these tools? They require a human to run them, they don't run as root, they don't make network connections, they don't access sensitive data. How can this be a 9.4 I had. I had to look at the actual bugs themselves and I probably gave him like a 4.5 ish something like that. There's no way that deliver in nine point 4 but they were holding up this customer from deploying AK S little bit more digging around and I talked to Michael Withrow. So Michael.
-
-Those are my podcast, I think episode 2 talking bout container security. I've talked to Michael about it, that's ask his opinion. He said one thing would be really careful is that sometimes the vendor of the operating system, in this case a bunch too. They may not actually have a Patch for that specific service, and sure enough, there was actually no Patch for Ubuntu 1604, but there was a Patch on 1804, but the customer was using 1604.
-
-I then looked a little bit further found that Red Hat actually disagreed with the 9.4 rating and rated at a 4.4 which is close to my 4.5 and their fix was we're not fixing this at all.
-
-So the moral of the story is that if your insecurity and you run scanning tools, please don't hand your developers or redeployment people a a wall of bugs that have to be addressed. You really need to perform some kind of pre analysis using your own security expertise to frankly triage the bugs and also pick you battles again for the customer. This is really kind of pretty scary because they had this wall of issues to look at, none of them. None of them were serious.
+So very very cool technology.
 
 ## Michael
 
-And with that, let's change tax and talk to our guest this week we have Randy Campbell who works for Microsoft Services. Welcome Randy, you want to give us a quick blurb on what you do, how long you been Microsoft?
+And a couple things sort of piqued my interest this week. The first one was the use of double key encryption for Microsoft 365. This applies to  labeling documents so that a second key can be applied to that document. So there's a key managed by Microsoft, and there's a key that's managed by the tenant. And the nice thing there is that you apply it to a specific sensitivity level and automatically the policy engine applies double key encryption. Really good to see this, a lot of customers asking for more control over the keys rather than just keys that are managed by Azure.
+
+The other thing that piqued my interest was Azure Active Directory Registration Service will be ending support for TLS 1.0 and 1.1. For Government Cloud that will be in August and for the rest of the commercial cloud that will be in October. As you can see, just about every service in Azure is moving to either totally deprecating prior versions of TLS older than 1.2 or allowing you to at least configure TLS 1.0, 1.1 and 1.2.
+
+Interesting thing happened to me this week that I want to share with you guys.  I've seen this kind of thing before.
+
+Back in the day when I was working on the Microsoft Security Development Lifecycle, on the SDL, we had this rule, which was if we ran a security tool over some code, say static analysis tool. We wouldn't just hand the developers a list of all the warnings because you really need to triage those warnings first. And frankly, if you give a developer 250 warnings and five of them are serious and the rest are not, the developers going to lose any interest in even listening to you let alone any trust in that particular tool.
+
+So I've always sort of live by that idea for many, many years and never hand a list of bugs to somebody to look at. 
+
+But that kinda happened this week, actually, with a customer; it was really interesting. The customer approached me and asked me for my opinion on some bugs and essentially what happened was the customer security team had run a scanning tool against an AKS (Azure Kubernetes Service) installation and it was running Ubuntu 1604 LTS, the long term support, and they found some bugs. Some unfixed vulnerabilities, and I use the word vulnerabilities very loosely.
+
+To be honest, we looking at the list. It looked pretty bad. You look like there's quite a few vulnerabilities in there, but on closer inspection they they really weren't. So one of them was actually rated what's called the CVSS - the common vulnerability scoring system, which goes on a range of 1 to 10, where one is low and ten is basically the slow heat-death of the universe; 10 is catastrophic, I mean 10 is "drop what you're doing and you need to go and fix this now". Well there was one bug in there that was against a set of tools called binutils and they were command line tools that was raised at 9.4 and this immediately set off alarm bells.
+
+So I started looking at this issue and like this is in command line tools. How can this be in 9.4 in command-line tools? They require a human to run them, they don't run as root, they don't make network connections, they don't access sensitive data. How can this be a 9.4. I had a look at the actual bugs themselves and I probably gave him like a 4.5-ish, something like that. There's no way they were a 9.4, but they were holding up this customer from deploying AKS. I did a bit more digging around and I talked to Michael Withrow. So Michael was on our podcast, I think episode 2 talking about container security. I talked to Michael about it, to ask his opinion. He said one thing would be really careful is that sometimes the vendor of the operating system, in this case Ubuntu, they may not actually have a patch for that specific service, and sure enough, there was actually no patch for Ubuntu 1604, but there was a patch on 1804, but the customer was using 1604.
+
+I then looked a little bit further found that RedHat actually disagreed with the 9.4 rating and rated at a 4.4 which is close to my 4.5 and their fix was we're not fixing this at all!
+
+So the moral of the story is that if your in security and you run scanning tools, please don't hand your developers or deployment people a wall of bugs that have to be addressed. You really need to perform some kind of pre-analysis using your own security expertise to frankly triage the bugs and also pick you battles. Again for the customer, this is really kind of pretty scary because they had this wall of issues to look at, none of them were serious.
+
+And with that, let's change tacks and talk to our guest this week. We have Randy Campbell who works for Microsoft Services. Welcome Randy, you want to give us a quick blurb on what you do, how long you been Microsoft?
 
 ## Randy
 
-Hello Michael, thanks for having me. I've been with Microsoft for May 23rd year, which is ranged from Technical Support, dedicated support, an now consulting for about the last 13 years.
-Nice so your your main area of expertise is is networking right specifically today anyway, as your networking Azure infrastructure as a whole, I do have a good bit of networking experience, yes.
-So one of the big topics that comes up constantly with customers is that of network isolation. I mean, obviously Azure is a public cloud and that means public endpoints, public IP addresses, services that are technically can be exposed to the Internet. Therefore potentially untrusted users. So one of the buzzwords were here thrown around quite often is this notion of network isolation. So from your perspective, what the customers want.
+Hello Michael, thanks for having me. I've been with Microsoft for, I am in my 23rd year, which is ranged from Technical Support, dedicated support, and now consulting for about the last 13 years.
 
-When they're talking about network isolation in the context of a cloud environment.
+## Michael
+
+Nice! So your your main area of expertise is networking right? Specifically today anyway, Azure networking.
+
+## Randy
+
+Azure infrastructure as a whole, I do have a good bit of networking experience, yes.
+
+## Michael
+
+So one of the big topics that comes up constantly with customers is that of network isolation. I mean, obviously Azure is a public cloud and that means public endpoints, public IP addresses, services that are technically can be exposed to the Internet. Therefore potentially untrusted users. So one of the buzzwords we hear thrown around quite often is this notion of network isolation. So from your perspective, what do customers want when they're talking about network isolation in the context of a cloud environment?
+
+## Randy
 
 So in my experience, I would say most of the time customers are looking for a way to be able to utilize Azure resources such as Azure storage, Azure SQL to store data that might have some very sensitive information, could contain Pi or Phi, anything like that, and they want to be able to utilize those in a way that remains on their private network while running in the cloud. We really need to differentiate here between pass.
 And I, as right, we're talking. We talk about private, privately accessible services. We've always kind of been able to do that with the as. Is that correct path has always been the area where there's been public endpoints? Absolutely yeah, with as you're thinking about virtual machines and those are by default just they're going to be specific for your environment, and they're going to be deployed into a subnet, so they would get their own private IP address, their private for you.
