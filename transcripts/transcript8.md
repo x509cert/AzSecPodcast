@@ -110,16 +110,31 @@ One of the buzzwords we hear thrown around quite often is this notion of network
 
 ## Randy
 
-So in my experience, I would say most of the time customers are looking for a way to be able to utilize Azure resources such as Azure storage, Azure SQL to store data that might have some very sensitive information, could contain Pi or Phi, anything like that, and they want to be able to utilize those in a way that remains on their private network while running in the cloud. We really need to differentiate here between pass.
-And I, as right, we're talking. We talk about private, privately accessible services. We've always kind of been able to do that with the as. Is that correct path has always been the area where there's been public endpoints? Absolutely yeah, with as you're thinking about virtual machines and those are by default just they're going to be specific for your environment, and they're going to be deployed into a subnet, so they would get their own private IP address, their private for you.
+So in my experience, I would say most of the time customers are looking for a way to be able to utilize Azure resources such as Azure storage, Azure SQL to store data that might have some very sensitive information, could contain PII (Personally Identifiable Information) or PHI (Personal Healthcare Information), anything like that, and they want to be able to utilize those in a way that remains on their private network while running in the cloud. 
 
-When it comes to the path offerings really around the multi tenant kind, you know for a long time the Azure Cloud didn't have the capability to to be able to allow those to be accessed through private means only. They were the only way you could access them was over the Internet public endpoint.
+## Michael
 
-So many pairs offering, so let's have an example, say as your storage or Azure SQL SQL database. They offer a firewall and I use the term firewall very loosely there like lower case F firewall that provide things like IP restrictions, perhaps even port restrictions in some cases, but that's not network isolation, right? That's right, Michael. So are things like storage accounts or Azure SQL or key vault. You can go to the firewall settings for that resource.
+We really need to differentiate here between PaaS and IaaS, right? We talk about private, privately accessible services. We've always kind of been able to do that with IaaS. Is that correct PaaS has always been the area where there's been public endpoints? 
 
-Hey, when you're looking to add IP address is there you can only add public IP addresses, so if you're needing to access something from on Prem but you want to try to do it in a somewhat secure manner, you can add those nated public IP addresses from your data center to the to the resource, but truly it's not really network isolation. At that point, it still is still traffic that leaves that's not confined to your private network, so over the years I mean Microsoft has moved.
+## Randy
 
-Towards newer to network isolation technologies, do you want to just give us an idea of what those technologies are and what the sort of the patterns are that we see emerge across various services, right? So as more and more customers really demanded that some of our multi tenant pass services have this additional security features, we produced a feature called service endpoints. Yeah, so with service endpoints they allow you to lock down, so to speak, which Azure V net or subnet can access that Azure resource such as a storage account or.
+Absolutely yeah, with IaaS you're thinking about virtual machines and those are by default just they're going to be specific for your environment, and they're going to be deployed into a subnet, so they would get their own private IP address, their private for you.
+
+When it comes to the PaaS offerings really around the multi tenant kind, you know for a long time the Azure Cloud didn't have the capability to  be able to allow those to be accessed through private means only. They were the only way you could access them was over the Internet  - a public endpoint.
+
+## Michael
+
+So many PaaS offering, so let's have an example, say as your storage or Azure SQL database. They offer a firewall and I use the term firewall very loosely there like lower case F firewall, that provide things like IP restrictions, perhaps even port restrictions in some cases, but that's not network isolation, right? 
+
+## Randy
+
+That's right, Michael. So  things like storage accounts or Azure SQL or Key Vault. You can go to the firewall settings for that resource.
+
+Hey, when you're looking to add IP address is there you can only add public IP addresses, so if you're needing to access something from on-prem but you want to try to do it in a somewhat secure manner, you can add those NAT' public IP addresses from your data center to the resource, but truly it's not really network isolation. At that point, it still is traffic that leaves that's not confined to your private network.
+
+## Michael
+
+So over the years I mean Microsoft has moved towards newer network isolation technologies, do you want to just give us an idea of what those technologies are and what the sort of the patterns are that we see emerge across various services, right? So as more and more customers really demanded that some of our multi tenant pass services have this additional security features, we produced a feature called service endpoints. Yeah, so with service endpoints they allow you to lock down, so to speak, which Azure V net or subnet can access that Azure resource such as a storage account or.
 
 For a Key Vault or or, see Azure SQL. And again I want to emphasize Azure virtual network because you cannot restrict traffic from on Prem through service endpoints. That is where one of the limitations for service endpoints comes into play.
 And that's where we come in to our most recent offering, which is around private endpoints, and I'd like to take a step back and really talk about two really private pass patterns.
