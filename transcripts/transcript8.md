@@ -1,24 +1,16 @@
-# Episode 8 [Recorded August 5th, 2020 with Randy Johnson - Azure Network Isolation]
+# Episode 8, recorded August 5th, 2020 with Randy Johnson - Azure Network Isolation
 
-## Intro
+**Intro** Welcome to the Azure Security podcast where we discuss topics relating to security, privacy, reliability and compliance on the Microsoft Cloud platform.
 
-Welcome to the Azure Security podcast where we discuss topics relating to security, privacy, reliability and compliance on the Microsoft Cloud platform.
+**Michael** Hey, welcome to Episode #8. We have the gang here this week. We also have a special guest, Randy Campbell to talk to us about network isolation and private endpoints in Azure. But before that let's go to the news. Sarah, what we got?
 
-## Michael
-
-Hey, welcome to Episode #8. We have the gang here this week. We also have a special guest, Randy Campbell to talk to us about network isolation and private endpoints in Azure. But before that let's go to the news. Sarah, what we got?
-
-## Sarah
-
-I've got a couple of things this week to talk about. Firstly, in preview is OpenID Connect support for Azure App Services and Functions. So that means if you're using an OpenID Connect provider for authentication, you can now integrate that into Azure App service and Azure Functions. If you don't want to use Azure AAD (Azure Active Directory) I would ask you why you don't want to use Azure AD 'cause it's great but for some reason you need to use another OpenID Connect provider, you can now do that which is really cool.
+**Sarah**I've got a couple of things this week to talk about. Firstly, in preview is OpenID Connect support for Azure App Services and Functions. So that means if you're using an OpenID Connect provider for authentication, you can now integrate that into Azure App service and Azure Functions. If you don't want to use Azure AAD (Azure Active Directory) I would ask you why you don't want to use Azure AD 'cause it's great but for some reason you need to use another OpenID Connect provider, you can now do that which is really cool.
 
 Next I'm going back to my favorite 'cause we always have things to talk about in this space. We're talking about Azure Kubernetes Service (AKS) and now you can get secure AKS pods using policy. So it means that like Azure Policy in the rest of Azure.
 
 You can actually deny on audit requests into a pod, so the 16 in-built options you can with those particular settings, you can either put them on audit or you can put them on deny so you can really really lock down the security of the pod and actually what happens within that pod. Because it's always about AKS with me as well. You can also now get managed Azure AD support that's generally available in AKS, which means you don't have to create client apps or service apps. It's all managed for you, so again, just making AK S well doing the right thing authentication-wise with AKS. Way, way easier which is again, I sound like a broken record, but very cool. And they're all my news bits this week.
 
-## Gladys
-
-The first one I selected for this week is related to Azure Monitor extending their support to containers.
+**Gladys**The first one I selected for this week is related to Azure Monitor extending their support to containers.
 
 Azure Monitor is now able to monitor containers' CPU, memory, disk usage and many others; in terms of security this provide another opportunity to detect security issues since they often cause performance impact.
 
@@ -48,9 +40,7 @@ This is especially important now that people have lost their jobs due to the to 
 
 Some of the role paths included through the training and the certification is data analyst, IT support, IT administrator and others. So if you guys are interested, please visit <https://aka.ms/jobseeker>.
 
-## Mark
-
-So a couple of Azure related things caught my eye this week. The first one I thought was really cool. Kind of just geeking out on non Azure topics, but Microsoft's really focused on kind of getting to zero waste and so we did. Some pilot programs. Can we take all the stuff that comes out of our data centers and you know find another use for it. So I thought this was pretty neat so got a little article there for folks to check out. The other thing that drop that's somewhat related to Azure is the windows baselines.
+**Mark**So a couple of Azure related things caught my eye this week. The first one I thought was really cool. Kind of just geeking out on non Azure topics, but Microsoft's really focused on kind of getting to zero waste and so we did. Some pilot programs. Can we take all the stuff that comes out of our data centers and you know find another use for it. So I thought this was pretty neat so got a little article there for folks to check out. The other thing that drop that's somewhat related to Azure is the windows baselines.
 
 Actually, just recently released for the latest versions of Windows Server and Windows 10 and a couple of interesting things in there. Some adjustments to the new password length controls. Keep in mind that we really are pushing for passwordless future, but we recognize that there is an interim state of having to strengthen what you can do on the password side, but it's not necessarily always, you know passwords that you have to change all the time. You know if it's not changing, excuse me if it's not been compromised, we don't want to change it, but strong longer passwords can be stronger.
 
@@ -65,10 +55,7 @@ In your storage accounts that hey, these things shouldn't be happening. These us
 
 So very very cool technology.
 
-## Michael
-
-
-And a couple things sort of piqued my interest this week. The first one was the use of double key encryption for Microsoft 365. This applies to  labeling documents so that a second key can be applied to that document. So there's a key managed by Microsoft, and there's a key that's managed by the tenant. And the nice thing there is that you apply it to a specific sensitivity level and automatically the policy engine applies double key encryption. Really good to see this, a lot of customers asking for more control over the keys rather than just keys that are managed by Azure.
+**Michael** A couple things sort of piqued my interest this week. The first one was the use of double key encryption for Microsoft 365. This applies to  labeling documents so that a second key can be applied to that document. So there's a key managed by Microsoft, and there's a key that's managed by the tenant. And the nice thing there is that you apply it to a specific sensitivity level and automatically the policy engine applies double key encryption. Really good to see this, a lot of customers asking for more control over the keys rather than just keys that are managed by Azure.
 
 The other thing that piqued my interest was Azure Active Directory Registration Service will be ending support for TLS 1.0 and 1.1. For Government Cloud that will be in August and for the rest of the commercial cloud that will be in October. As you can see, just about every service in Azure is moving to either totally deprecating prior versions of TLS older than 1.2 or allowing you to at least configure TLS 1.0, 1.1 and 1.2.
 
@@ -90,55 +77,33 @@ So the moral of the story is that if your in security and you run scanning tools
 
 And with that, let's change tacks and talk to our guest this week. We have Randy Campbell who works for Microsoft Services. Welcome Randy, you want to give us a quick blurb on what you do, how long you been Microsoft?
 
-## Randy
+**Randy** Hello Michael, thanks for having me. I've been with Microsoft for, I am in my 23rd year, which is ranged from Technical Support, dedicated support, and now consulting for about the last 13 years.
 
-Hello Michael, thanks for having me. I've been with Microsoft for, I am in my 23rd year, which is ranged from Technical Support, dedicated support, and now consulting for about the last 13 years.
+**Michael** Nice! So your your main area of expertise is networking right? Specifically today anyway, Azure networking.
 
-## Michael
+**Randy** Azure infrastructure as a whole, I do have a good bit of networking experience, yes.
 
-Nice! So your your main area of expertise is networking right? Specifically today anyway, Azure networking.
-
-## Randy
-
-Azure infrastructure as a whole, I do have a good bit of networking experience, yes.
-
-## Michael
-
-So one of the big topics that comes up constantly with customers is that of network isolation. I mean, obviously Azure is a public cloud and that means public endpoints, public IP addresses, services that are technically can be exposed to the Internet. Therefore potentially untrusted users. 
+**Michael** So one of the big topics that comes up constantly with customers is that of network isolation. I mean, obviously Azure is a public cloud and that means public endpoints, public IP addresses, services that are technically can be exposed to the Internet. Therefore potentially untrusted users. 
 
 One of the buzzwords we hear thrown around quite often is this notion of network isolation. So from your perspective, what do customers want when they're talking about network isolation in the context of a cloud environment?
 
-## Randy
+**Randy** So in my experience, I would say most of the time customers are looking for a way to be able to utilize Azure resources such as Azure storage, Azure SQL to store data that might have some very sensitive information, could contain PII (Personally Identifiable Information) or PHI (Personal Healthcare Information), anything like that, and they want to be able to utilize those in a way that remains on their private network while running in the cloud. 
 
-So in my experience, I would say most of the time customers are looking for a way to be able to utilize Azure resources such as Azure storage, Azure SQL to store data that might have some very sensitive information, could contain PII (Personally Identifiable Information) or PHI (Personal Healthcare Information), anything like that, and they want to be able to utilize those in a way that remains on their private network while running in the cloud. 
+**Michael** We really need to differentiate here between PaaS and IaaS, right? We talk about private, privately accessible services. We've always kind of been able to do that with IaaS. Is that correct PaaS has always been the area where there's been public endpoints? 
 
-## Michael
-
-We really need to differentiate here between PaaS and IaaS, right? We talk about private, privately accessible services. We've always kind of been able to do that with IaaS. Is that correct PaaS has always been the area where there's been public endpoints? 
-
-## Randy
-
-Absolutely yeah, with IaaS you're thinking about virtual machines and those are by default just they're going to be specific for your environment, and they're going to be deployed into a subnet, so they would get their own private IP address, their private for you.
+**Randy** Absolutely yeah, with IaaS you're thinking about virtual machines and those are by default just they're going to be specific for your environment, and they're going to be deployed into a subnet, so they would get their own private IP address, their private for you.
 
 When it comes to the PaaS offerings really around the multi tenant kind, you know for a long time the Azure Cloud didn't have the capability to  be able to allow those to be accessed through private means only. They were the only way you could access them was over the Internet  - a public endpoint.
 
-## Michael
+**Michael**  So many PaaS offerings, let's have an example, say Azure storage or Azure SQL database. They offer a firewall and I use the term firewall very loosely there like lower case F firewall, that provide things like IP restrictions, perhaps even port restrictions in some cases, but that's not network isolation, right?
 
-So many PaaS offering, so let's have an example, say as your storage or Azure SQL database. They offer a firewall and I use the term firewall very loosely there like lower case F firewall, that provide things like IP restrictions, perhaps even port restrictions in some cases, but that's not network isolation, right?
-
-## Randy
-
-That's right, Michael. So  things like storage accounts or Azure SQL or Key Vault. You can go to the firewall settings for that resource.
+**Randy** That's right, Michael. So  things like storage accounts or Azure SQL or Key Vault. You can go to the firewall settings for that resource.
 
 Hey, when you're looking to add IP address is there you can only add public IP addresses, so if you're needing to access something from on-prem but you want to try to do it in a somewhat secure manner, you can add those NAT' public IP addresses from your data center to the resource, but truly it's not really network isolation. At that point, it still is traffic that leaves that's not confined to your private network.
 
-## Michael
+**Michael** So over the years I mean Microsoft has moved towards newer network isolation technologies, do you want to just give us an idea of what those technologies are and what the sort of the patterns are that we see emerge across various services?
 
-So over the years I mean Microsoft has moved towards newer network isolation technologies, do you want to just give us an idea of what those technologies are and what the sort of the patterns are that we see emerge across various services?
-
-## Randy
-
-Right, so as more and more customers really demanded that some of our multi-tenant PaaS services have this additional security feature, we produced a feature called "service endpoints". Yeah, so with service endpoints they allow you to lock down, so to speak, which Azure VNet or subnet can access that Azure resource such as a storage account or a Key Vault or Azure SQL.
+**Randy** Right, so as more and more customers really demanded that some of our multi-tenant PaaS services have this additional security feature, we produced a feature called "service endpoints". Yeah, so with service endpoints they allow you to lock down, so to speak, which Azure VNet or subnet can access that Azure resource such as a storage account or a Key Vault or Azure SQL.
 
 And again I want to emphasize Azure virtual network because you cannot restrict traffic from on-prem through service endpoints. That is where one of the limitations for service endpoints comes into play.
 
@@ -152,25 +117,28 @@ Now the other pattern is private endpoints, and those really apply to multi-tena
 
 If you've got ExpressRoute set up, private peering, you've got a server on-prem that needs to talk to a storage account directly with private endpoints. You have that you have that capability now because it is part of your Vnet at that point.
 
-## Michael
-And is it fair to say that both Vnet-injected solutions, an private endpoint solutions the majority of time the networking architecture will be over ExpressRoute? 
+**Michael** And is it fair to say that both Vnet-injected solutions, an private endpoint solutions the majority of time the networking architecture will be over ExpressRoute? 
 
-## Randy
-Yes, if your hybrid setup DS, that's most definitely the case.
+**Randy** Yes, if your hybrid setup, that's most definitely the case.
 
-Hybrid being you've got stuff on premises is not cloud native. Necessary stuff on premises that's communicating with stuff in the cloud that's correct.
+**Michael** Hybrid being you've got stuff on premises is not cloud native. Necessary stuff on premises that's communicating with stuff in the cloud?
 
-A couple of really good examples. I mean, SQL managed instance is a good example of using venous injection and Azure SQL database which is a multi tenant environment that would use private endpoints instead.
+**Randy** That's correct.
 
-Is it fair to say that as you're in general, where it makes sense, Azure is moving towards private endpoints and people should be learning about private endpoints? Yes, most definitely for my. For my understanding from my experience, product group is really focusing their efforts and investments on on the private link service, which powers private endpoints.
+**Michael** A couple of really good examples. I mean, SQL managed instance is a good example of using Vnet-injection and Azure SQL database which is a multi tenant environment that would use private endpoints instead.
 
-Service endpoints. They do have their place again, really along the lines of locking down access from an Azure VNet to an Azure PaaS Resource.
+Is it fair to say that as you're in general, where it makes sense, Azure is moving towards private endpoints and people should be learning about private endpoints? 
+
+**Randy** Yes, most definitely for my. For my understanding from my experience, product group is really focusing their efforts and investments on on the private link service, which powers private endpoints.
+
+Service endpoints. They do have their place, again, really along the lines of locking down access from an Azure VNet to an Azure PaaS Resource.
 
 It's pretty easy to set up just to really, if you're doing this in the portal is really just a few clicks. Like I said, they have their place, but I think for the majority of folks, especially those that are in some of those industries where they want to have some of their data in the cloud and there are little apprehensive, then private endpoints really comes in quite positively in those situations.
-So in the interest of Full disclosure, so you and I have been working on a healthcare solution or the last.
-Last few months in the company in question actually has a policy right that says anything that is sensitive healthcare information. The hosting in Azure you must use private endpoints.
 
-That's right, that's right. It's it's coming along that we're we've actually, I think, deployed a few apps if I'm not mistaken. More on the data analytics side of the of the house, but they are utilizing private endpoints for some of those features where they're going to have any type of sensitive data in a database or in a storage account.
+
+**Michael** So in the interest of Full disclosure, you and I have been working on a healthcare solution for the last few months; and the company in question actually has a policy right that says anything that is sensitive healthcare information, they are hosting in Azure you must use private endpoints.
+
+**Randy** That's right, that's right. It's coming along that we're we've actually, I think, deployed a few apps if I'm not mistaken. More on the data analytics side of the of the house, but they are utilizing private endpoints for some of those features where they're going to have any type of sensitive data in a database or in a storage account.
 
 So I'm gonna be honest with you. I have looked at the private endpoint stuff. You know my background is not networking, it is mainly application development and I do find it, it's not confusing but there are a few things that I sort of have to come to grips with. So one of the common issues that we see with private endpoints. But what would you expect customers possibly to run into in terms of resistance deploying private endpoints, I would say the biggest hurdle that a customer will need to overcome is correctly setting up DNS for name resolution because a lot of times you may have an app or.
 
