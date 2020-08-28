@@ -124,7 +124,7 @@ When it comes to the PaaS offerings really around the multi tenant kind, you kno
 
 ## Michael
 
-So many PaaS offering, so let's have an example, say as your storage or Azure SQL database. They offer a firewall and I use the term firewall very loosely there like lower case F firewall, that provide things like IP restrictions, perhaps even port restrictions in some cases, but that's not network isolation, right? 
+So many PaaS offering, so let's have an example, say as your storage or Azure SQL database. They offer a firewall and I use the term firewall very loosely there like lower case F firewall, that provide things like IP restrictions, perhaps even port restrictions in some cases, but that's not network isolation, right?
 
 ## Randy
 
@@ -134,19 +134,30 @@ Hey, when you're looking to add IP address is there you can only add public IP a
 
 ## Michael
 
-So over the years I mean Microsoft has moved towards newer network isolation technologies, do you want to just give us an idea of what those technologies are and what the sort of the patterns are that we see emerge across various services, right? So as more and more customers really demanded that some of our multi tenant pass services have this additional security features, we produced a feature called service endpoints. Yeah, so with service endpoints they allow you to lock down, so to speak, which Azure V net or subnet can access that Azure resource such as a storage account or.
+So over the years I mean Microsoft has moved towards newer network isolation technologies, do you want to just give us an idea of what those technologies are and what the sort of the patterns are that we see emerge across various services?
 
-For a Key Vault or or, see Azure SQL. And again I want to emphasize Azure virtual network because you cannot restrict traffic from on Prem through service endpoints. That is where one of the limitations for service endpoints comes into play.
-And that's where we come in to our most recent offering, which is around private endpoints, and I'd like to take a step back and really talk about two really private pass patterns.
+## Randy
 
-I tried to say that fast three times, so whenever 11 there's two main patterns. One is around the net injection and that is basically for dedicated pass resources. Examples might be something like Azure SQL MI Application Gateway, where it requires its own subnet.
-Databricks where you deploy into where you can deploy into your own Vineet directly. Those are those are examples of net injection and by default since they are being injected they get private IPS so they are part of your virtual network.
+Right, so as more and more customers really demanded that some of our multi-tenant PaaS services have this additional security feature, we produced a feature called "service endpoints". Yeah, so with service endpoints they allow you to lock down, so to speak, which Azure VNet or subnet can access that Azure resource such as a storage account or a Key Vault or Azure SQL.
 
-Now the other pattern is private endpoints, and those really apply to multi tenant paths type resources. Again like Azure Storage or Azure SQL for key vault, things of that nature and basically when you enable private endpoint on one of those Azure resources that's creating a read only network interface for that pass resource. In bringing that into your Vineet. So again that allows for complete dataflow network flow between between resources.
+And again I want to emphasize Azure virtual network because you cannot restrict traffic from on-prem through service endpoints. That is where one of the limitations for service endpoints comes into play.
 
-In your private networks within Azure, that can also be utilized by resources from on Prem. If you've got express route set up, private peering, you've got a server on Prem that needs to talk to a storage account directly with private endpoints. You have that you have that capability now because it is part of your Vineet at that point.
+And that's where we come in to our most recent offering, which is around private endpoints, and I'd like to take a step back and really talk about two really private PaaS patterns.
 
-And is it fair to say that both Vineet injected solutions, an private endpoint solutions the majority of time the networking architecture will be over express route? Yes, if your hybrid setup DS, that's most definitely the case.
+Try to say that fast three times! 
+
+So whenever there's two main patterns. One is around the Vnet injection and that is basically for dedicated PaaS resources. Examples might be something like Azure SQL MI or Application Gateway, where it requires its own subnet, Databricks where you can deploy into your own Vnet directly. Those are examples of Vnet injection and by default since they are Vnet injected they get private IPs so they are part of your virtual network.
+
+Now the other pattern is private endpoints, and those really apply to multi-tenant PaaS type resources. Again like Azure Storage or Azure SQL or key vault, things of that nature, and basically when you enable private endpoint on one of those Azure resources that's creating a read only network interface for that PaaS resource and bringing that into your VNet. So again that allows for complete network flow between resources in your private networks within Azure. That can also be utilized by resources from on-prem.
+
+If you've got ExpressRoute set up, private peering, you've got a server on-prem that needs to talk to a storage account directly with private endpoints. You have that you have that capability now because it is part of your Vnet at that point.
+
+## Michael
+And is it fair to say that both Vnet-injected solutions, an private endpoint solutions the majority of time the networking architecture will be over ExpressRoute? 
+
+## Randy
+Yes, if your hybrid setup DS, that's most definitely the case.
+
 Hybrid being you've got stuff on premises is not cloud native. Necessary stuff on premises that's communicating with stuff in the cloud that's correct.
 
 A couple of really good examples. I mean, SQL managed instance is a good example of using venous injection and Azure SQL database which is a multi tenant environment that would use private endpoints instead.
