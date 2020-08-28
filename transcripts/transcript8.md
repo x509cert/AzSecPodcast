@@ -67,9 +67,13 @@ So very very cool technology.
 
 ## Michael
 
+<<<<<<< HEAD
 And a couple things sort of piqued my interest this week. The first one was the use of double key encryption for Microsoft 365. This applies to  labeling documents so that a second key can be applied to that document. So there's a key managed by Microsoft, and there's a key that's managed by the tenant. And the nice thing there is that you apply it to a specific sensitivity level and automatically the policy engine applies double key encryption. Really good to see this, a lot of customers asking for more control over the keys rather than just keys that are managed by Azure.
 
 The other thing that piqued my interest was Azure Active Directory Registration Service will be ending support for TLS 1.0 and 1.1. For Government Cloud that will be in August and for the rest of the commercial cloud that will be in October. As you can see, just about every service in Azure is moving to either totally deprecating prior versions of TLS older than 1.2 or allowing you to at least configure TLS 1.0, 1.1 and 1.2.
+Back in the day when I was working on the Microsoft Security Development Lifecycle on the HDL, we had this rule, which was if we ran a security tool over some code, say static analysis tool. We wouldn't just hand the developers list of all the warnings be cause you really need to triage those warnings 1st. And frankly, if you give a developer 250 warnings and five of them are serious and the rest are not, the developers going to lose any interest in even listening to your little learn any trust in that particular tool.
+So I've always sort of live by that idea for many, many years and never hand a list of bugs to somebody to look at that gonna happen this week. Actually, where the customer it was really interesting. The customer approached me and asked me for my opinion on some bugs and essentially what happened was the customer security team had run a scanning tool against an AK S Azure Kubernetes service installation and it was running Ubuntu 1604 LTS. The long term support and they found some bugs.
+>>>>>>> 075569cea9eb2085a8595d73db4dcb2470924da1
 
 Interesting thing happened to me this week that I want to share with you guys.  I've seen this kind of thing before.
 
@@ -95,6 +99,7 @@ Hello Michael, thanks for having me. I've been with Microsoft for, I am in my 23
 
 ## Michael
 
+<<<<<<< HEAD
 Nice! So your your main area of expertise is networking right? Specifically today anyway, Azure networking.
 
 ## Randy
@@ -104,6 +109,19 @@ Azure infrastructure as a whole, I do have a good bit of networking experience, 
 ## Michael
 
 So one of the big topics that comes up constantly with customers is that of network isolation. I mean, obviously Azure is a public cloud and that means public endpoints, public IP addresses, services that are technically can be exposed to the Internet. Therefore potentially untrusted users. So one of the buzzwords we hear thrown around quite often is this notion of network isolation. So from your perspective, what do customers want when they're talking about network isolation in the context of a cloud environment?
+=======
+And with that, let's change tack and talk to our guest; this week we have Randy Campbell who works for Microsoft Services. Welcome Randy, you want to give us a quick blurb on what you do, how long you been Microsoft?
+
+## Randy
+
+Hello Michael, thanks for having me. I've been with Microsoft for May 23rd year, which is ranged from Technical Support, dedicated support, an now consulting for about the last 13 years.
+
+Nice so your your main area of expertise is networking right? Specifically today anyway, is networking Azure infrastructure as a whole, I do have a good bit of networking experience, yes.
+
+## Michael
+
+So one of the big topics that comes up constantly with customers is that of network isolation. I mean, obviously Azure is a public cloud and that means public endpoints, public IP addresses, services that are technically can be exposed to the Internet. Therefore potentially untrusted users. So one of the buzzwords were here thrown around quite often is this notion of network isolation. So from your perspective, what the customers want.
+>>>>>>> 075569cea9eb2085a8595d73db4dcb2470924da1
 
 ## Randy
 
