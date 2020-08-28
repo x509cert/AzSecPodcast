@@ -1,20 +1,18 @@
-# Episode 8, recorded August 5th, 2020 with Randy Johnson - Azure Network Isolation
+# Episode 8. Recorded August 5th, 2020 with Randy Johnson - Azure Network Isolation
 
 **Intro:** Welcome to the Azure Security podcast where we discuss topics relating to security, privacy, reliability and compliance on the Microsoft Cloud platform.
 
-**Michael:**Michael:**** Hey, welcome to Episode #8. We have the gang here this week. We also have a special guest, Randy Campbell to talk to us about network isolation and private endpoints in Azure. But before that let's go to the news. Sarah, what we got?
+**Michael:** Hey, welcome to Episode #8. We have the gang here this week. We also have a special guest, Randy Campbell to talk to us about network isolation and private endpoints in Azure. But before that let's go to the news. Sarah, what we got?
 
 **Sarah:** I've got a couple of things this week to talk about. Firstly, in preview is OpenID Connect support for Azure App Services and Functions. So that means if you're using an OpenID Connect provider for authentication, you can now integrate that into Azure App service and Azure Functions. If you don't want to use Azure AAD (Azure Active Directory) I would ask you why you don't want to use Azure AD 'cause it's great but for some reason you need to use another OpenID Connect provider, you can now do that which is really cool.
 
 Next I'm going back to my favorite 'cause we always have things to talk about in this space. We're talking about Azure Kubernetes Service (AKS) and now you can get secure AKS pods using policy. So it means that like Azure Policy in the rest of Azure.
 
-You can actually deny on audit requests into a pod, so the 16 in-built options you can with those particular settings, you can either put them on audit or you can put them on deny so you can really really lock down the security of the pod and actually what happens within that pod. Because it's always about AKS with me as well. You can also now get managed Azure AD support that's generally available in AKS, which means you don't have to create client apps or service apps. It's all managed for you, so again, just making AK S well doing the right thing authentication-wise with AKS. Way, way easier which is again, I sound like a broken record, but very cool. And they're all my news bits this week.
+You can actually deny on audit requests into a pod, so the 16 in-built options you can with those particular settings, you can either put them on audit or you can put them on deny so you can really really lock down the security of the pod and actually what happens within that pod. Because it's always about AKS with me as well. You can also now get managed Azure AD support that's generally available in AKS, which means you don't have to create client apps or service apps. It's all managed for you, so again, just making AKS well doing the right thing authentication-wise with AKS. Way, way easier which is again, I sound like a broken record, but very cool. And they're all my news bits this week.
 
 **Gladys:** The first one I selected for this week is related to Azure Monitor extending their support to containers.
 
-Azure Monitor is now able to monitor containers' CPU, memory, disk usage and many others; in terms of security this provide another opportunity to detect security issues since they often cause performance impact.
-
-This give us the opportunity to correlate those performance indicators with information from services like Azure Security Center, Sentinel, Defender ATP etc.
+Azure Monitor is now able to monitor containers' CPU, memory, disk usage and many others; in terms of security this provide another opportunity to detect security issues since they often cause performance impact. This give us the opportunity to correlate those performance indicators with information from services like Azure Security Center, Sentinel, Defender ATP etc.
 
 The next news that I'm really excited about is that Microsoft is launching a tech community page for Microsoft threat protection.
 
@@ -134,7 +132,6 @@ Is it fair to say that as you're in general, where it makes sense, Azure is movi
 Service endpoints. They do have their place, again, really along the lines of locking down access from an Azure VNet to an Azure PaaS Resource.
 
 It's pretty easy to set up just to really, if you're doing this in the portal is really just a few clicks. Like I said, they have their place, but I think for the majority of folks, especially those that are in some of those industries where they want to have some of their data in the cloud and there are little apprehensive, then private endpoints really comes in quite positively in those situations.
-
 
 **Michael:** So in the interest of Full disclosure, you and I have been working on a healthcare solution for the last few months; and the company in question actually has a policy right that says anything that is sensitive healthcare information, they are hosting in Azure you must use private endpoints.
 
