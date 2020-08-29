@@ -1,6 +1,10 @@
 # Episode 8. Recorded August 5th, 2020 with Randy Johnson - Azure Network Isolation
 
-**Intro:** Welcome to the Azure Security podcast where we discuss topics relating to security, privacy, reliability and compliance on the Microsoft Cloud platform.
+## Intro
+
+Welcome to the Azure Security podcast where we discuss topics relating to security, privacy, reliability and compliance on the Microsoft Cloud platform.
+
+## Audio
 
 **Michael:** Hey, welcome to Episode #8. We have the gang here this week. We also have a special guest, Randy Campbell to talk to us about network isolation and private endpoints in Azure. But before that let's go to the news. Sarah, what we got?
 
@@ -77,7 +81,7 @@ And with that, let's change tacks and talk to our guest this week. We have Randy
 
 **Randy:** Hello Michael, thanks for having me. I've been with Microsoft for, I am in my 23rd year, which is ranged from Technical Support, dedicated support, and now consulting for about the last 13 years.
 
-**Michael:** Nice! So your your main area of expertise is networking right? Specifically today anyway, Azure networking.
+**Michael:** Nice! So your main area of expertise is networking right? Specifically today anyway, Azure networking.
 
 **Randy:** Azure infrastructure as a whole, I do have a good bit of networking experience, yes.
 
@@ -117,7 +121,7 @@ If you've got ExpressRoute set up, private peering, you've got a server on-prem 
 
 **Michael:** And is it fair to say that both Vnet-injected solutions, an private endpoint solutions the majority of time the networking architecture will be over ExpressRoute? 
 
-**Randy:** Yes, if your hybrid setup, that's most definitely the case.
+**Randy:** Yes, if you're hybrid setup, that's most definitely the case.
 
 **Michael:** Hybrid being you've got stuff on premises is not cloud native. Necessary stuff on premises that's communicating with stuff in the cloud?
 
@@ -139,14 +143,14 @@ It's pretty easy to set up just to really, if you're doing this in the portal is
 
 **Michael:** So I'm gonna be honest with you. I have looked at the private endpoint stuff. You know my background is not networking, it is mainly application development and I do find it, it's not confusing but there are a few things that I sort of have to come to grips with. So one of the common issues that we see with private endpoints, what would you expect customers possibly to run into in terms of resistance deploying private endpoints?
 
-**Randy:** I would say the biggest hurdle that a customer will need to overcome is correctly setting up DNS for name resolution because a lot of times you may have an app or something like that that needs to connect via FQDN (Fully Qualified Domain Name) and if that if that storage account with its FQDN now has private endpoint enabled, it has a private IP so we need to be able to correctly, you know resolve that name so having DNS setup correctly, specially when it comes to a hybrid model like we were talking about. If you need to access some of those resources from on Prem then there is a little bit of work to do with on Prem DNS connecting to.
+**Randy:** I would say the biggest hurdle that a customer will need to overcome is correctly setting up DNS for name resolution because a lot of times you may have an app or something like that that needs to connect via FQDN (Fully Qualified Domain Name) and if that if that storage account with its FQDN now has private endpoint enabled, it has a private IP so we need to be able to correctly, you know resolve that name so having DNS setup correctly, specially when it comes to a hybrid model like we were talking about. If you need to access some of those resources from on Prem then there is a little bit of work to do with on Prem DNS connecting too.
 
 Possibly DNS servers running in Azure. I can assist in the resolution of those of the names of those endpoints. To me DNS is the big thing.
 So on the topic of DNS there and this is my naivete coming through or lack of experience, that would be Azure private DNS or. Or is it public DNS? It is Azure private DNS that capability is there for you to host zones to host those records for any resource that you enable with private endpoint. The general idea is that especially from on Prem, the general idea again is you have conditional forwarder setup on your on Prem DNS servers.
 
-And this is any like in a typical hub and spoke type of architecture running in the cloud where in the hub you may have several servers running DNS. It could be Windows DNS. Let's just say for this example they're running Windows DNS. So basically what you would do is you would enable or set up conditional forwarders on Prem to some to the zones that these Azure resources use for storing their DNS records you forward those wueries to your DNS servers running in the hub and at that point you would have specific forward or set up on those to go to an Azure specific IP address and all this is really is documented in some documentation that we're going to provide with this podcast, but once that happens you basically have resolution from on Prem and you can allow also disallows resolution from let's say various folks in the environment as well various various applications running in spokes that are.
-Peer to your hub network. That's fantastic stuff I mean.
-I'm really excited to see so many more pairs offerings move towards private endpoints. I think it gives a lot of customers greater degree of confidence that these services are essentially accessible as an extension of their own, their own infrastructure, which again just brings extra level of confidence running running services in the cloud. So random we always finish podcast by asking people one simple question, which is if you have to leave customers. Just thinking about one thing.
+And this is any like in a typical hub and spoke type of architecture running in the cloud where in the hub you may have several servers running DNS. It could be Windows DNS. Let's just say for this example they're running Windows DNS. So basically what you would do is you would enable or set up conditional forwarders on Prem to some to the zones that these Azure resources use for storing their DNS records you forward those wueries to your DNS servers running in the hub and at that point you would have specific forward or set up on those to go to an Azure specific IP address and all this is really is documented in some documentation that we're going to provide with this podcast, but once that happens you basically have resolution from on Prem and you can allow also disallows resolution from let's say various folks in the environment as well various various applications running in spokes that are peered to your hub network. 
+
+**Michael:** That's fantastic stuff I mean, I'm really excited to see so many more PaaS offerings move towards private endpoints. I think it gives a lot of customers a greater degree of confidence that these services are essentially accessible as an extension of their own infrastructure, which again just brings extra level of confidence running running services in the cloud. So random we always finish podcast by asking people one simple question, which is if you have to leave customers. Just thinking about one thing.
 With relation to private endpoints, what would that be?
 
 I would say if the customer has made the decision, you know if they're deciding between service endpoints or private endpoints and they've made the decision to go with private endpoints. I'm going to harp on it again. I'm going to say go to our article that we're going to provide that talks about DNS configuration. It has all the information that you'll need in there. We've relied on it with this customer that Michael and I have working on.
