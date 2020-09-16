@@ -1,4 +1,10 @@
+# Episode 9. Recorded August 19th, 2020 with Maryam Rahmani - Cybersecurity Maturity Model Certification
+
+## Intro
+
 Welcome to the Azure Security Podcast where we discuss topics relating to security, privacy, reliability and compliance on the Microsoft Cloud platform.
+
+## Audio
 
 **Michael**: Hey everybody, welcome to episode #9. We have the whole gang here this week. We have a guest Marianne Rahmani who is a senior manager with the security partner development team to talk to us about governance, risk and compliance. But before we get stuck into that let's start with the news. Mark, what do we have?
 

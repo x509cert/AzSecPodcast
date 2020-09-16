@@ -34,7 +34,7 @@ Microsoft threat protection, or MTP, has an incident tab that shows a list of de
 
 Enable this because I have seen customers that own certain services and they don't have it enabled. 
 
-The other cool thing about MTP is that it helps streamline the time to acknowledge and remediate incidents. Since now you have all the information centralized and more automation can be used to deal with all the attacks that are commonly seen in the environment. 
+The other cool thing about MTP is that it helps streamline the time to acknowledge and remediate incidents. Since now you have all the information centralized and more automation can be used to deal with all the attacks that are commonly seen in the environment.
 
 The last thing I want to talk about is this cool skilling initiative that Microsoft has put together to help people get the financial fluency needed in this day and age!
 
