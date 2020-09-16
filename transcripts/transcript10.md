@@ -12,7 +12,9 @@ It's it's really kinda have some quite nasty effects on business and you know th
 Were throwing in there that you can the Azure platform? Of course has plenty of D dos protection. But we do also have something called Azure D dos standard, which is more advanced capability. That's tuned to your endpoints and so that's worth checking out if you're if you find that you're a little bit lacking in the D dos capability area so that's my first one that I wanted to talk about Secondly, we now putting on.
 Ingestion volume rate limit into log Analytics. Now this was already in place for the wider Azure monitor platform. But we're now doing it. Within Log Analytics. So the limit is enforced on compressed data at about 6 gigabytes. A minute uncompressed now. The reason we're doing this 'cause you might say well. That sounds a little bit counterproductive. The reason we're doing this of course, is to balance our resource is across all of our customers and.
 We have to put these limits in to protect customers from so that maybe one customer would have a huge ingestion spike and that could affect other customers who were also using the wider log. Analytics platform, so essentially, though nothing to worry about so although we will be enforcing a limit at 6. Giga minute uncompressed if you are. You will start getting alerts. If you start to reach about 80% of that going forward and if you do need to increase.
-Your ingestion volume to more than 6 gig-a-minute, then you'll need to open a support request. So it's not that we won't allow it entirely. It's just that. We need to be able to plan for it again to keep the platform running for all of our customers. So it does one just to be mindful of and that's my news done so. I think I'll hand it over to Mark.
+Your ingestion volume to more than 6 gig-a-minute, then you'll need to open a support request. So it's not that we won't allow it entirely. It's just that. We need to be able to plan for it again to keep the platform running for all of our customers. So it does one just to be mindful of and that's my news done so. 
+
+I think I'll hand it over to Mark.
 
 **Mark**: So yeah couple things caught my eye this week. Thank you Sarah. 
 
@@ -102,5 +104,6 @@ I think that first it will be that you can access them deep experience by going 
 Use it in order to use the NTP experience so you don't need to have the entire Microsoft. Security suit to to have the empty experience in idle for you.
 Will tell you thanks so much for joining us this week. I certainly learned a bunch of new things and with that. Hey let's bring this episode to a close.
 Thanks for listening. We hope you found this useful stay safe and we'll see you next time.
-Thanks for listening to the Azure Security podcast. You can find show notes and other resources at our website AzSecurityPodcast.net if you have any questions. Find us on Twitter @AzSecPod. Background music is from CCmixter.com and licensed under the Creative Commons license.
 
+## Outro
+Thanks for listening to the Azure Security podcast. You can find show notes and other resources at our website AzSecurityPodcast.net if you have any questions. Find us on Twitter @AzSecPod. Background music is from CCmixter.com and licensed under the Creative Commons license.
