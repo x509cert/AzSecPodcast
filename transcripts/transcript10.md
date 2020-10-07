@@ -4,6 +4,8 @@
 
 Welcome to the Azure Security Podcast where we discussed topics relating to security, privacy, reliability and compliance on the Microsoft Cloud platform.
 
+## Audio
+
 **Michael**: Welcome to episode number 10. We have a full House this week. We also have a special guest Tali Ash who will talk to us about Microsoft threat protection. But before that. Let's get stuck into the news Sarah what we got.
 
 **Sarah**: First thing I want to talk about is topical and at the time we are recording this and it's very local to me over the last 10 days or so there's a number of New Zealand organizations that have been coming under quite a nasty D dos attack. So NZ Stock Exchange had to stop trading for a few days and that's still it still hasn't been fully resolved as of the time we're recording this and.
@@ -12,11 +14,11 @@ It's it's really kinda have some quite nasty effects on business and you know th
 Were throwing in there that you can the Azure platform? Of course has plenty of D dos protection. But we do also have something called Azure D dos standard, which is more advanced capability. That's tuned to your endpoints and so that's worth checking out if you're if you find that you're a little bit lacking in the D dos capability area so that's my first one that I wanted to talk about Secondly, we now putting on.
 Ingestion volume rate limit into log Analytics. Now this was already in place for the wider Azure monitor platform. But we're now doing it. Within Log Analytics. So the limit is enforced on compressed data at about 6 gigabytes. A minute uncompressed now. The reason we're doing this 'cause you might say well. That sounds a little bit counterproductive. The reason we're doing this of course, is to balance our resource is across all of our customers and.
 We have to put these limits in to protect customers from so that maybe one customer would have a huge ingestion spike and that could affect other customers who were also using the wider log. Analytics platform, so essentially, though nothing to worry about so although we will be enforcing a limit at 6. Giga minute uncompressed if you are. You will start getting alerts. If you start to reach about 80% of that going forward and if you do need to increase.
-Your ingestion volume to more than 6 gig-a-minute, then you'll need to open a support request. So it's not that we won't allow it entirely. It's just that. We need to be able to plan for it again to keep the platform running for all of our customers. So it does one just to be mindful of and that's my news done so. 
+Your ingestion volume to more than 6 gig-a-minute, then you'll need to open a support request. So it's not that we won't allow it entirely. It's just that. We need to be able to plan for it again to keep the platform running for all of our customers. So it does one just to be mindful of and that's my news done so.
 
 I think I'll hand it over to Mark.
 
-**Mark**: So yeah couple things caught my eye this week. Thank you Sarah. 
+**Mark**: So yeah couple things caught my eye this week. Thank you Sarah.
 
 One is well, one was one that I actually presented which is I did a recording of the Open Group Zero Trust core principles and so that recording is out on YouTube. So will post that link in the show notes and a couple of interesting things kind of came about the first is that these are the near final ones. The final ones are going through the approval process right now.
 And so that was sort of one of the things there is that you know, these are almost final there and we've found simpler ways to express it with axioms and so that will be out in the next couple of weeks, possibly by the time you hear this and then the the thing that was actually kind of cool as part of this project was that we got a really crisp concise view of kind of what security is if you're kind of looking at it from the showdown view and it really can be pretty simple. If you break it down in a certain way. And this really breaks down to sort of access control, which is how most people think about security is like.
@@ -106,4 +108,5 @@ Will tell you thanks so much for joining us this week. I certainly learned a bun
 Thanks for listening. We hope you found this useful stay safe and we'll see you next time.
 
 ## Outro
+
 Thanks for listening to the Azure Security podcast. You can find show notes and other resources at our website AzSecurityPodcast.net if you have any questions. Find us on Twitter @AzSecPod. Background music is from CCmixter.com and licensed under the Creative Commons license.
