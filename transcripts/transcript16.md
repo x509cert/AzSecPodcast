@@ -309,90 +309,15 @@ And you could say these are. This is my network initiative, but here is my firew
 Yeah, Ignite was extremely exciting. Lots of good activity at heard personally from the product groups that they're continuing to iterate and we look forward to what the future holds.
 
 **Michael**
-So I think one other item that was, uh?
-
-**Michael**
-From Ignite was using Ms graph.
-
-**Nick**
-Yeah, that that's really awesome. So going, you know, in the past, if you had compliance results, you could ship those to Azure Security Center as we mentioned, but that was kind of it. There wasn't a really good way to send the results to an event hub or to a log analytics workspace and then file the rest of your data flows. There really wasn't a whole lot of automation to you can sort of get some surface level information. You know how many resources are non compliant.
-
-**Nick**
-Or for a particular policy, which condition within that policy is the reason?
-
-**Nick**
-It'll be here.
-
-**Nick**
-Is that me?
-
-**Michael**
-You know what that's may, I'm so sorry. Can we just do that sentence again? That's Maine.
-
-**Nick**
-OK.
-
-**Michael**
-Just give out five second delay. I'm so sorry that I should run on mute.
-
-**Nick**
-Yeah.
-
-**Nick**
-Yeah.
-
-**Nick**
-Yep.
-
-**Nick**
-So in the past.
-
-**Nick**
-If you wanted to create an exception, oh, that's not the one we were answering the Ms Graph question. OK, 5 seconds, hold on.
-
-**Michael**
-Yeah, let's just let's just take it from the top five seconds and then just say actually know what. Let me ask the question again.
-
-**Nick**
-Yeah, yeah.
-
-**Mark**
-Are you filled online? I do have to drop for a conflict. Um, Nick, it's been. Yeah, I know you're not quite done talking, but it's been fantastic having out here. Really appreciate it, man.
-
-**Nick**
-OK.
-
-**Nick**
-Sure, awesome problem.
-
-**Sarah**
-Yeah, I gotta drop two guys. I'm a bit late for my next meeting, but thanks Nick.
-
-**Michael**
-Tiger Tiger
-
-**Nick**
-Yeah.
-
-**Nick**
-You're welcome.
-
-**Michael**
-alright so guys alright alright let's take him very top.
-
-**Michael**
 So another announcements at Ignite was around using Microsoft Graph.
 
 **Nick**
 Yeah, that was really exciting in the past. If you wanted to get compliance results out of out of Azure policy, you could either register your policy to and then use Azure Security Center and have the data flow downstream for whatever automation, or use the portal to look at the look at the results, but there really wasn't another good way to get those results programmatically and so.
 
-**Nick**
 With this announcement opening up the the graph allows for much finer grained access to compliance and non compliance results, including which resources are non compliant and crucially which was almost impossible if not impossible to get before. Why those resources are not compliant. So if uh storage account didn't have soft delete turned on in the past, you might get nothing. You might.
 
-**Nick**
 See that that storage account was out of compliance, but you might not. But you definitely wouldn't know why, and now you can actually go in and say the results will tell you which policy is non compliant and ultimately which property on the resources triggering the policy rule to identify noncompliance and so for customers that are maybe not using Azure Security Center fully but do have other dashboards or other power BI mechanisms or.
 
-**Nick**
 Automation flows for pulling those results out. This opens up a world of possibilities for SoC integration, management reports and other things that didn't just didn't exist before, and so it's really, really exciting stuff.
 
 **Michael**
@@ -418,7 +343,6 @@ And those those modernization times drastically. So really good investment.
 
 **Michael**
 Thanks so much for that. So yes and next thank you so much for joining us this week. Thank you for taking the time out. I know I learned a few things. Some of the gaps that I had in my knowledge about Azure policy of certain been filled. Thank you to everyone listening this week. Take care of their and we'll see you next time.
-
 
 ## Outro
 
