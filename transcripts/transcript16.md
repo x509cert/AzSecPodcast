@@ -38,10 +38,11 @@ Or endpoints an it means you could do advance hunting and it will be stored in A
 Have a look at that might apply to you 'cause I do know a lot of customers were waiting for that feature, and that's probably me done for today.
 
 **Michael**
-Alright, so the couple things piqued my interest over the last few weeks. The first one is HD Insight now supports private link and preview and as does Azure Batch. This is really cool. I know I mentioned this almost every week that we talk.
+Alright, so the couple things piqued my interest over the last few weeks. The first one is HDInsight now supports private link in preview as does Azure Batch. This is really cool. I know I mention this almost every week that we talk, but the fact that more and more PaaS offerings moving to private link private endpoint the better because it allows you to essentially construct solutions that are essentially just an extension of your own, your own network, highly isolated from a network perspective. 
 
-But the fact that more and more PaaS offerings moving to private link private endpoint the better because it allows you to essentially construct solutions that are essentially just an extension of your own, your own network, highly isolated from a network perspective. So yeah, so HD insight and Azure Batch to new features that have added to that list.
-Another cool feature on Azure Storage and now allows you to select your minimum TLS version. This is another thing we're seeing happening.
+So yeah, so HDInsight and Azure Batch are two new features that have added to that list.
+
+Another cool feature in Azure Storage and now allows you to select your minimum TLS version. This is another thing we're seeing happening.
 But we have more control over the TLS version that passes services support. So for example, if you're building something that must be PCI compliance, then you need to really select TLS 1.2 and above, but you know you may be building something that had may have serious compatibility issues, so you may want to support TLS 1.1. I'm not saying it's a good idea will security standpoint, but at least you can now do it.
 
 Something we talked about in September was that Azure Data Lake Storage Gen. 2 supported recursive access control lists, POSIX 100, three .1 controllers that was in preview in September that is now GA. There's now generally available, which is, which is great to see.
