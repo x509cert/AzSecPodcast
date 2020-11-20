@@ -1,5 +1,5 @@
 {
     "python.pythonPath": "c:\\Users\\mikehow\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
     "python.linting.enabled": true,
-    "python.dataScience.jupyterServerURI": "local"
+    "jupyter.jupyterServerType": "local"
 }
