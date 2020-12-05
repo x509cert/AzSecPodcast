@@ -138,7 +138,7 @@ Wow, Gary, I've got here in my notes, "explain what a data center is!" Now I'm g
 
 **Gary**: What's coming next? Mark Russinovich, the CTO for Azure does a fantastic talk on inside Azure data centers, and there's there's going to be a link to it in the show notes and when he delivers this talk from Microsoft, it's standing room only and we're talking like multiple ballrooms inside of a hotel and everybody in Microsoft comes in watch. Is it because it's so fascinating? Some of the neat stuff that we're talking about what's coming next, and some of the demos that he does. A really fantastic so anyone who has an hour and a half free watch it because it's really, really engaging.
 
-**Michael**: Hey thanks Gary. Thank you so much for joining us this week. No, I learned a few things. In fact, I think I learned about stuff I didn't know I didn't know clearly. Datacenter security is a critical component of our tenant security posture, and I urge all customers to take a look at the SoC one and SoC 2 reports as well, especially around the physical security that we that we have on our data centres. And also thanks to all of you for joining us this week. Stay safe and we'll see you next time.
+**Michael**: Hey thanks Gary. Thank you so much for joining us this week. I know I learned a few things. In fact, I think I learned about stuff I didn't know I didn't know! Clearly, Azure datacenter security is a critical component of our tenants' security posture, and I urge all customers to take a look at the SOC 1 and SOC 2 reports as well, especially around the physical security that we that we have on our data centres. And also thanks to all of you for joining us this week. Stay safe and we'll see you next time.
 
 ## Outro
 
