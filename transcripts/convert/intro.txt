@@ -1,0 +1,7 @@
+# Episode NN. Recorded DATE with XX - TITLE
+
+## Intro
+
+Welcome to the Azure Security Podcast where we discuss topics relating to security, privacy, reliability and compliance on the Microsoft Cloud platform.
+
+## Audio
