@@ -8,7 +8,7 @@ Welcome to the Azure Security Podcast where we discuss topics relating to securi
 
 **Michael**: Hello everybody, welcome to episode #17. This week it's just Sarah and I marking gladysr off this week because of the US Thanksgiving. We also have a special guest this week we have Gary Buckmaster going to talk to us about Azure data Centers but before we get to Gary, Sarah, what do we have in the news?
 
-**Sarah**: Well, yeah, it's a pretty light Newsweek this week. It's post ignite and it's Thanksgiving. But there's one thing that caught my eye, which is again, one of my favorite things. We have Azure monitor an now we have a health feature in Azure monitor for VM. So essentially it's a feature that will monitor the health of virtual machines and if any parameters Healthwise in your virtual machine that's being monitored is outside an acceptable or normal range.
+**Sarah**: Well, yeah, it's a pretty light newsweek this week. It's post ignite and it's Thanksgiving. But there's one thing that caught my eye, which is again, one of my favorite things. We have Azure monitor an now we have a health feature in Azure monitor for VM. So essentially it's a feature that will monitor the health of virtual machines and if any parameters Healthwise in your virtual machine that's being monitored is outside an acceptable or normal range.
 
 It will actually fire you an alert off. Now that's something that you could have done before. Uh, in your machine, but now it's actually. It's now actually all built in a nice and configurable. So much easier and that is all I have this week.
 
@@ -34,7 +34,7 @@ And the last point I want to bring up. Is that we now have Terraform support for
 
 **Sarah**: Cool.
 
-**Sarah**: Wow, Gary, I I've got here in my notes explain what a data center is now I'm going to assume that quite a lot of people listening probably have an idea what a data center is, but maybe we should talk about data centers in cloud and cloud providers and how they're different.
+Wow, Gary, I've got here in my notes, "explain what a data center is!" Now I'm going to assume that quite a lot of people listening probably have an idea what a data center is, but maybe we should talk about data centers in cloud and cloud providers and how they're different.
 
 **Gary**: Yeah, no, it is a good question Ann. I guess the conversation really changes depending on what kind of a data center we're talking about. 'cause in my career I started with like the first data center that I was looking after was quite literally a closet inside of an office that had a few AV cable racks and a bunch of old HP servers that were bolted into it. And then almost every job after that. The scale of the data center that I was looking after changed by an order of magnitude so it was really.
 
@@ -116,7 +116,7 @@ And the last point I want to bring up. Is that we now have Terraform support for
 
 **Michael**: Auditors that all the appropriate defenses and policies are in place and procedures in place.
 
-**Michael**: And so, um, you know, oftentimes ends up being the customer has to look at SoC one and SoC 2 reports.
+**Michael**: And so, um, you know, oftentimes ends up being the customer has to look at SOC 1 and SOC 2 reports.
 
 **Michael**: So for those of you who have building on Azure, you may be very familiar with, yeah, Responsibility model, which is some responsibilities lie with the customer or the tenant more accurately and some responsibilities lie with Azure itself and things like physical protections. As Gary alluded to, are really within the purview of the data centers themselves, so when it comes to building out the data that you need for a compliance program, you're probably going to have access to the SoC one and SoC 2 reports.
 
@@ -130,15 +130,13 @@ And the last point I want to bring up. Is that we now have Terraform support for
 
 **Gary**: And then, yeah, there's obviously a lot of questions in the team that I work on that does datacenter tours. We sort of keep a log of some of the most interesting questions that we get, and currently I think I'm still the record Holder for one of the most challenging questions that I was asked, and it was on a tour where I was showing some some instances of some of our data center sites and I think it was a picture of either Dublin or one of our Amsterdam campus is an the guy stopped me and he said, hey, 'Can you tell me where are the anti missile defense emplacements on the site?'
 
-**Michael**: So Gary, one thing that like to ask our guests as if you had one final point to make, what would it be?
+**Michael**: So Gary, one thing that we like to ask our guests as if you had one final point to make, what would it be?
 
-**Gary**: So I'm going to be unbelievably rude and I'm going to take two if you don't mind. One of them. Is that the way that we approach public? Cloud is very different, so I'm talking largely about our big public cloud hyperscale datacenters. You know, these Big 32 and 64 MW bit Barnes that you can park Two 737 jet aircraft into and we've got bunches and lots of them. That's only one piece of the puzzle, and so we've started rolling out what we call.
+**Gary**: So I'm going to be unbelievably rude and I'm going to take two if you don't mind. One of them. Is that the way that we approach public? Cloud is very different, so I'm talking largely about our big public cloud hyperscale datacenters. You know, these Big 32 and 64 MW bit barns that you can park Two 737 jet aircraft into and we've got bunches and lots of them. That's only one piece of the puzzle, and so we've started rolling out what we call.
 
 **Gary**: Assistant security model Anna compliance model that's consistent for all of that environment. So when we're talking about digital transformation and what that looks like, it doesn't mean you need to go back a moving truck up to your data center. Unload all of your servers and drop him off inside Azure. You don't have to move everything into Azure Public Cloud in order to achieve what you're trying to get to. There's a much more nuanced approach, and then the other thing that I would say, and this is more of a plug if you are really interested in how we build datacenters, how we operate data centers.
 
-**Gary**: What's coming next? Marker sinovich. The CTO for Azure does a fantastic talk on inside Azure data centers, and there's there's going to be a link to it in the show notes and when he delivers this talk from Microsoft, it's standing room only and we're talking like multiple ballrooms inside of a hotel and everybody in Microsoft comes in watch. Is it because it's so fascinating? Some of the neat stuff that we're talking about what's coming next, and some of the demos that he does. A really fantastic so.
-
-**Gary**: Anyone who has an hour and a half free watch it because it's really, really engaging.
+**Gary**: What's coming next? Mark Russinovich, the CTO for Azure does a fantastic talk on inside Azure data centers, and there's there's going to be a link to it in the show notes and when he delivers this talk from Microsoft, it's standing room only and we're talking like multiple ballrooms inside of a hotel and everybody in Microsoft comes in watch. Is it because it's so fascinating? Some of the neat stuff that we're talking about what's coming next, and some of the demos that he does. A really fantastic so anyone who has an hour and a half free watch it because it's really, really engaging.
 
 **Michael**: Hey thanks Gary. Thank you so much for joining us this week. No, I learned a few things. In fact, I think I learned about stuff I didn't know I didn't know clearly. Datacenter security is a critical component of our tenant security posture, and I urge all customers to take a look at the SoC one and SoC 2 reports as well, especially around the physical security that we that we have on our data centres. And also thanks to all of you for joining us this week. Stay safe and we'll see you next time.
 
