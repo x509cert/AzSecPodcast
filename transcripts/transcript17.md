@@ -142,4 +142,4 @@ Wow, Gary, I've got here in my notes, "explain what a data center is!" Now I'm g
 
 ## Outro
 
-Thanks for listening to the Azure Security podcast. You can find show notes and other resources at our website <https://azsecuritypodcast.net>. If you have any questions, please find us on Twitter @azsecpod. Background music is from ccmixter.com and licensed under the Creative Commons license.
+Thanks for listening to the Azure Security podcast. You can find show notes and other resources at our website <https://azsecuritypodcast.net>. If you have any questions, please find us on Twitter @azuresecpod. Background music is from ccmixter.com and licensed under the Creative Commons license.
