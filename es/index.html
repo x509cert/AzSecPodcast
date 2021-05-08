@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es"> 
+<html lang="en"> 
 
 <head>
-   <title>Hola Mundo! The Microsoft Azure Security Podcast</title>
+   <title>The Microsoft Azure Security Podcast</title>
    <meta name="description" 
-         content="El podcast de seguridad de Azure. Los temas incluyen seguridad, privacidad, cumplimiento y confiabilidad en Microsoft Cloud Platform. Anfitrión: Gladys Rodriguez, David Sanchez y ,  y Mark Simos.">
+         content="The Azure Security Podcast. Topics include Security, Privacy, Compliance and Reliability on the Microsoft Cloud Platform. Hosted by Microsoft security experts Michael Howard, Sarah Young, Gladys Rodriguez and Mark Simos.">
    
    <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -18,4 +18,122 @@
    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.min.js"></script>
 </head>
 
-Hola, Mundo! 
+<!-- code to hide/show episodes-->
+<script>
+   $(document).ready(function() {
+
+      // collapse all but the first episode
+      $("div.EpisodeContent").hide();
+      $("div.EpisodeContent:first").show();
+
+      // set the correct expand/collapse icon
+      $("img.ColExpIcon").attr('src','images/expand.png');
+      $("img.ColExpIcon:first").attr('src','images/collapse.png');
+
+      // toggle the cursor type when hovering over the episode header
+      $('h3.Heading').css('cursor', 'pointer'); 
+      
+      // Handle click on a title - expand or collapse 
+      $("h3.Heading").click(function(){
+         const delay = 300;
+         
+         var h = "#Content-" + $(this).attr("id");
+         var ec = "ColExp-"+ $(this).attr("id");
+
+         if ($(h).is(":hidden")) {
+            $(h).slideDown(delay);
+            document.getElementById(ec).src="images/Collapse.png";
+         }
+         else { 
+            $(h).slideUp(delay);
+            document.getElementById(ec).src="images/Expand.png";
+         }
+       })
+   });
+</script>
+
+<body>
+   <header>
+      <div class="logo">
+         <a class="smoothscroll" href='https://azsecuritypodcast.net/'><img alt="" src="images/logo2.png"></a>
+      </div>
+   </header>
+
+   <!-- HEADER - DON'T TOUCH -->
+   <section id="hero">
+	   <div class="row">
+		   <div class="twelve columns">
+			   <div class="hero-text">
+				   <h1 class="responsive-headline">
+                  The Azure Security Podcast
+                     &nbsp;
+                     <a href="https://twitter.com/AzureSecPod"><i class="fa fa-twitter"></i></a>
+                     <a href="https://media.rss.com/azsecpodcast/feed.xml"><i class="fa fa-rss"></i></a>
+                     <a href="https://github.com/x509cert/AzSecPodcast"><i class="fa fa-github"></i></a>
+               </h1>
+				   <p>
+                    Un podcast dos veces al mes dedicado a la seguridad, privacidad, cumplimiento y fiabilidad 
+                    en microsoft cloud platform. Alojado por expertos en seguridad de Microsoft Gladys Rodriguez, David Sanchez y Javier Soriano.
+                  <a href='bios.html'>Conoce al equipo.</a>
+               </p>
+               <p>
+                  <a href="https://podcasts.apple.com/us/podcast/the-azure-security-podcast/id1512476835?mt=2&app=podcast"><img width='142' src='images/apple_podcasts_badge1.png'/></a> &nbsp;
+                  <a href="https://open.spotify.com/show/6AZVRZWttZdYkvlSAXjiGK"><img src="images/listen-on-spotify-badge-300x92.jpg" width='118' alt='Listen on Spotify' width='165px'/></a>&nbsp;
+                  <a href='https://rss.com/podcasts/azsecpodcast/'><img width='118'src="images/rss-button.png"/></a>&nbsp;&nbsp;
+                  <a href='https://www.google.com/podcasts?feed=aHR0cHM6Ly9tZWRpYS5yc3MuY29tL2F6c2VjcG9kY2FzdC9mZWVkLnhtbA%3D%3D' rel='nofollow'><img width='142' alt='Listen on Google Play Music' src='images/google_podcasts_badge1.png'/></a>&nbsp;
+                  <a href='https://music.amazon.com/podcasts/a526c965-4e12-4482-8527-7a8de7b7d7c2/The-Azure-Security-Podcast' rel='nofollow'><img width='118' alt='Listen on Amazon Podcasts' src='images/AmznPodcast.png'/></a>&nbsp;
+               </p>
+            </div>
+		   </div>
+	   </div>
+   </section>
+   <!-- Header end-->
+
+   <section id='features'>
+
+      <!-- Add a new div class row add-bottom for each episode -->
+
+
+      <!-- EPISODE 1 -->
+      <div class="row add-bottom">
+		    <div class="nine columns offset-2">
+            <h3 class="Heading" id="Ep001">&nbsp;<img id="ColExp-Ep001" class="ColExpIcon" width=16 height=16 src="images/Expand.png"> Episode 1 - April 30th, 2020  [Hello, World!]</h3>
+            <div class="EpisodeContent" id="Content-Ep001">
+                Gladys Rodriguez, David Sanchez y Javier Soriano.
+               <br>
+               En este episodio, presentamos a los hosts y discutimos la capacidad de Azure Security Center para analizar 
+               contenedores para malware, así como nuevas máquinas virtuales de computación confidencial que admiten la tecnología SGX enclave de Intel.
+
+               <br><br>
+               <b>Esto es una prueba</b>
+
+               <h5>Links</h5> 
+               <ul>
+                  <li><a href='https://rss.com/podcasts/azsecpodcast/39799'>Episode #1 Recording</a>&nbsp;&nbsp;<i class="fa fa-rss"></i></li>
+                  <li><a href='https://docs.microsoft.com/en-us/azure/security-center/container-security'>Container Security in Azure Security Center</a></li>
+                  <li><a href='https://www.microsoft.com/en-us/microsoft-365/blog/2020/04/30/enable-remote-work-faster-new-windows-virtual-desktop-capabilities/'>Enable remote work faster with new Windows Virtual Desktop </a></li>
+                  <li><a href='https://techcommunity.microsoft.com/t5/azure-sentinel/bg-p/AzureSentinelBlog'>Azure Sentinel</a></li>
+                  <li><a href='https://techcommunity.microsoft.com/t5/azure-sentinel/protecting-your-teams-with-azure-sentinel/ba-p/1265761'>Protecting your Teams with Azure Sentinel</a></li>
+                  <li><a href='https://techcommunity.microsoft.com/t5/azure-sentinel/monitoring-zoom-with-azure-sentinel/ba-p/1341516'>Monitoring Zoom with Azure Sentinel</a></li>   
+                  <li><a href='https://techcommunity.microsoft.com/t5/azure-sentinel/become-an-azure-sentinel-ninja-the-complete-level-400-training/ba-p/1246310'>Become an Azure Sentinel Ninja: The complete level 400 training</a></li>
+                  <li><a href='https://azure.microsoft.com/en-us/blog/dcsv2series-vm-now-generally-available-from-azure-confidential-computing/'>DCsv2-series VM now generally available from Azure confidential computing</a></li>
+                  <li><a href='https://openenclave.io/sdk/'>Open Enclave SDK</a></li>   
+                  <li><a href='https://docs.microsoft.com/en-us/security/compass/microsoft-security-compass-introduction'>What's inside Microsoft security architecture recommendations?</a></li>
+                  <li><a href='https://docs.microsoft.com/en-us/security/'>Microsoft Security documentation</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </section>     
+   
+   <footer>
+      <div class="row">         
+         <div class="twelve columns info">
+            <p>This web site is derived from the work of <a href=http://www.Styleshout.com>http://www.Styleshout.com</a>. Thank you!
+            <br>Music is from CCMixter.com used under the Creative Commons Licence, from artist <a href='http://beta.ccmixter.org/people/Whitewolf225'>WhiteWolf</a>. Thank you!
+            </p> 
+         </div>
+      </div>
+      </footer>
+   </body>
+</html>
