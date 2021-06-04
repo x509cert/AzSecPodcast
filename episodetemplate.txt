@@ -11,10 +11,7 @@
                about
 
                <br>
-               We also discuss Azure Security news for the following services: 
-
-               <br><br>
-               <b>YYYY's bio</b> yyy
+               We also discuss Azure Security news about:
 
                <br><br>
 
