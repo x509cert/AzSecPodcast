@@ -5,36 +5,33 @@
              <div class="EpisodeContent" href="#ep0xx" id="Content-Ep0xx">
                In this episode Michael, Sarah, Gladys and Mark talk with guest yyyy &nbsp;
                (
-                  <a href='https://www.linkedin.com/in/xyzzy/'><i class="fa fa-linkedin"></i></a>
-                  <a href='https://twitter.com/xyzzy'><i class="fa fa-twitter"></i></a>
+                  <a target="_blank" href='https://www.linkedin.com/in/xyzzy/'><i class="fa fa-linkedin"></i></a>
+                  <a target="_blank" href='https://twitter.com/xyzzy'><i class="fa fa-twitter"></i></a>
                ) 
                about
 
                <br>
-               We also discuss Azure Security news for the following services: 
-
-               <br><br>
-               <b>YYYY's bio</b> yyy
+               We also discuss Azure Security news about:
 
                <br><br>
 
                <h5>Links</h5> 
                <ul>
-                  <li><a href='https://rss.com/podcasts/azsecpodcast/nnnnn'>Episode xx Recording</a>&nbsp;&nbsp;<i class="fa fa-rss"></i></li>
-                  <li><a href=''></a></li>
-                  <li><a href=''></a></li>
-                  <li><a href=''></a></li>
-                  <li><a href=''></a></li>
-                  <li><a href=''></a></li>
-                  <li><a href=''></a></li>
-                  <li><a href=''></a></li>
-                  <li><a href=''></a></li>
-                  <li><a href=''></a></li>
-                  <li><a href=''></a></li>
-                  <li><a href=''></a></li>
-                  <li><a href=''></a></li>
-                  <li><a href=''></a></li>
-                  <li><a href=''></a></li>
+                  <li><a target="_blank" href='https://rss.com/podcasts/azsecpodcast/nnnnn'>Episode xx Recording</a>&nbsp;&nbsp;<i class="fa fa-rss"></i></li>
+                  <li><a target="_blank" href=''></a></li>
+                  <li><a target="_blank" href=''></a></li>
+                  <li><a target="_blank" href=''></a></li>
+                  <li><a target="_blank" href=''></a></li>
+                  <li><a target="_blank" href=''></a></li>
+                  <li><a target="_blank" href=''></a></li>
+                  <li><a target="_blank" href=''></a></li>
+                  <li><a target="_blank" href=''></a></li>
+                  <li><a target="_blank" href=''></a></li>
+                  <li><a target="_blank" href=''></a></li>
+                  <li><a target="_blank" href=''></a></li>
+                  <li><a target="_blank" href=''></a></li>
+                  <li><a target="_blank" href=''></a></li>
+                  <li><a target="_blank" href=''></a></li>
                </ul>
             </div>
          </div>  
