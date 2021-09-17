@@ -54,14 +54,15 @@
 </script>
 
 <!-- code to read the URL to see if an episode is selected or not -->
+<!-- format is /EpNNN -->
 <script>
    var uri = window.location.href;
-   var re = /Ep\d\d\d/gi
+   var re = /Ep(\d\d\d)/gi
    var result = re.exec(uri);
    if (result != null) {
-      let epNum = parseInt(result[0]);
+      let epNum = parseInt(result[1]);
       if (epNum != NaN) {
-         var episode = '#' + --epNum;
+         var episode = '#0' + --epNum;
          window.location.href = episode;
       }
    } 
