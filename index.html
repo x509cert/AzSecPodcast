@@ -65,9 +65,7 @@
          //epNum++;
          var episode = '#Epp0' + epNum;
 
-         $([document.documentElement, document.body]).animate({
-            scrollTop: $(episode).offset().top
-         }, 2000);
+         $('body').scrollTo(episode);
       }
    } 
 
