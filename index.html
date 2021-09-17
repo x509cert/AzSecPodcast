@@ -62,7 +62,8 @@
    if (result != null) {
       let epNum = parseInt(result[1]);
       if (epNum != NaN) {
-         var episode = '#0' + --epNum;
+         epNum++;
+         var episode = '#0' + epNum;
          window.location.href = episode;
       }
    } 
