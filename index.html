@@ -21,7 +21,7 @@
 
 <!-- code to hide/show episodes-->
 <script>
-   $(document).ready(function() {
+      $(document).ready(function() {
 
       // collapse all but the first episode
       $("div.EpisodeContent").hide();
@@ -52,29 +52,6 @@
        })
    });
 </script>
-
-<!-- code to read the URL to see if an episode is selected or not -->
-<!-- format is /EpNNN -->
-<script>
-   var uri = window.location.href;
-   var re = /Ep(\d\d\d)/gi
-   var result = re.exec(uri);
-   if (result != null) {
-      let epNum = parseInt(result[1]);
-      if (epNum != NaN) {
-         //epNum++;
-         var episode = '#Epp033'; //'#Epp0' + epNum;
-
-         var element = document.getElementById("Epx022");
-         alert(element);
-
-         element.scrollIntoView();
-      }
-   } 
-
-
-</script>
-
 
 <body>
    <header>   
@@ -1651,4 +1628,27 @@
       </div>
       </footer>
    </body>
+
+<!-- code to read the URL to see if an episode is selected or not -->
+<!-- format is /EpNNN -->
+<script>
+   var uri = window.location.href;
+   var re = /Ep(\d\d\d)/gi
+   var result = re.exec(uri);
+   if (result != null) {
+      let epNum = parseInt(result[1]);
+      if (epNum != NaN) {
+         //epNum++;
+         var episode = '#Epp033'; //'#Epp0' + epNum;
+
+         var element = document.getElementById("Epx022");
+         alert(element);
+
+         element.scrollIntoView();
+      }
+   } 
+
+</script>
+
+
 </html>
