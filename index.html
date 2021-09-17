@@ -59,9 +59,11 @@
    var re = /Ep\d\d\d/gi
    var result = re.exec(uri);
    if (result != null) {
-      var episode = '#' + result[0];
-      //$(location).attr('href',episode); 
-      window.location.href = episode;
+      let epNum = parseInt(result[0]);
+      if (epNum != NaN) {
+         var episode = '#' + --epNum;
+         window.location.href = episode;
+      }
    } 
 
 
