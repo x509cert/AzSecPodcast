@@ -53,6 +53,21 @@
    });
 </script>
 
+<!-- code to read the URL to see if an episode is selected or not -->
+<script>
+   var uri = window.location.href;
+   var re = /Ep\d\d\d/gi
+   var result = re.exec(uri);
+   if (result != null) {
+      var episode = '#' + result[0];
+      //$(location).attr('href',episode); 
+      window.location.href = episode;
+   } 
+
+
+</script>
+
+
 <body>
    <header>   
       <a href="https://azsecuritypodcast.net/es">
