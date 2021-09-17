@@ -64,8 +64,10 @@
       if (epNum != NaN) {
          epNum++;
          var episode = '#Ep0' + epNum;
-         window.location.href = episode;
-         $(this).scroll(-64);
+
+         $([document.documentElement, document.body]).animate({
+            scrollTop: $(episode).offset().top
+         }, 2000);
       }
    } 
 
