@@ -1,38 +1,38 @@
-      <!-- Episode xx -->
-      <div class="row add-bottom">
-         <div class="nine columns offset-2">
-            <h3 class="Heading" id="Ep0xx">&nbsp;<img id="ColExp-Ep0xx" class="ColExpIcon" width=16 height=16 src="images/Collapse.png"> Episode xx - July 3rd, 2021 - [topic]</h3>
-             <div class="EpisodeContent" href="#ep0xx" id="Content-Ep0xx">
-               In this episode Michael, Sarah, Gladys and Mark talk with guest yyyy &nbsp;
-               (
-                  <a target="_blank" rel="noreferrer" href='https://www.linkedin.com/in/xyzzy/'><i class="fa fa-linkedin"></i></a>
-                  <a target="_blank" rel="noreferrer" href='https://twitter.com/xyzzy'><i class="fa fa-twitter"></i></a>
-               ) 
-               about
+<!-- Episode xx -->
+<div class="row add-bottom">
+   <div class="nine columns offset-2">
+      <h3 class="Heading" id="Ep0xx">&nbsp;<img id="ColExp-Ep0xx" class="ColExpIcon" width=16 height=16 src="images/Collapse.png"> Episode xx - July 3rd, 2021 - [topic]</h3>
+         <div class="EpisodeContent" href="#ep0xx" id="Content-Ep0xx">
+         In this episode Michael, Sarah, Gladys and Mark talk with guest yyyy &nbsp;
+         (
+            <a target="_blank" rel="noreferrer" href='https://www.linkedin.com/in/xyzzy/'><i class="fa fa-linkedin"></i></a>
+            <a target="_blank" rel="noreferrer" href='https://twitter.com/xyzzy'><i class="fa fa-twitter"></i></a>
+         ) 
+         about
 
-               <br>
-               We also discuss Azure Security news about:
+         <br>
+         We also discuss Azure Security news about:
 
-               <br><br>
+         <br><br>
 
-               <h5>Links</h5> 
-               <ul>
-                  <li><a target="_blank" rel="noreferrer" href='https://rss.com/podcasts/azsecpodcast/nnnnn'>Episode xx Recording</a>&nbsp;&nbsp;<i class="fa fa-rss"></i></li>
-                  <li><a target="_blank" rel="noreferrer" href=''></a></li>
-                  <li><a target="_blank" rel="noreferrer" href=''></a></li>
-                  <li><a target="_blank" rel="noreferrer" href=''></a></li>
-                  <li><a target="_blank" rel="noreferrer" href=''></a></li>
-                  <li><a target="_blank" rel="noreferrer" href=''></a></li>
-                  <li><a target="_blank" rel="noreferrer" href=''></a></li>
-                  <li><a target="_blank" rel="noreferrer" href=''></a></li>
-                  <li><a target="_blank" rel="noreferrer" href=''></a></li>
-                  <li><a target="_blank" rel="noreferrer" href=''></a></li>
-                  <li><a target="_blank" rel="noreferrer" href=''></a></li>
-                  <li><a target="_blank" rel="noreferrer" href=''></a></li>
-                  <li><a target="_blank" rel="noreferrer" href=''></a></li>
-                  <li><a target="_blank" rel="noreferrer" href=''></a></li>
-                  <li><a target="_blank" rel="noreferrer" href=''></a></li>
-               </ul>
-            </div>
-         </div>  
+         <h5>Links</h5> 
+         <ul>
+            <li><a target="_blank" rel="noreferrer" href='https://rss.com/podcasts/azsecpodcast/nnnnn'>Episode xx Recording</a>&nbsp;&nbsp;<i class="fa fa-rss"></i></li>
+            <li><a target="_blank" rel="noreferrer" href=''></a></li>
+            <li><a target="_blank" rel="noreferrer" href=''></a></li>
+            <li><a target="_blank" rel="noreferrer" href=''></a></li>
+            <li><a target="_blank" rel="noreferrer" href=''></a></li>
+            <li><a target="_blank" rel="noreferrer" href=''></a></li>
+            <li><a target="_blank" rel="noreferrer" href=''></a></li>
+            <li><a target="_blank" rel="noreferrer" href=''></a></li>
+            <li><a target="_blank" rel="noreferrer" href=''></a></li>
+            <li><a target="_blank" rel="noreferrer" href=''></a></li>
+            <li><a target="_blank" rel="noreferrer" href=''></a></li>
+            <li><a target="_blank" rel="noreferrer" href=''></a></li>
+            <li><a target="_blank" rel="noreferrer" href=''></a></li>
+            <li><a target="_blank" rel="noreferrer" href=''></a></li>
+            <li><a target="_blank" rel="noreferrer" href=''></a></li>
+         </ul>
       </div>
+   </div>  
+</div>

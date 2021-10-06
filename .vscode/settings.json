@@ -1,5 +1,6 @@
 {
     "python.pythonPath": "c:\\Users\\mikehow\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
     "python.linting.enabled": true,
-    "jupyter.jupyterServerType": "local"
+    "jupyter.jupyterServerType": "local",
+    "cmake.configureOnOpen": false
 }
