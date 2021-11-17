@@ -16,9 +16,9 @@
 
             <br><br>
 
-            <h5>Links</h5> 
             <!-- Insert link from rss.com -->
 
+            <h5>Links</h5> 
             <!-- Links to news articles -->
             <ul>
 
