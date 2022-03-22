@@ -1,4 +1,4 @@
-   $(document).ready(function() {
+$(document).ready(function() {
 
    // collapse all but the first episode
    $("div.EpisodeContent").hide();
