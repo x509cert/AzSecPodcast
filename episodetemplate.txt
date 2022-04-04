@@ -16,7 +16,8 @@
 
                   <br><br>
 
-                  <!-- Insert link from rss.com -->
+                  <!-- Insert episode info from rss.com into NNNNNN and TTTTTT which is the episode number and the title -->
+                  <iframe src="https://player.rss.com/azsecpodcast/NNNNNN?theme=light" title="The Azure Security Podcast" frameborder="0"><a href="https://rss.com/podcasts/azsecpodcast/430180/">TTTTTTT</a></iframe>
 
                   <h5>Links</h5> 
                   <!-- Links to news articles -->
