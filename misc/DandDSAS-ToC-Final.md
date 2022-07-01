@@ -1,4 +1,7 @@
 Designing and Developing Secure Azure Solutions Table of Contents
+Michael Howard, Heinrich Gantenbein and Simone Curzi
+Microsoft Press
+https://www.amazon.com/Designing-Developing-Solutions-Developer-Practices/dp/013790875X
 
 Page counts are approximate
 
