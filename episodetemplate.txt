@@ -1,30 +1,30 @@
-      <!-- Episode xx -->
-      <article>
-         <div class="row add-bottom">
-            <div class="nine columns offset-2">
-               <h3 class="Heading" id="Ep0xx">&nbsp;<img id="ColExp-Ep0xx" class="ColExpIcon" width=16 height=16 src="images/Collapse.png"> Episode xx - July 3rd, 2022 - [topic]</h3>
-                  <div class="EpisodeContent" href="#ep0xx" id="Content-Ep0xx">
-                  In this episode Michael, Sarah, Gladys and Mark talk with guest yyyy&nbsp;
-                  (
-                     <a target="_blank" rel="noreferrer" href='https://www.linkedin.com/in/xyzzy/'><i class="fa fa-linkedin"></i></a>
-                     <a target="_blank" rel="noreferrer" href='https://twitter.com/xyzzy'><i class="fa fa-twitter"></i></a>
-                  ) 
-                  about
+<!-- Episode xx -->
+<article>
+   <div class="row add-bottom">
+      <div class="nine columns offset-2">
+         <h3 class="Heading" id="Ep0xx">&nbsp;<img id="ColExp-Ep0xx" class="ColExpIcon" width=16 height=16 src="images/Collapse.png"> Episode xx - July 3rd, 2022 - [topic]</h3>
+            <div class="EpisodeContent" href="#ep0xx" id="Content-Ep0xx">
+            In this episode Michael, Sarah, Gladys and Mark talk with guest yyyy&nbsp;
+            (
+               <a target="_blank" rel="noreferrer" href='https://www.linkedin.com/in/xyzzy/'><i class="fa fa-linkedin"></i></a>
+               <a target="_blank" rel="noreferrer" href='https://twitter.com/xyzzy'><i class="fa fa-twitter"></i></a>
+            ) 
+            about
 
-                  <br>
-                  We also discuss Azure Security news about:
+            <br>
+            We also discuss Azure Security news about:
 
-                  <br><br>
+            <br><br>
 
-                  <!-- Insert episode info from rss.com into NNNNNN and TTTTTT which is the episode number and the title -->
-                  <iframe src="https://player.rss.com/azsecpodcast/NNNNNN?theme=light" style="width: 50%" title="The Azure Security Podcast" frameborder="0"><a href="https://rss.com/podcasts/azsecpodcast/NNNNNN/">TTTTTTT</a></iframe>
+            <!-- Insert episode info from rss.com into NNNNNN and TTTTTT which is the episode number and the title -->
+            <iframe src="https://player.rss.com/azsecpodcast/NNNNNN?theme=light" style="width: 50%" title="The Azure Security Podcast" frameborder="0"><a href="https://rss.com/podcasts/azsecpodcast/NNNNNN/">TTTTTTT</a></iframe>
 
-                  <h5>Links</h5> 
-                  <!-- Links to news articles -->
-                  <ul>
+            <h5>Links</h5> 
+            <!-- Links to news articles -->
+            <ul>
 
-                  </ul>
-               </div>
-            </div>  
+            </ul>
          </div>
-      </article>
+      </div>  
+   </div>
+</article>
