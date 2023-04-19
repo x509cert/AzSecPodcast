@@ -20,8 +20,9 @@
             <iframe src="https://player.rss.com/azsecpodcast/NNNNNN?theme=light" style="width: 50%" title="The Azure Security Podcast" frameborder="0"><a href="https://rss.com/podcasts/azsecpodcast/NNNNNN/">TTTTTTT</a></iframe>
 
             <h5>Links</h5> 
-            <!-- Links to news articles -->
+            <!-- Links to transcription and news articles -->
             <ul>
+               <li><a target="_blank" rel="noreferrer" href='https://rss.com/podcasts/azsecpodcast/NNNNNN/'>Transcription <i class="fa fa-book"></i></a></li>
 
             </ul>
          </div>
