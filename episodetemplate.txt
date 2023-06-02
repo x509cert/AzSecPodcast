@@ -22,7 +22,7 @@
             <h5>Links</h5> 
             <!-- Links to transcription and news articles -->
             <ul>
-               <li><a target="_blank" rel="noreferrer" href='https://rss.com/podcasts/azsecpodcast/NNNNNN/'>Transcription <i class="fa fa-book"></i></a></li>
+               <li><a target="_blank" rel="noreferrer" href='https://rss.com/podcasts/azsecpodcast/NNNNNN/'>Transcript <i class="fa fa-book"></i></a></li>
 
             </ul>
          </div>
