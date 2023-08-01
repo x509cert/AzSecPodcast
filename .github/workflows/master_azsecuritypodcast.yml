@@ -23,15 +23,10 @@ jobs:
     runs-on: windows-latest
     needs: build
 
-    environment:
-      name: deploystuff
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-
     steps:
       - name: Download artifact from build job
-        uses: actions/download-artifact@v2
-        with:
-          name: azsecuritypodcast
+        uses: actions/checkout@v2
+
       - uses: azure/login@v1
         with:
           creds: |
