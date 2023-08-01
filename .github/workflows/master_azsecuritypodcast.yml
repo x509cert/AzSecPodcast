@@ -3,7 +3,7 @@ name: Build and deploy AzSecPodcast to Azure Web App
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 env:
