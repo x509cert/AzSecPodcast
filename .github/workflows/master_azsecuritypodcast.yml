@@ -6,23 +6,9 @@ on:
       - master
   workflow_dispatch:
 
-jobs:
-  build:
-      runs-on: windows-latest
-
-      steps:
-        - uses: actions/checkout@v2
-
-        - name: Set up .NET Core
-          uses: actions/setup-dotnet@v1
-          with:
-            dotnet-version: '3.1'
-            include-prerelease: true
-          
+jobs:          
   deploy:
     runs-on: windows-latest
-    needs: build
-
     steps:
       - name: Download artifact from build job
         uses: actions/checkout@v2
