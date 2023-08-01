@@ -6,11 +6,6 @@ on:
       - master
   workflow_dispatch:
 
-env:
-  AZURE_WEBAPP_NAME: azsecuritypodcast   # set this to your application's name
-  NODE_VERSION: '18.x'                # set this to the node version to use
-  AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
-
 jobs:
   build:
       runs-on: windows-latest
@@ -50,8 +45,8 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+          app-name: 'azsecuritypodcast'
+          package: '.'
 
       - name: logout
         run: |
