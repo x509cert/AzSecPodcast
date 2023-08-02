@@ -4,13 +4,12 @@ on:
   push:
     branches:
       - master
-  workflow_dispatch:
-
+      
 jobs:          
   deploy:
     runs-on: windows-latest
     steps:
-      - name: Download artifact from build job
+      - name: Download artifacts from build job
         uses: actions/checkout@v2
 
       - uses: azure/login@v1
@@ -24,7 +23,7 @@ jobs:
             }
 
       - name: 'Deploy to Azure Web App'
-        id: deploy-to-webapp
+        id: deploy-to-azsecpod
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'azsecuritypodcast'
