@@ -5,4 +5,4 @@ EN: https://azsecuritypodcast.net/
 
 ES: https://azsecuritypodcast.net/es
 
-It's very much a work-in-progress!
+It's updated often for each new episode and moving old episodes off the main page.
