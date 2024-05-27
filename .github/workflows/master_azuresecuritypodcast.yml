@@ -27,7 +27,7 @@ jobs:
         id: deploy-to-azsecpod
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'azsecuritypodcast'
+          app-name: 'azuresecuritypodcast'
           package: '.'
 
       - name: logout
