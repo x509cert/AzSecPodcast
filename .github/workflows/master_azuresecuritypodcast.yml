@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v2
 
       - uses: azure/login@v1
-          with:
+        with:
             creds: '${{ secrets.AZURE_CREDS }}'
 
       - name: 'Deploy to Azure Web App'
