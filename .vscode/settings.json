@@ -3,5 +3,6 @@
     "python.linting.enabled": true,
     "jupyter.jupyterServerType": "local",
     "cmake.configureOnOpen": false,
-    "sarif-viewer.connectToGithubCodeScanning": "off"
+    "sarif-viewer.connectToGithubCodeScanning": "off",
+    "codeQL.githubDatabase.download": "never"
 }
