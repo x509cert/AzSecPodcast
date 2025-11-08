@@ -18,7 +18,7 @@ jobs:
       - name: Minify HTML
         run: |
           npm install -g html-minifier-terser
-          find . -name "*.html" -exec html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o {} {} \;
+          find . -name "*.html" -exec html-minifier-terser --collapse-whitespace --remove-comments -o {} {} \;
 
       - uses: azure/login@v1
         with:
