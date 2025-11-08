@@ -7,7 +7,7 @@ on:
   push:
     branches:
       - master
-      
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -20,9 +20,9 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install optimization tools
+      - name: Install optimization tools (no PurgeCSS)
         run: |
-          npm install -g html-minifier-terser purgecss csso terser
+          npm install -g html-minifier-terser csso terser
 
       - name: Minify HTML (inline CSS & JS)
         run: |
@@ -31,13 +31,12 @@ jobs:
             --remove-comments \
             --minify-css true \
             --minify-js true \
-            -o {} {} \;
+            -o {} {} \
+            ;
 
-      - name: Purge and Minify CSS
+      - name: Minify CSS (no purge)
         run: |
           for f in $(find . -type f -name "*.css"); do \
-            purgecss --css "$f" --content "**/*.html" --output $(dirname "$f")/__purged; \
-            mv $(dirname "$f")/__purged/$(basename "$f") "$f"; \
             csso "$f" --output "$f.min"; \
             mv "$f.min" "$f"; \
           done
