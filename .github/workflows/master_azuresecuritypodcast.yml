@@ -13,7 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download artifacts from build job
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
+      - name: Minify HTML
+        run: |
+          npm install -g html-minifier-terser
+          find . -name "*.html" -exec html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o {} {} \;
 
       - uses: azure/login@v1
         with:
@@ -28,6 +33,3 @@ jobs:
 
       - name: logout
         run: az logout
-
-
-
