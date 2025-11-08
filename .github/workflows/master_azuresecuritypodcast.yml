@@ -35,12 +35,8 @@ jobs:
                 --collapse-whitespace \
                 --remove-comments \
                 --remove-attribute-quotes \
-                --remove-redundant-attributes \
-                --remove-script-type-attributes \
-                --remove-style-link-type-attributes \
                 --use-short-doctype \
                 --minify-css true \
-                --minify-js true \
                 -o "$tmp" "$f"
               mv "$tmp" "$f"
             done
@@ -58,3 +54,4 @@ jobs:
 
       - name: Logout
         run: az logout
+
