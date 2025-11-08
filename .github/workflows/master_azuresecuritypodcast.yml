@@ -8,28 +8,64 @@ on:
     branches:
       - master
       
-jobs:          
+jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Download artifacts from build job
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Minify HTML
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install optimization tools
         run: |
-          npm install -g html-minifier-terser
-          find . -name "*.html" -exec html-minifier-terser --collapse-whitespace --remove-comments -o {} {} \;
+          npm install -g html-minifier-terser purgecss csso terser
+
+      - name: Minify HTML (inline CSS & JS)
+        run: |
+          find . -type f -name "*.html" -exec html-minifier-terser \
+            --collapse-whitespace \
+            --remove-comments \
+            --minify-css true \
+            --minify-js true \
+            -o {} {} \;
+
+      - name: Purge and Minify CSS
+        run: |
+          for f in $(find . -type f -name "*.css"); do \
+            purgecss --css "$f" --content "**/*.html" --output $(dirname "$f")/__purged; \
+            mv $(dirname "$f")/__purged/$(basename "$f") "$f"; \
+            csso "$f" --output "$f.min"; \
+            mv "$f.min" "$f"; \
+          done
+
+      - name: Minify JS
+        run: |
+          for f in $(find . -type f -name "*.js"); do \
+            terser "$f" -c -m -o "$f.min"; \
+            mv "$f.min" "$f"; \
+          done
+
+      - name: Optimize images (PNG & JPEG)
+        run: |
+          sudo apt-get update && sudo apt-get install -y pngquant jpegoptim
+          find . -type f -name "*.png" -exec pngquant --force --output {} {} \;
+          find . -type f -name "*.jpg" -exec jpegoptim --strip-all {} \;
+          find . -type f -name "*.jpeg" -exec jpegoptim --strip-all {} \;
 
       - uses: azure/login@v1
         with:
-            creds: '${{ secrets.AZURE_CREDS }}'
+          creds: '${{ secrets.AZURE_CREDS }}'
 
-      - name: 'Deploy to Azure Web App'
+      - name: Deploy to Azure Web App
         id: deploy-to-azsecpod
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'azuresecuritypodcast'
           package: '.'
 
-      - name: logout
+      - name: Logout
         run: az logout
