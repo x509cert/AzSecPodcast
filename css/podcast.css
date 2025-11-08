@@ -1,0 +1,9 @@
+/* Podcast Player Styling */
+.podcast-player {
+    width: 100%; 
+    max-width: 600px; 
+    height: 200px; 
+    box-shadow: 0 1px 6px rgba(0,0,0,0.12); 
+    border-radius: 6px; 
+    border: 1px solid #f0f0f0;
+}
