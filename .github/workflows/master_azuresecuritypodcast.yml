@@ -1,57 +1,32 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
 name: Build and deploy Azure Secure Podcast to Azure Web App
 
 on:
   push:
     branches:
       - master
-
-jobs:
+      
+jobs:          
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
-      - name: Checkout source
-        uses: actions/checkout@v4
-
-      - name: Setup Node (for minification)
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install html-minifier-terser
-        run: npm i -g html-minifier-terser@^7
-
-      - name: Minify HTML in place
-        shell: bash
-        run: |
-          set -euo pipefail
-          # Find all HTML files except in .git and node_modules, then minify in place
-          find . -type f -name '*.html' \
-            -not -path './.git/*' \
-            -not -path './node_modules/*' \
-            -print0 \
-          | while IFS= read -r -d '' f; do
-              tmp="${f}.min"
-              html-minifier-terser \
-                --collapse-whitespace \
-                --remove-comments \
-                --remove-attribute-quotes \
-                --use-short-doctype \
-                --minify-css true \
-                -o "$tmp" "$f"
-              mv "$tmp" "$f"
-            done
+      - name: Download artifacts from build job
+        uses: actions/checkout@v2
 
       - uses: azure/login@v1
         with:
-          creds: '${{ secrets.AZURE_CREDS }}'
+            creds: '${{ secrets.AZURE_CREDS }}'
 
-      - name: Deploy to Azure Web App
+      - name: 'Deploy to Azure Web App'
         id: deploy-to-azsecpod
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'azuresecuritypodcast'
           package: '.'
 
-      - name: Logout
+      - name: logout
         run: az logout
+
 
