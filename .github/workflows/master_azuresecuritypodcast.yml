@@ -10,7 +10,7 @@ on:
       
 jobs:          
   deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Download artifacts from build job
         uses: actions/checkout@v2
@@ -28,5 +28,6 @@ jobs:
 
       - name: logout
         run: az logout
+
 
 
