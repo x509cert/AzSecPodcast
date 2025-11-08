@@ -26,13 +26,7 @@ jobs:
 
       - name: Minify HTML (inline CSS & JS)
         run: |
-          find . -type f -name "*.html" -exec html-minifier-terser \
-            --collapse-whitespace \
-            --remove-comments \
-            --minify-css true \
-            --minify-js true \
-            -o {} {} \
-            ;
+          find . -type f -name "*.html" -exec html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o {} {} \;
 
       - name: Minify CSS (no purge)
         run: |
