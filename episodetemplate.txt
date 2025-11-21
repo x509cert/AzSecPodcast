@@ -17,12 +17,12 @@
             <br><br>
 
             <!-- Insert episode info from rss.com into NNNNNN and TTTTTT which is the episode number and the title -->
-            <iframe src="https://player.rss.com/azsecpodcast/NNNNNN?theme=light" style="width: 50%" title="The Azure Security Podcast" frameborder="0"><a href="https://rss.com/podcasts/azsecpodcast/NNNNNN/">TTTTTTT</a></iframe>
+            <iframe src="https://player.rss.com/azsecpodcast/NNNNNN?theme=light" class="podcast-player" title="The Azure Security Podcast" frameborder="0"><a href="https://rss.com/podcasts/azsecpodcast/NNNNNN/">TTTTTTT</a></iframe>
 
             <!-- Links to transcription and news articles -->
             <h5>Links</h5> 
             <ul>
-               <li><a target="_blank" rel="noreferrer" href='https://rss.com/podcasts/azsecpodcast/NNNNNN/#transcript'>Transcript <i class="fa fa-book"></i></a></li>
+               <li><a target="_blank" rel="noreferrer" href='https://rss.com/podcasts/azsecpodcast/NNNNNN/#transcript'>Transcript <i class="fa-solid fa-book"></i></a></li>
 
             </ul>
          </div>
