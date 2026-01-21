@@ -1,0 +1,30 @@
+<!-- Performance Optimization Guidelines for Images -->
+<!-- 
+CRITICAL: The following images need urgent optimization:
+- M365.png (745KB) - Should be < 100KB
+- Mark.jpg (578KB) - Should be < 80KB  
+- Gladys.jpg (541KB) - Should be < 80KB
+- MiriamBook.png (293KB) - Should be < 50KB
+- azure_icon.png (208KB) - Should be < 30KB
+
+Recommended tools for image optimization:
+1. Online tools: TinyPNG, Squoosh.app, Kraken.io
+2. Command line: ImageMagick, cwebp (Google WebP)
+3. Batch optimization with PowerShell script
+
+For WebP conversion using online tools:
+1. Go to https://squoosh.app/
+2. Upload each large image
+3. Choose WebP format with 80% quality
+4. Download optimized versions
+
+Expected savings: 2MB+ reduction in total image size
+-->
+
+<!-- Example of responsive image with WebP fallback -->
+<!-- 
+<picture>
+  <source srcset="images/mark-optimized.webp" type="image/webp">
+  <img src="images/mark-optimized.jpg" alt="Mark" width="200" height="200" loading="lazy">
+</picture>
+-->

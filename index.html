@@ -10,15 +10,32 @@
    <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-   <link rel="stylesheet" href="css/default.css">
-	<link rel="stylesheet" href="css/layout.css">
-   <link rel="stylesheet" href="css/media-queries.css">
-   <link rel="stylesheet" href="css/podcast.css">
+   <!-- Performance optimizations: preconnect to external resources -->
+   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+   <!-- Single optimized CSS file instead of 4 separate files -->
+   <link rel="stylesheet" href="css/optimized.css">
+   
+   <!-- Load Font Awesome from CDN with performance hints -->
+   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
 
    <link rel="shortcut icon" href="images/favicon-aznew.ico" >
    
-   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
-   <script src="ui.js"></script>
+   <!-- Optimized vanilla JavaScript instead of jQuery -->
+   <script src="js/ui-optimized.js" defer></script>
+   
+   <!-- Service Worker Registration for Caching -->
+   <script>
+   if ('serviceWorker' in navigator) {
+       window.addEventListener('load', () => {
+           navigator.serviceWorker.register('/sw.js')
+               .then(reg => console.log('SW registered'))
+               .catch(err => console.log('SW registration failed'));
+       });
+   }
+   </script>
 
 </head>
 
@@ -43,11 +60,11 @@
                   <a href='bios.html'>Meet the hosts.</a>
                </p>
                <p>
-                  <a href="https://podcasts.apple.com/us/podcast/the-azure-security-podcast/id1512476835?mt=2&app=podcast"><img width='142' src='images/apple_podcasts_badge1.png' alt='Apple RSS logo'/></a> &nbsp;
-                  <a href="https://open.spotify.com/show/6AZVRZWttZdYkvlSAXjiGK"><img src="images/listen-on-spotify-badge-300x92.jpg" width='118' alt='Listen on Spotify' width='165px' alt='Spotify RSS logo'/></a>&nbsp;
-                  <a href='https://rss.com/podcasts/azsecpodcast/'><img width='118' src="images/rss-button.png" alt='RSS.com logo'/></a>&nbsp;&nbsp;
+                  <a href="https://podcasts.apple.com/us/podcast/the-azure-security-podcast/id1512476835?mt=2&app=podcast"><img width='142' src='images/apple_podcasts_badge1.png' alt='Apple RSS logo' loading='lazy'/></a> &nbsp;
+                  <a href="https://open.spotify.com/show/6AZVRZWttZdYkvlSAXjiGK"><img src="images/listen-on-spotify-badge-300x92.jpg" width='118' alt='Listen on Spotify' loading='lazy'/></a>&nbsp;
+                  <a href='https://rss.com/podcasts/azsecpodcast/'><img width='118' src="images/rss-button.png" alt='RSS.com logo' loading='lazy'/></a>&nbsp;&nbsp;
                   <!-- Need to add Goog -->
-                  <a href='https://music.amazon.com/podcasts/a526c965-4e12-4482-8527-7a8de7b7d7c2/The-Azure-Security-Podcast' rel='nofollow'><img width='118' alt='Listen on Amazon Podcasts' src='images/AmznPodcast.png' alt='Amazon Podcast logo'/></a>&nbsp;
+                  <a href='https://music.amazon.com/podcasts/a526c965-4e12-4482-8527-7a8de7b7d7c2/The-Azure-Security-Podcast' rel='nofollow'><img width='118' alt='Listen on Amazon Podcasts' src='images/AmznPodcast.png' loading='lazy'/></a>&nbsp;
                </p>
             </div>
 		   </div>
@@ -58,6 +75,39 @@
    <section id='features'>
 
       <!-- Add a new div class row add-bottom for each episode -->
+
+      <!-- Episode 123 -->
+      <article>
+         <div class="row add-bottom">
+            <div class="nine columns offset-2">
+               <h3 class="Heading" id="Ep0123">&nbsp;<img id="ColExp-Ep0123" class="ColExpIcon" width=16 height=16 src="images/Collapse.png"> Episode 123 - January 15th,, 2026 - [<span id="ep0123">topic</span>] <a href="#ep0123" title="Episode 123: topic - Link to this section"><i class="fa-solid fa-link" style="font-size: 0.8em; color: #666;"></i></a></h3>
+                  <div class="EpisodeContent" href="#ep0123" id="Content-Ep0123">
+                  In this episode Michael, Sarah, Gladys and Mark talk with guest yyyy
+                  (
+                     <a target="_blank" rel="noreferrer" href='https://www.linkedin.com/in/xyzzy/'><i class="fa-brands fa-linkedin"></i></a>
+                     <a target="_blank" rel="noreferrer" href='https://twitter.com/xyzzy'><i class="fa-brands fa-x-twitter"></i></a>
+                  ) 
+                  about
+
+                  <br>
+                  We also discuss Azure Security news about:
+
+                  <br><br>
+
+                  <!-- Insert episode info from rss.com into NNNNNN and TTTTTT which is the episode number and the title -->
+                  <iframe src="https://player.rss.com/azsecpodcast/NNNNNN?theme=light" class="podcast-player" title="The Azure Security Podcast" frameborder="0"><a href="https://rss.com/podcasts/azsecpodcast/NNNNNN/">TTTTTTT</a></iframe>
+
+                  <!-- Links to transcription and news articles -->
+                  <h5>Links</h5> 
+                  <ul>
+                     <li><a target="_blank" rel="noreferrer" href='https://rss.com/podcasts/azsecpodcast/NNNNNN/#transcript'>Transcript <i class="fa-solid fa-book"></i></a></li>
+
+                  </ul>
+               </div>
+            </div>  
+         </div>
+      </article>
+
 
       <!-- Episode 122 -->
       <article>
