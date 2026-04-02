@@ -4,7 +4,10 @@ document.addEventListener("DOMContentLoaded", function() {
    if (!container) return;
 
    fetch("data/episodes.json")
-      .then(function(r) { return r.json(); })
+      .then(function(r) {
+         if (!r.ok) throw new Error("HTTP " + r.status);
+         return r.json();
+      })
       .then(function(data) {
          var episodes = data.episodes || [];
          if (episodes.length === 0) return;
