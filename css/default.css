@@ -159,8 +159,6 @@ table {
 *,
 *:before,
 *:after {
-   -moz-box-sizing: border-box;
-   -webkit-box-sizing: border-box;
    box-sizing: border-box;
 }
 
@@ -316,9 +314,6 @@ a, a:visited {
    outline: 0;
    color: #11ABB0;
 
-   -webkit-transition: color .3s ease-in-out;
-   -moz-transition: color .3s ease-in-out;
-   -o-transition: color .3s ease-in-out;
    transition: color .3s ease-in-out;
 }
 a:hover, a:focus { color: #333; }
@@ -445,10 +440,6 @@ dd { margin: 0 0 0 20px; }
 	color: #6E757C;
 	background-color: #E6E8EB;
 
-	-webkit-transition: all 200ms ease-in-out;
-	-moz-transition: all 200ms ease-in-out;
-	-o-transition: all 200ms ease-in-out;
-	-ms-transition: all 200ms ease-in-out;
 	transition: all 200ms ease-in-out;
 
    border-radius: 3px;
@@ -510,11 +501,7 @@ input[type="button"] {
    text-transform: uppercase;
    letter-spacing: 2px;
 
-   -webkit-transition: all .2s ease-in-out;
-	-moz-transition: all .2s ease-in-out;
-	-o-transition: all .2s ease-in-out;
-	-ms-transition: all .2s ease-in-out;
-	transition: all .2s ease-in-out;
+   transition: all .2s ease-in-out;
 
    border-radius: 3px;
 }
@@ -628,10 +615,7 @@ input[type="checkbox"] { display: inline; }
    max-width: none;
    margin: 0 auto;
 }
-/* fixed width for IE8 */
-.ie .row { width: 1000px ; }
-
-.narrow .row { max-width: 980px; }
+.narrow .row{ max-width: 980px; }
 
 .row .row { width: auto; max-width: none; margin: 0 -18px; }
 
@@ -833,6 +817,10 @@ properly.
 	text-align: center !important;
 }
 
-
-
-
+@media (prefers-reduced-motion: reduce) {
+   *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+   }
+}
