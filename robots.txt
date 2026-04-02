@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://azsecuritypodcast.net/sitemap.xml
+Sitemap: https://azsecuritypodcast.azurewebsites.net/sitemap.xml
