@@ -11,3 +11,7 @@
 h3.Heading {
     cursor: pointer;
 }
+
+#episodes-container .add-bottom {
+    margin-bottom: 12px !important;
+}
