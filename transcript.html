@@ -1,8 +1,13 @@
-<script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
+        <title>Transcript - The Azure Security Podcast</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="images/favicon-aznew.ico">
+        <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"
+                integrity="sha384-TTjj1KxpUMxMChPbgmSWLlfEep0/67X86v9lnJMkldzkQGHZNAhZRgE9owovIRyz"
+                crossorigin="anonymous"></script>
         <style>
             body {
                 background: #fff;
@@ -20,26 +25,28 @@
         <div id='root'></div>
 
         <script>
-            $(document).ready(function() {
-
-                var queryString = window.location.search;
-                var urlParams = new URLSearchParams(queryString);
+            document.addEventListener("DOMContentLoaded", function() {
+                var urlParams = new URLSearchParams(window.location.search);
                 var episode = urlParams.get('ep');
+                var epNum = parseInt(episode);
 
-                if (parseInt(episode) != NaN) {
+                if (!isNaN(epNum)) {
+                    var url = "https://azsecuritypodcast.net/transcripts/transcript" + epNum + ".md";
 
-                    var name = "https://azsecuritypodcast.net/transcripts/transcript" + episode.toString() + ".md";
-
-                    $("#root").load(name, function(rsponseText, statusTxt, xhr) {
-                        if (statusTxt == "success") {
+                    fetch(url)
+                        .then(function(response) {
+                            if (!response.ok) throw new Error("HTTP " + response.status);
+                            return response.text();
+                        })
+                        .then(function(text) {
                             var converter = new showdown.Converter();
-                            var html = converter.makeHtml(rsponseText);
-                            document.getElementById('root').innerHTML = html;
-                        }
-                    });
+                            document.getElementById('root').innerHTML = converter.makeHtml(text);
+                        })
+                        .catch(function(err) {
+                            document.getElementById('root').innerHTML = '<p>Failed to load transcript.</p>';
+                        });
                 }
             });
-
         </script>
 
     </body>

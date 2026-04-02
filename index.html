@@ -10,10 +10,21 @@
    <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-   <!-- Prevent caching -->
-   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-   <meta http-equiv="Pragma" content="no-cache">
-   <meta http-equiv="Expires" content="0">
+   <!-- Open Graph -->
+   <meta property="og:title" content="The Azure Security Podcast">
+   <meta property="og:description" content="A twice-monthly podcast dedicated to Security, Privacy, Compliance, Governance and Reliability on the Microsoft Cloud Platform.">
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://azsecuritypodcast.net/">
+   <meta property="og:image" content="https://azsecuritypodcast.net/images/logo2.png">
+
+   <!-- Twitter Card -->
+   <meta name="twitter:card" content="summary">
+   <meta name="twitter:site" content="@AzureSecPod">
+   <meta name="twitter:title" content="The Azure Security Podcast">
+   <meta name="twitter:description" content="A twice-monthly podcast dedicated to Security, Privacy, Compliance, Governance and Reliability on the Microsoft Cloud Platform.">
+   <meta name="twitter:image" content="https://azsecuritypodcast.net/images/logo2.png">
+
+   <link rel="canonical" href="https://azsecuritypodcast.net/">
 
    <link rel="stylesheet" href="css/default.css">
 	<link rel="stylesheet" href="css/layout.css">
@@ -23,6 +34,24 @@
    <link rel="shortcut icon" href="images/favicon-aznew.ico" >
    
    <script src="ui.js" defer></script>
+
+   <!-- Structured Data -->
+   <script type="application/ld+json">
+   {
+      "@context": "https://schema.org",
+      "@type": "PodcastSeries",
+      "name": "The Azure Security Podcast",
+      "description": "A twice-monthly podcast dedicated to Security, Privacy, Compliance, Governance and Reliability on the Microsoft Cloud Platform.",
+      "url": "https://azsecuritypodcast.net/",
+      "webFeed": "https://media.rss.com/azsecpodcast/feed.xml",
+      "author": [
+         {"@type": "Person", "name": "Michael Howard"},
+         {"@type": "Person", "name": "Sarah Young"},
+         {"@type": "Person", "name": "Gladys Rodriguez"},
+         {"@type": "Person", "name": "Mark Simos"}
+      ]
+   }
+   </script>
 
 </head>
 
@@ -47,11 +76,10 @@
                   <a href='bios.html'>Meet the hosts.</a>
                </p>
                <p>
-                  <a href="https://podcasts.apple.com/us/podcast/the-azure-security-podcast/id1512476835?mt=2&app=podcast"><img width='142' src='images/apple_podcasts_badge1.png' alt='Apple RSS logo'/></a> &nbsp;
-                  <a href="https://open.spotify.com/show/6AZVRZWttZdYkvlSAXjiGK"><img src="images/listen-on-spotify-badge-300x92.jpg" width='118' alt='Listen on Spotify' width='165px' alt='Spotify RSS logo'/></a>&nbsp;
+                  <a href="https://podcasts.apple.com/us/podcast/the-azure-security-podcast/id1512476835?mt=2&app=podcast"><img width='142' src='images/apple_podcasts_badge1.png' alt='Listen on Apple Podcasts'/></a> &nbsp;
+                  <a href="https://open.spotify.com/show/6AZVRZWttZdYkvlSAXjiGK"><img src="images/listen-on-spotify-badge-300x92.jpg" width='118' alt='Listen on Spotify'/></a>&nbsp;
                   <a href='https://rss.com/podcasts/azsecpodcast/'><img width='118' src="images/rss-button.png" alt='RSS.com logo'/></a>&nbsp;&nbsp;
-                  <!-- Need to add Goog -->
-                  <a href='https://music.amazon.com/podcasts/a526c965-4e12-4482-8527-7a8de7b7d7c2/The-Azure-Security-Podcast' rel='nofollow'><img width='118' alt='Listen on Amazon Podcasts' src='images/AmznPodcast.png' alt='Amazon Podcast logo'/></a>&nbsp;
+                  <a href='https://music.amazon.com/podcasts/a526c965-4e12-4482-8527-7a8de7b7d7c2/The-Azure-Security-Podcast' rel='nofollow'><img width='118' src='images/AmznPodcast.png' alt='Listen on Amazon Podcasts'/></a>&nbsp;
                </p>
             </div>
 		   </div>
@@ -59,6 +87,7 @@
    </section>
    <!-- Header end-->
 
+   <main>
    <section id='features'>
       <div id='episodes-container'></div>
       <noscript>
@@ -68,7 +97,8 @@
             </div>
          </div>
       </noscript>
-   </section>     
+   </section>
+   </main>
 
 <footer>
       <div class="row">         
