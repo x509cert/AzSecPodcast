@@ -1,17 +1,6 @@
 {
   "episodes": [
-    {
-      "number": 131,
-      "date": "April 1st, 2026",
-      "title": "More secret stuff!",
-      "contentHtml": "In this episode Michael and Mark talk with guests Kimmy Smith&nbsp;(<a target=\"_blank\" rel=\"noreferrer\" href='https://linkedin.com/in/kimmyS'><i class=\"fa-brands fa-linkedin\"></i></a> <a target=\"_blank\" rel=\"noreferrer\" href='https://twitter.com/k1mmyS'><i class=\"fa-brands fa-x-twitter\"></i></a>), Mary Bruce&nbsp;(<a target=\"_blank\" rel=\"noreferrer\" href='https://twitter.com/MaryBee'><i class=\"fa-brands fa-x-twitter\"></i></a>), Jim Matt Q. Smithers&nbsp;(<a target=\"_blank\" rel=\"noreferrer\" href='https://linkedin.com/in/jimmCricketYo'><i class=\"fa-brands fa-linkedin\"></i></a>) and Bruce Wayne\n                  about all sorts of random stuff\n\n                  <br>\n                  We also discuss Azure Security news about AKV, AKS, Storage and FIPS 140-3.\n\n                  <br><br>\n\n                  <iframe src=\"https://player.rss.com/azsecpodcast/12345?theme=light\" class=\"podcast-player\" title=\"The Azure Security Podcast\" frameborder=\"0\"><a href=\"https://rss.com/podcasts/azsecpodcast/12345/\">Moresecretstuff</a></iframe>\n\n                  <h5>Links</h5>\n                  <ul>\n                     <li><a target=\"_blank\" rel=\"noreferrer\" href='https://rss.com/podcasts/azsecpodcast/12345/#transcript'>Transcript <i class=\"fa-solid fa-book\"></i></a></li>\n                     <li><a target=\"_blank\" rel=\"noreferrer\" href=\"https://news.com\">News!</a></li>\n                     <li><a target=\"_blank\" rel=\"noreferrer\" href=\"https://google.com/a/b/99\">Project 99 from Google!</a></li>\n                  </ul>"
-    },
-    {
-      "number": 130,
-      "date": "April 1st, 2026",
-      "title": "Blah top secret",
-      "contentHtml": "In this episode Michael, Sarah and Mark talk with guests Fred Bloggs, Mary Smithers and Michael Goop\n                  (\n                     <a target=\"_blank\" rel=\"noreferrer\" href='https://linkedin.com/en/fredb'><i class=\"fa-brands fa-linkedin\"></i></a>\n                     <a target=\"_blank\" rel=\"noreferrer\" href='https://twitter.com/fr33d'><i class=\"fa-brands fa-x-twitter\"></i></a>\n                  )\n                  (\n                     <a target=\"_blank\" rel=\"noreferrer\" href='https://twitter.com/@marymary'><i class=\"fa-brands fa-x-twitter\"></i></a>\n                  )\n                  (\n                     <a target=\"_blank\" rel=\"noreferrer\" href='https://linkedin.com/en/MGReady'><i class=\"fa-brands fa-linkedin\"></i></a>\n                  )\n                  about all sorts of random crap!\n\n                  <br>\n                  We also discuss Azure Security news about AKS, AKV, Storage and Mark talks about SP80-53\n\n                  <br><br>\n\n                  <iframe src=\"https://player.rss.com/azsecpodcast/12345?theme=light\" class=\"podcast-player\" title=\"The Azure Security Podcast\" frameborder=\"0\"><a href=\"https://rss.com/podcasts/azsecpodcast/12345/\">Blahtopsecret</a></iframe>\n\n                  <h5>Links</h5>\n                  <ul>\n                     <li><a target=\"_blank\" rel=\"noreferrer\" href='https://rss.com/podcasts/azsecpodcast/12345/#transcript'>Transcript <i class=\"fa-solid fa-book\"></i></a></li>\n                     <li><a target=\"_blank\" rel=\"noreferrer\" href=\"https://news.com\">News!</a></li>\n                     <li><a target=\"_blank\" rel=\"noreferrer\" href=\"https://google.com/a/b/99\">Project 99</a></li>\n                  </ul>"
-    },
+
     {
       "number": 126,
       "date": "Mar 27th, 2026",
