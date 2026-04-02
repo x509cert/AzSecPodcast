@@ -69,6 +69,11 @@ document.addEventListener("DOMContentLoaded", function() {
          // Phase 1: render the first batch immediately so the page is usable fast
          var firstBatch = episodes.slice(0, INITIAL_BATCH);
          container.innerHTML = firstBatch.map(renderEpisode).join('\n');
+
+         // Eager-load the newest episode's player since it's visible by default
+         var firstIframe = container.querySelector('article:first-child iframe');
+         if (firstIframe) firstIframe.removeAttribute('loading');
+
          scrollToHash();
 
          // Phase 2: render remaining episodes after the browser paints the first batch
