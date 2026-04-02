@@ -29,7 +29,7 @@ jobs:
 
       - name: Deploy to Azure Web App
         id: deploy-to-azsecpod
-        uses: azure/webapps-deploy@v2
+        uses: azure/webapps-deploy@v3
         with:
           app-name: 'azuresecuritypodcast'
           package: '.'
