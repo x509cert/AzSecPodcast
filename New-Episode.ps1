@@ -197,7 +197,7 @@ if ($newsDescription) {
 [void]$sb.Append("`n`n                  <br><br>`n`n")
 
 # Player embed
-[void]$sb.Append("                  <iframe src=`"https://player.rss.com/azsecpodcast/${rssId}?theme=light`" class=`"podcast-player`" title=`"The Azure Security Podcast`" frameborder=`"0`"><a href=`"https://rss.com/podcasts/azsecpodcast/${rssId}/`">${rssShortName}</a></iframe>`n`n")
+[void]$sb.Append("                  <iframe loading=`"lazy`" src=`"https://player.rss.com/azsecpodcast/${rssId}?theme=light`" class=`"podcast-player`" title=`"The Azure Security Podcast`" frameborder=`"0`"><a href=`"https://rss.com/podcasts/azsecpodcast/${rssId}/`">${rssShortName}</a></iframe>`n`n")
 
 # Links section
 [void]$sb.Append("                  <h5>Links</h5>`n")
