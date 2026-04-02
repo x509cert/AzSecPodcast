@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install html minifier
         run: |
@@ -23,13 +23,14 @@ jobs:
         run: |
           find . -type f -name "*.html" -exec html-minifier-terser --collapse-whitespace --remove-comments -o {} {} \;
 
-      - uses: azure/login@v1
+      - name: Azure Login
+        uses: azure/login@v2
         with:
           creds: '${{ secrets.AZURE_CREDS }}'
 
       - name: Deploy to Azure Web App
         id: deploy-to-azsecpod
-        uses: azure/webapps-deploy@v2
+        uses: azure/webapps-deploy@v3
         with:
           app-name: 'azuresecuritypodcast'
           package: '.'
