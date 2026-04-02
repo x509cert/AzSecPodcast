@@ -20,7 +20,7 @@ jobs:
           npm install -g html-minifier-terser
 
       - name: Azure Login
-        uses: azure/login@v2
+        uses: azure/login@v3
         with:
           creds: '${{ secrets.AZURE_CREDS }}'
 
