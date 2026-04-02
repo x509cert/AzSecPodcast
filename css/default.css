@@ -8,15 +8,13 @@
 TOC:
 
 a. Webfonts and Icon fonts
-b. Preloader
 c. Reset
 d. Default Styles
    1. Basic
    2. Typography
    3. Links
-   4. Media
-   5. Buttons
-   6. Forms
+   4. Lists
+   5. Media
    d. Grid
    e. Others
    1. Clearing
@@ -34,30 +32,6 @@ d. Default Styles
 
 
 /* ------------------------------------------------------------------ */
-/* b. Preloader
- ------------------------------------------------------------------ */
-
-#preloader  {
-   position: fixed;
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   background: #fff;
-   z-index: 99999;
-   height: 100%;
-}
-#status  {    
-   position: absolute;
-   left: 50%;
-   top: 50%;
-   width: 64px;
-   height: 64px;
-   margin: -32px 0 0 -32px;  
-   padding: 0;    
-}
-
-/* ------------------------------------------------------------------
 /* c. Reset
       Adapted from:
       Normalize.css - https://github.com/necolas/normalize.css/
@@ -242,45 +216,6 @@ blockquote cite:before { content: "\2014 \0020"; }
 blockquote cite a,
 blockquote cite a:visited { color: #8B9798; border: none }
 
-/* ---------------------------------------------------------------------
-/*  Pull Quotes Markup
-/*
-    <aside class="pull-quote">
-		<blockquote>
-			<p></p>
-		</blockquote>
-	 </aside>
-/*
-/* --------------------------------------------------------------------- */
-.pull-quote {
-   position: relative;
-	padding: 18px 30px 18px 0px;
-}
-.pull-quote:before,
-.pull-quote:after {
-	height: 1em;
-	opacity: 0.45;
-	position: absolute;
-	font-size: 80px;
-   font-family: Arial, Sans-Serif;
-}
-.pull-quote:before {
-	content: "\201C";
-	top:  33px;
-	left: 0;
-}
-.pull-quote:after {
-	content: '\201D';
-	bottom: -33px;
-	right: 0;
-}
-.pull-quote blockquote {
-   margin: 0;
-}
-.pull-quote blockquote:before {
-   content: none;
-}
-
 /* Abbreviations */
 abbr {
    font-family: 'opensans-bold', sans-serif;
@@ -290,19 +225,6 @@ abbr {
 	color: gray;
 }
 abbr:hover { cursor: help; }
-
-/* drop cap */
-.drop-cap:first-letter {
-	float: left;
-	margin: 0;
-	padding: 14px 6px 0 0;
-	font-size: 84px;
-	font-family: /* Copperplate */ 'montserrat-bold', sans-serif;
-   line-height: 60px;
-	text-indent: 0;
-	background: transparent;
-	color: inherit;
-}
 
 hr { border: solid #E8E8E8; border-width: 1px 0 0; clear: both; margin: 11px 0 30px; height: 0; }
 
@@ -337,128 +259,10 @@ li { line-height: 18px; margin-bottom: 12px; }
 ul.large li { }
 li p { }
 
-/* ---------------------------------------------------------------------
-/*  Stats Tab Markup
-
-    <ul class="stats-tabs">
-		<li><a href="#">[value]<b>[name]</b></a></li>
-	 </ul>
-
-    Extend this object into your markup.
-/*
-/* --------------------------------------------------------------------- */
-.stats-tabs {
-   padding: 0;
-   margin: 24px 0;
-}
-.stats-tabs li {
-	display: inline-block;
-	margin: 0 10px 18px 0;
-	padding: 0 10px 0 0;
-	border-right: 1px solid #ccc;
-}
-.stats-tabs li:last-child {
-	margin: 0;
-	padding: 0;
-	border: none;
-}
-.stats-tabs li a {
-	display: inline-block;
-	font-size: 22px;
-	font-family: 'opensans-bold', sans-serif;
-   border: none;
-   color: #313131;
-}
-.stats-tabs li a:hover {
-   color:#11ABB0;
-}
-.stats-tabs li a b {
-	display: block;
-	margin: 6px 0 0 0;
-	font-size: 13px;
-	font-family: 'opensans-regular', sans-serif;
-   color: #8B9798;
-}
-
 /* definition list */
 dl { margin: 12px 0; }
 dt { margin: 0; color:#0aabb1; }
 dd { margin: 0 0 0 20px; }
-
-/* Lining Definition Style Markup */
-.lining dt,
-.lining dd {
-	display: inline;
-	margin: 0;
-}
-.lining dt + dt:before,
-.lining dd + dt:before {
-	content: "\A";
-	white-space: pre;
-}
-.lining dd + dd:before {
-	content: ", ";
-}
-.lining dd:before {
-	content: ": ";
-	margin-left: -0.2em;
-}
-
-/* Dictionary Definition Style Markup */
-.dictionary-style dt {
-	display: inline;
-	counter-reset: definitions;
-}
-.dictionary-style dt + dt:before {
-	content: ", ";
-	margin-left: -0.2em;
-}
-.dictionary-style dd {
-	display: block;
-	counter-increment: definitions;
-}
-.dictionary-style dd:before {
-	content: counter(definitions, decimal) ". ";
-}
-
-/* Pagination */
-.pagination {
-   margin: 36px auto;
-   text-align: center;
-}
-.pagination ul li {
-   display: inline-block;
-   margin: 0;
-   padding: 0;
-}
-.pagination .page-numbers {
-   font: 15px/18px 'opensans-bold', sans-serif;
-   display: inline-block;
-   padding: 6px 10px;
-   margin-right: 3px;
-   margin-bottom: 6px;
-	color: #6E757C;
-	background-color: #E6E8EB;
-
-	transition: all 200ms ease-in-out;
-
-   border-radius: 3px;
-}
-.pagination .page-numbers:hover {
-   background: #838A91;
-   color: #fff;
-}
-.pagination .current,
-.pagination .current:hover {
-   background-color: #11ABB0;
-   color: #fff;
-}
-.pagination .inactive,
-.pagination .inactive:hover {
-   background-color: #E6E8EB;
-	color: #A9ADB2;
-}
-.pagination .prev, .pagination .next {}
 
 /* 5. Media   --------------------------------------------------------- */
 
@@ -478,131 +282,6 @@ img.resize23 {
    max-width:23%;
    max-height:23%;
  }
-
-/* 6. Buttons  --------------------------------------------------------- */
-
-.button,
-.button:visited,
-button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
-   font: 14px/24px 'montserrat-bold', sans-serif;
-   background: #11ABB0;
-   color: #fff;
-   display: inline-block;   
-	text-decoration: none;
-   letter-spacing: 0;   
-	padding: 12px 20px;
-	margin-bottom: 18px;
-   border: none;
-   cursor: pointer;
-   height: auto;
-   text-transform: uppercase;
-   letter-spacing: 2px;
-
-   transition: all .2s ease-in-out;
-
-   border-radius: 3px;
-}
-
-.button:hover,
-button:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-input[type="button"]:hover {
-   background: #14D0D6;
-   color: #fff;
-}
-
-.button:active,
-button:active,
-input[type="submit"]:active,
-input[type="reset"]:active,
-input[type="button"]:active {
-   background: #11ABB0;
-   color: #fff;
-}
-
-.button.full-width,
-button.full-width,
-input[type="submit"].full-width,
-input[type="reset"].full-width,
-input[type="button"].full-width {
-	width: 100%;
-	padding-left: 0 !important;
-	padding-right: 0 !important;
-	text-align: center;
-}
-
-/* Fix for odd Mozilla border & padding issues */
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-}
-
-
-/* 7. Forms  --------------------------------------------------------- */
-
-form { margin-bottom: 24px; }
-fieldset { margin-bottom: 24px; }
-
-input[type="text"],
-input[type="password"],
-input[type="email"],
-textarea,
-select {
-   display: block;
-   padding: 18px 15px;
-   margin: 0 0 24px 0;
-   border: 0;
-   outline: none;
-   vertical-align: middle;
-   min-width: 225px;
-	max-width: 100%;
-   font-size: 15px;
-   line-height: 24px;
-	color: #647373;
-	background: #D3D9D9;
-   border-radius: 3px;
-
-}
-
-/* select { padding: 0;
-   width: 220px;
-   } */
-
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-   color: #B3B7BC;
-	background-color: #383D41;
-}
-
-textarea { min-height: 220px; }
-
-label,
-legend {
-   font: 16px/24px 'opensans-bold', sans-serif;
-	margin: 12px 0;
-   color: #3d4145;
-   display: block;
-}
-label span,
-legend span {
-	color: #8B9798;
-   font: 14px/24px 'opensans-regular', sans-serif;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-   font-size: 15px;
-   color: #3d4145;
-}
-
-input[type="checkbox"] { display: inline; }
 
 /* ------------------------------------------------------------------ */
 /* d. Grid
@@ -675,63 +354,14 @@ input[type="checkbox"] { display: inline; }
 .row .offset-10   { margin-left: 83.33333%; }
 .row .offset-11   { margin-left: 91.66667%; }
 
-/* Push/Pull */
-.row .push-1      { left: 8.33333%; }
-.row .pull-1      { right: 8.33333%; }
-.row .push-2      { left: 16.66667%; 	}
-.row .pull-2      { right: 16.66667%; }
-.row .push-3      { left: 25%; }
-.row .pull-3      { right: 25%;	}
-.row .push-4      { left: 33.33333%; }
-.row .pull-4      { right: 33.33333%; }
-.row .push-5      { left: 41.66667%; }
-.row .pull-5      { right: 41.66667%; }
-.row .push-6      { left: 50%; }
-.row .pull-6      { right: 50%; }
-.row .push-7      { left: 58.33333%; }
-.row .pull-7      { right: 58.33333%; }
-.row .push-8      { left: 66.66667%; 	}
-.row .pull-8      { right: 66.66667%; }
-.row .push-9      { left: 75%; }
-.row .pull-9      { right: 75%; }
-.row .push-10     { left: 83.33333%; }
-.row .pull-10     { right: 83.33333%; }
-.row .push-11     { left: 91.66667%; }
-.row .pull-11     { right: 91.66667%; }
-
-/* block grids
---------------------------------------------------------------------- */
-.bgrid-sixths [class*="column"]   { width: 16.66667%; }
-.bgrid-quarters [class*="column"] { width: 25%; }
-.bgrid-thirds [class*="column"]   { width: 33.33333%; }
-.bgrid-halves [class*="column"]   { width: 50%; }
-
-[class*="bgrid"] [class*="column"] + [class*="column"]:last-child { float: left; }
-
-/* Left clearing for block grid columns - columns that changes width in
-different screen sizes. Allows columns with different heights to align
-properly.
---------------------------------------------------------------------- */
-.first { clear: left; }   /* first column in default screen */
-.s-first { clear: none; } /* first column in smaller screens */
 
 /* smaller screens
 --------------------------------------------------------------- */
 @media only screen and (max-width: 900px) {
 
-   /* block grids on small screens */
-   .s-bgrid-sixths [class*="column"]   { width: 16.66667%; }
-   .s-bgrid-quarters [class*="column"] { width: 25%; }
-   .s-bgrid-thirds [class*="column"]   { width: 33.33333%; }
-   .s-bgrid-halves [class*="column"]   { width: 50%; }
-
-   /* block grids left clearing */
-   .first { clear: none; }
-   .s-first { clear: left; }
-
 }
 
-/* screenwidth less than 768px - mobile/smaller tablets
+/* screenwidth less than 768px- mobile/smaller tablets
 --------------------------------------------------------------- */
 @media only screen and (max-width: 767px) {
 
@@ -771,14 +401,6 @@ properly.
 @media only screen and (max-width: 480px) {
 
    .row { width: auto; }
-
-}
-
-/* larger screens
---------------------------------------------------------------- */
-@media screen and (min-width: 1200px) {
-
-   .wide .row { max-width: 1180px; }
 
 }
 
