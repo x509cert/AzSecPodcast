@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
          + '<div class="nine columns offset-2">'
          + '<h3 class="Heading" id="' + headingId + '">'
          + '&nbsp;<img id="ColExp-' + headingId + '" class="ColExpIcon" width="16" height="16" src="' + icon + '" alt=""> '
-         + 'Episode ' + n + ' - ' + ep.date + ' - [<span id="' + anchorId + '">' + ep.title + '</span>] '
+         + 'Episode ' + n + ' - ' + ep.date + ' - [<span id="' + anchorId + '"><b>' + ep.title + '</b></span>] '
          + '<a href="#' + anchorId + '" title="Link to this section"><i class="fa-solid fa-link" style="font-size: 0.8em; color: #666;"></i></a>'
          + '</h3>'
          + '<div class="EpisodeContent" id="' + contentId + '"' + hidden + '>'
