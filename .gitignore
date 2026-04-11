@@ -1,1 +1,13 @@
+# VS Code
 .vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Audio files (serve from CDN/blob storage, not git)
+*.mp3
+*.wav
+*.m4a
