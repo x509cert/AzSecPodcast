@@ -9,10 +9,9 @@ Security fixes are applied to the `master` branch and deployed continuously.
 
 If you discover a security vulnerability in this repository, please **do not** open a public GitHub issue.
 
-Instead, report it privately via one of these options:
+Instead, report it privately via:
 
 - **GitHub Private Vulnerability Reporting**: Use the [Security tab](../../security/advisories/new) in this repository
-- **Email**: Contact the maintainers at the email address listed on [azsecuritypodcast.net](https://www.azsecuritypodcast.net)
 
 Please include:
 
