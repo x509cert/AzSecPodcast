@@ -1,6 +1,12 @@
 {
   "episodes": [
     {
+      "number": 127,
+      "date": "April 30th, 2026",
+      "title": "Threat intel update and AI",
+      "contentHtml": "In this episode Michael, Sarah and Mark talk with guest Sherrod DeGrippo&nbsp;(<a target=\"_blank\" rel=\"noreferrer\" href='https://linkedin.com/in/sherroddegrippo'><i class=\"fa-brands fa-linkedin\"></i></a> <a target=\"_blank\" rel=\"noreferrer\" href='https://twitter.com/sherrod_im'><i class=\"fa-brands fa-x-twitter\"></i></a>)\n                  about some of the latest tactics and strategies used by modern threat actors, we also wander into the AI security weeds! We only have one news item related to Azure SQL databases.\n\n                  <br><br>\n\n                  <iframe loading=\"lazy\" src=\"https://player.rss.com/azsecpodcast/2781746?theme=light\" class=\"podcast-player\" title=\"The Azure Security Podcast\" frameborder=\"0\"><a href=\"https://rss.com/podcasts/azsecpodcast/2781746/\">Threatintelupdate</a></iframe>\n\n                  <h5>Links</h5>\n                  <ul>\n                     <li><a target=\"_blank\" rel=\"noreferrer\" href='https://rss.com/podcasts/azsecpodcast/2781746/#transcript'>Transcript <i class=\"fa-solid fa-book\"></i></a></li>\n                     <li><a target=\"_blank\" rel=\"noreferrer\" href=\"https://techcommunity.microsoft.com/blog/CoreInfrastructureandSecurityBlog/azure-database-security-newsletter---april-2026/4507226\">Azure Database Security Newsletter - April 2026</a></li>\n                  </ul>"
+    },
+    {
       "number": 126,
       "date": "March 27th, 2026",
       "title": "Microsoft Baseline Security Mode",
