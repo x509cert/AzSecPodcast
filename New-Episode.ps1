@@ -107,7 +107,7 @@ while ($true) {
 # ── Episode description ─────────────────────────────────────────────
 Write-Host ""
 if ($guests.Count -gt 0) {
-    $guestNames = ($guests | ForEach-Object { $_.name })
+    $guestNames = @($guests | ForEach-Object { $_.name })
     if ($guestNames.Count -eq 1) {
         $guestString = $guestNames[0]
     } else {
