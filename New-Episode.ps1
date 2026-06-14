@@ -4,14 +4,22 @@
 
 .DESCRIPTION
     Prompts for episode details (number, date, title, guest, description,
-    RSS ID, and links), then appends the episode to data\episodes.json
-    and regenerates index.html.
+    RSS ID, and links), then can prepend the episode to data\episodes.json.
+
+    Pass the optional edit argument to add one news link to an existing
+    episode in data\episodes.json.
 
 .EXAMPLE
     .\New-Episode.ps1
+
+.EXAMPLE
+    .\New-Episode.ps1 edit
 #>
 
 param(
+    [ValidateSet("edit")]
+    [string]$Mode,
+
     [switch]$Help
 )
 
@@ -24,6 +32,102 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
 $repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
+
+function Read-RequiredValue {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Prompt,
+
+        [string]$DefaultValue
+    )
+
+    $displayPrompt = if ($DefaultValue) { "$Prompt [$DefaultValue]" } else { $Prompt }
+    $value = Read-Host $displayPrompt
+    if (-not $value -and $DefaultValue) { return $DefaultValue }
+    if (-not $value) {
+        Write-Host "$Prompt is required." -ForegroundColor Red
+        return $null
+    }
+    return $value
+}
+
+function ConvertTo-HtmlAttributeValue {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Value
+    )
+
+    return [System.Net.WebUtility]::HtmlEncode($Value)
+}
+
+function Add-NewsItemToEpisodesJson {
+    $jsonPath = Join-Path $repoRoot "data\episodes.json"
+    $json = Get-Content $jsonPath -Raw -Encoding utf8 | ConvertFrom-Json
+    $episodes = @($json.episodes)
+
+    if ($episodes.Count -eq 0) {
+        Write-Host "No episodes found in $jsonPath." -ForegroundColor Red
+        return
+    }
+
+    Write-Host ""
+    Write-Host "╔══════════════════════════════════════════╗" -ForegroundColor Cyan
+    Write-Host "║       Add Azure Security News Item       ║" -ForegroundColor Cyan
+    Write-Host "╚══════════════════════════════════════════╝" -ForegroundColor Cyan
+    Write-Host ""
+
+    $defaultEpisodeNumber = [string]$episodes[0].number
+    $episodeNumberInput = Read-RequiredValue -Prompt "Episode number" -DefaultValue $defaultEpisodeNumber
+    if (-not $episodeNumberInput) { return }
+    $episodeNumber = [int]$episodeNumberInput
+
+    $episodeIndex = -1
+    for ($i = 0; $i -lt $episodes.Count; $i++) {
+        if ([int]$episodes[$i].number -eq $episodeNumber) {
+            $episodeIndex = $i
+            break
+        }
+    }
+
+    if ($episodeIndex -lt 0) {
+        Write-Host "Episode $episodeNumber was not found in $jsonPath." -ForegroundColor Red
+        return
+    }
+
+    $episode = $episodes[$episodeIndex]
+    Write-Host "Adding news item to episode $($episode.number): $($episode.title)" -ForegroundColor Yellow
+    Write-Host ""
+
+    $url = Read-RequiredValue -Prompt "News item URL"
+    if (-not $url) { return }
+    $title = Read-Host "News item title [$url]"
+    if (-not $title) { $title = $url }
+
+    $encodedUrl = ConvertTo-HtmlAttributeValue -Value $url
+    $encodedTitle = [System.Net.WebUtility]::HtmlEncode($title)
+    $newListItem = "                     <li><a target=`"_blank`" rel=`"noreferrer`" href=`"$encodedUrl`">$encodedTitle</a></li>"
+
+    $contentHtml = [string]$episode.contentHtml
+    $closingListIndex = $contentHtml.LastIndexOf("</ul>", [System.StringComparison]::OrdinalIgnoreCase)
+    if ($closingListIndex -lt 0) {
+        Write-Host "Episode $episodeNumber does not contain a Links list ending with </ul>." -ForegroundColor Red
+        return
+    }
+
+    $lineBreak = if ($contentHtml.Contains("`r`n")) { "`r`n" } else { "`n" }
+    $updatedContentHtml = $contentHtml.Insert($closingListIndex, "$newListItem$lineBreak")
+    $episodes[$episodeIndex].contentHtml = $updatedContentHtml
+
+    [PSCustomObject]@{ episodes = $episodes } | ConvertTo-Json -Depth 10 | Set-Content $jsonPath -Encoding utf8
+
+    Write-Host ""
+    Write-Host "✓ Added news item to data\episodes.json" -ForegroundColor Green
+}
+
+if ($Mode -eq "edit") {
+    Add-NewsItemToEpisodesJson
+    return
+}
 
 # ── Prompt for episode metadata ─────────────────────────────────────
 Write-Host ""
