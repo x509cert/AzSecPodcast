@@ -100,7 +100,14 @@ function Add-NewsItemToEpisodesJson {
 
     $url = Read-RequiredValue -Prompt "News item URL"
     if (-not $url) { return }
+    $url = $url.Trim()
+    if (-not $url) {
+        Write-Host "News item URL is required." -ForegroundColor Red
+        return
+    }
     $title = Read-Host "News item title [$url]"
+    if (-not $title) { $title = $url }
+    $title = $title.Trim()
     if (-not $title) { $title = $url }
 
     $encodedUrl = ConvertTo-HtmlAttributeValue -Value $url
@@ -108,11 +115,12 @@ function Add-NewsItemToEpisodesJson {
     $newListItem = "                     <li><a target=`"_blank`" rel=`"noreferrer`" href=`"$encodedUrl`">$encodedTitle</a></li>"
 
     $contentHtml = [string]$episode.contentHtml
-    $closingListIndex = $contentHtml.LastIndexOf("</ul>", [System.StringComparison]::OrdinalIgnoreCase)
-    if ($closingListIndex -lt 0) {
+    $closingListMatches = [System.Text.RegularExpressions.Regex]::Matches($contentHtml, "(?im)^[ \t]*</ul>")
+    if ($closingListMatches.Count -eq 0) {
         Write-Host "Episode $episodeNumber does not contain a Links list ending with </ul>." -ForegroundColor Red
         return
     }
+    $closingListIndex = $closingListMatches[$closingListMatches.Count - 1].Index
 
     $lineBreak = if ($contentHtml.Contains("`r`n")) { "`r`n" } else { "`n" }
     $updatedContentHtml = $contentHtml.Insert($closingListIndex, "$newListItem$lineBreak")
