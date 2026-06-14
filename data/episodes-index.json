@@ -1,0 +1,772 @@
+{
+  "episodes": [
+    {
+      "number": 129,
+      "date": "June 12th, 2026",
+      "title": "John Savill's Top of Mind",
+      "file": "Episode0129.json"
+    },
+    {
+      "number": 128,
+      "date": "June 2nd, 2026",
+      "title": "Post-Quantum Cryptography",
+      "file": "Episode0128.json"
+    },
+    {
+      "number": 127,
+      "date": "April 30th, 2026",
+      "title": "Threat intel update and AI",
+      "file": "Episode0127.json"
+    },
+    {
+      "number": 126,
+      "date": "March 27th, 2026",
+      "title": "Microsoft Baseline Security Mode",
+      "file": "Episode0126.json"
+    },
+    {
+      "number": 125,
+      "date": "February 27th, 2026",
+      "title": "Origins: MITRE ATT&CK",
+      "file": "Episode0125.json"
+    },
+    {
+      "number": 124,
+      "date": "January 31st, 2026",
+      "title": "Microsoft Security Response Center for AI",
+      "file": "Episode0124.json"
+    },
+    {
+      "number": 123,
+      "date": "January 21st, 2026",
+      "title": "Agentic Identity",
+      "file": "Episode0123.json"
+    },
+    {
+      "number": 122,
+      "date": "December 15th, 2025",
+      "title": "Microsoft Ignite 2025 Security Wrapup",
+      "file": "Episode0122.json"
+    },
+    {
+      "number": 121,
+      "date": "November 21st, 2025",
+      "title": "The Open Group Security Documentation",
+      "file": "Episode0121.json"
+    },
+    {
+      "number": 120,
+      "date": "October 29th, 2025",
+      "title": "Zero Trust Workshop",
+      "file": "Episode0120.json"
+    },
+    {
+      "number": 119,
+      "date": "October 9th, 2025",
+      "title": "Pedantic Security Wording and Taxonomies",
+      "file": "Episode0119.json"
+    },
+    {
+      "number": 118,
+      "date": "September 16th, 2025",
+      "title": "Quantum Computing with Mark Russinovich",
+      "file": "Episode0118.json"
+    },
+    {
+      "number": 117,
+      "date": "28th August, 2025",
+      "title": "Gaming Security",
+      "file": "Episode0117.json"
+    },
+    {
+      "number": 116,
+      "date": "July 31st, 2025",
+      "title": "Microsoft Sentinel Data Lake",
+      "file": "Episode0116.json"
+    },
+    {
+      "number": 115,
+      "date": "July 10th, 2025",
+      "title": "MCP Security",
+      "file": "Episode0115.json"
+    },
+    {
+      "number": 114,
+      "date": "June 5th, 2025",
+      "title": "SQL Server 2025 Security Improvements",
+      "file": "Episode0114.json"
+    },
+    {
+      "number": 113,
+      "date": "May 16th, 2025",
+      "title": "Microsoft Red Team",
+      "file": "Episode0113.json"
+    },
+    {
+      "number": 112,
+      "date": "May 13th, 2025",
+      "title": "Security Copilot",
+      "file": "Episode0112.json"
+    },
+    {
+      "number": 111,
+      "date": "April 17th, 2025",
+      "title": "Securing Agentic AI",
+      "file": "Episode0111.json"
+    },
+    {
+      "number": 110,
+      "date": "April 1st, 2025",
+      "title": "Securing Gen AI Apps with Entra 3/4",
+      "file": "Episode0110.json"
+    },
+    {
+      "number": 109,
+      "date": "February 17th, 2025",
+      "title": "Securing Gen AI Apps with Entra 2/4",
+      "file": "Episode0109.json"
+    },
+    {
+      "number": 108,
+      "date": "January 20th, 2025",
+      "title": "Securing Gen AI Apps with Entra 1/4",
+      "file": "Episode0108.json"
+    },
+    {
+      "number": 107,
+      "date": "January 7th, 2025",
+      "title": "Secure by default and Copilot Overshare Blueprints",
+      "file": "Episode0107.json"
+    },
+    {
+      "number": 106,
+      "date": "December 10th, 2024",
+      "title": "Microsoft Ignite Wrapup (Security)",
+      "file": "Episode0106.json"
+    },
+    {
+      "number": 105,
+      "date": "November 15th, 2024",
+      "title": "Entra ID Tools",
+      "file": "Episode0105.json"
+    },
+    {
+      "number": 104,
+      "date": "November 11th, 2024",
+      "title": "Post Bluehat Wrap-up",
+      "file": "Episode0104.json"
+    },
+    {
+      "number": 103,
+      "date": "October 17th, 2024",
+      "title": "Microsoft Bluehat",
+      "file": "Episode0103.json"
+    },
+    {
+      "number": 102,
+      "date": "October 7th, 2024",
+      "title": "Entra ID Purple-teaming with Dr Azure AD",
+      "file": "Episode0102.json"
+    },
+    {
+      "number": 101,
+      "date": "September 20th, 2024",
+      "title": "GHOST Threat Hunting",
+      "file": "Episode0101.json"
+    },
+    {
+      "number": 100,
+      "date": "August 29th, 2024",
+      "title": "Our Stories!",
+      "file": "Episode0100.json"
+    },
+    {
+      "number": 99,
+      "date": "August 16th, 2024",
+      "title": "Securing Copilot Data and Purview",
+      "file": "Episode099.json"
+    },
+    {
+      "number": 98,
+      "date": "June 20th, 2024",
+      "title": "Secure Future Initiative and Rust at Microsoft",
+      "file": "Episode098.json"
+    },
+    {
+      "number": 97,
+      "date": "June 6th, 2024",
+      "title": "Securing AI",
+      "file": "Episode097.json"
+    },
+    {
+      "number": 96,
+      "date": "May 3rd, 2024",
+      "title": "CNAPP - Cloud Native Applications Protection Platform",
+      "file": "Episode096.json"
+    },
+    {
+      "number": 95,
+      "date": "April 25th, 2024",
+      "title": "Threat Intelligence",
+      "file": "Episode095.json"
+    },
+    {
+      "number": 94,
+      "date": "April 1st, 2024",
+      "title": "Copilot for Security",
+      "file": "Episode094.json"
+    },
+    {
+      "number": 93,
+      "date": "March 25th, 2024",
+      "title": "Continuous SDL",
+      "file": "Episode093.json"
+    },
+    {
+      "number": 92,
+      "date": "March 15th, 2024",
+      "title": "Global Azure (Security)",
+      "file": "Episode092.json"
+    },
+    {
+      "number": 91,
+      "date": "February 13th, 2024",
+      "title": "Chaos Studio",
+      "file": "Episode091.json"
+    },
+    {
+      "number": 90,
+      "date": "January 24th, 2024",
+      "title": "AI red teaming",
+      "file": "Episode090.json"
+    },
+    {
+      "number": 89,
+      "date": "December 18th, 2023",
+      "title": "Our Year-end Thoughts",
+      "file": "Episode089.json"
+    },
+    {
+      "number": 88,
+      "date": "December 1st, 2023",
+      "title": "Attacker's Guide to Securing SQL Server",
+      "file": "Episode088.json"
+    },
+    {
+      "number": 87,
+      "date": "November 15th, 2023",
+      "title": "Advances in Always Encrypted and Transparent Data Encryption",
+      "file": "Episode087.json"
+    },
+    {
+      "number": 86,
+      "date": "October 30th, 2023",
+      "title": "Zero Trust Playbook",
+      "file": "Episode086.json"
+    },
+    {
+      "number": 85,
+      "date": "October 11th, 2023",
+      "title": "Security Response and Bug Bounties",
+      "file": "Episode085.json"
+    },
+    {
+      "number": 84,
+      "date": "September 22nd, 2023",
+      "title": "Attack Simulation",
+      "file": "Episode084.json"
+    },
+    {
+      "number": 83,
+      "date": "August 14th, 2023",
+      "title": "PowerShell Automation and Scripting for Cybersecurity",
+      "file": "Episode083.json"
+    },
+    {
+      "number": 82,
+      "date": "August 8th, 2023",
+      "title": "Modern Security Strategy",
+      "file": "Episode082.json"
+    },
+    {
+      "number": 81,
+      "date": "July 28th, 2023",
+      "title": "Auditing in Azure SQL Database",
+      "file": "Episode081.json"
+    },
+    {
+      "number": 80,
+      "date": "July 14th, 2023",
+      "title": "Incident Response",
+      "file": "Episode080.json"
+    },
+    {
+      "number": 79,
+      "date": "June 13th, 2023",
+      "title": "Threat Intelligence with MSTICPy",
+      "file": "Episode079.json"
+    },
+    {
+      "number": 78,
+      "date": "June 2nd, 2023",
+      "title": "Entra Permissions Management",
+      "file": "Episode078.json"
+    },
+    {
+      "number": 77,
+      "date": "May 19th, 2023",
+      "title": "Securing Infrastructure as Code (IaC)",
+      "file": "Episode077.json"
+    },
+    {
+      "number": 76,
+      "date": "May 3rd, 2023",
+      "title": "Microsoft Security Research",
+      "file": "Episode076.json"
+    },
+    {
+      "number": 75,
+      "date": "April 13th, 2023",
+      "title": "Latest Microsoft Defender for Cloud News",
+      "file": "Episode075.json"
+    },
+    {
+      "number": 74,
+      "date": "April 7th, 2023",
+      "title": "What's New in Azure Policy",
+      "file": "Episode074.json"
+    },
+    {
+      "number": 73,
+      "date": "March 17th 2023",
+      "title": "Microsoft Defender for Cloud as Code",
+      "file": "Episode073.json"
+    },
+    {
+      "number": 72,
+      "date": "February 28th, 2023",
+      "title": "The team reflects after almost three years",
+      "file": "Episode072.json"
+    },
+    {
+      "number": 71,
+      "date": "February 15th, 2023",
+      "title": "ANNOUNCEMENT: Azure SQL DB, Always Encrypted with VBS Secure Enclaves",
+      "file": "Episode071.json"
+    },
+    {
+      "number": 70,
+      "date": "February 9th, 2023",
+      "title": "Microsoft Purview",
+      "file": "Episode070.json"
+    },
+    {
+      "number": 69,
+      "date": "January 29th, 2022",
+      "title": "Secure Software Supply Chain and SBOM",
+      "file": "Episode069.json"
+    },
+    {
+      "number": 68,
+      "date": "December 7nd, 2022",
+      "title": "SQL Server 2022",
+      "file": "Episode068.json"
+    },
+    {
+      "number": 67,
+      "date": "November 24th, 2022",
+      "title": "Privileged Access",
+      "file": "Episode067.json"
+    },
+    {
+      "number": 66,
+      "date": "November 11th, 2022",
+      "title": "Workload Identities",
+      "file": "Episode066.json"
+    },
+    {
+      "number": 65,
+      "date": "November 4th, 2022",
+      "title": "Microsoft Defender for Threat Intelligence",
+      "file": "Episode065.json"
+    },
+    {
+      "number": 64,
+      "date": "October 14th, 2022",
+      "title": "SQL Server Permission Model",
+      "file": "Episode064.json"
+    },
+    {
+      "number": 63,
+      "date": "Oct 7th, 2022",
+      "title": "Entra Permissions Management",
+      "file": "Episode063.json"
+    },
+    {
+      "number": 62,
+      "date": "September 28th, 2022",
+      "title": "Microsoft Defender for Endpoint Tamper Protection",
+      "file": "Episode062.json"
+    },
+    {
+      "number": 61,
+      "date": "August 26th, 2022",
+      "title": "Operational Technology (OT) Security",
+      "file": "Episode061.json"
+    },
+    {
+      "number": 60,
+      "date": "August 23th, 2022",
+      "title": "Defender for Cloud",
+      "file": "Episode060.json"
+    },
+    {
+      "number": 59,
+      "date": "August 9th, 2022",
+      "title": "CISO Workshop",
+      "file": "Episode059.json"
+    },
+    {
+      "number": 58,
+      "date": "July 22nd, 2022",
+      "title": "Latest Innovations in Azure Confidential Computing",
+      "file": "Episode058.json"
+    },
+    {
+      "number": 57,
+      "date": "July 12th, 2022",
+      "title": "Microsoft Sentinel Content Hub",
+      "file": "Episode057.json"
+    },
+    {
+      "number": 56,
+      "date": "July 8th, 2022",
+      "title": "Microsoft Defender Advanced Hunting",
+      "file": "Episode056.json"
+    },
+    {
+      "number": 55,
+      "date": "June 28th, 2022",
+      "title": "Practical Zero Trust",
+      "file": "Episode055.json"
+    },
+    {
+      "number": 54,
+      "date": "June 14th, 2022",
+      "title": "Azure SQL MI Windows Authentication",
+      "file": "Episode054.json"
+    },
+    {
+      "number": 53,
+      "date": "May 24th, 2022",
+      "title": "Azure SQL Database Ledger",
+      "file": "Episode053.json"
+    },
+    {
+      "number": 52,
+      "date": "May 18th 2022",
+      "title": "Microsoft Defender for Containers",
+      "file": "Episode052.json"
+    },
+    {
+      "number": 51,
+      "date": "April 18th, 2022",
+      "title": "Updated CosmosDB Security",
+      "file": "Episode051.json"
+    },
+    {
+      "number": 50,
+      "date": "April 4th, 2022",
+      "title": "Microsoft Cybersecurity Reference Architectures (MCRA)",
+      "file": "Episode050.json"
+    },
+    {
+      "number": 49,
+      "date": "March 23rd, 2022",
+      "title": "RiskIQ",
+      "file": "Episode049.json"
+    },
+    {
+      "number": 48,
+      "date": "March 11th, 2022",
+      "title": "Microsoft Compliance Manager and Security Score",
+      "file": "Episode048.json"
+    },
+    {
+      "number": 47,
+      "date": "February 22nd, 2022",
+      "title": "Microsoft Defender for IoT",
+      "file": "Episode047.json"
+    },
+    {
+      "number": 46,
+      "date": "February 11th, 2022",
+      "title": "Azure Sentinel Extensions",
+      "file": "Episode046.json"
+    },
+    {
+      "number": 45,
+      "date": "January 26th, 2022",
+      "title": "Zero Trust and the SOC",
+      "file": "Episode045.json"
+    },
+    {
+      "number": 44,
+      "date": "January 12th, 2022",
+      "title": "Security - The Boring Bits",
+      "file": "Episode044.json"
+    },
+    {
+      "number": 43,
+      "date": "December 28th, 2021",
+      "title": "Deep Dive into Azure Policy",
+      "file": "Episode043.json"
+    },
+    {
+      "number": 42,
+      "date": "December 7th 3rd, 2021",
+      "title": "Inside Azure Monitor",
+      "file": "Episode042.json"
+    },
+    {
+      "number": 41,
+      "date": "November 13th, 2021",
+      "title": "Security Highlights from Ignite",
+      "file": "Episode041.json"
+    },
+    {
+      "number": 40,
+      "date": "November 4th, 2021",
+      "title": "Incident Response with Jupyter Notebooks",
+      "file": "Episode040.json"
+    },
+    {
+      "number": 39,
+      "date": "October 21st, 2021",
+      "title": "Microsoft Digital Defense Reports",
+      "file": "Episode039.json"
+    },
+    {
+      "number": 38,
+      "date": "October 1st, 2021",
+      "title": "Azure Active Directory Conditional Access",
+      "file": "Episode038.json"
+    },
+    {
+      "number": 37,
+      "date": "September 15th, 2021",
+      "title": "Adversary Tradecraft - Simuland",
+      "file": "Episode037.json"
+    },
+    {
+      "number": 36,
+      "date": "September 1st, 2021",
+      "title": "Azure Defender for SQL - Vulnerability Assessment",
+      "file": "Episode036.json"
+    },
+    {
+      "number": 35,
+      "date": "August 18th, 2021",
+      "title": "Azure Defender for SQL - Threat Protection",
+      "file": "Episode035.json"
+    },
+    {
+      "number": 34,
+      "date": "August 2nd, 2021",
+      "title": "Study Guide for SC-200: Microsoft Security Operations Analyst",
+      "file": "Episode034.json"
+    },
+    {
+      "number": 33,
+      "date": "July 25th, 2021",
+      "title": "Zero Trust",
+      "file": "Episode033.json"
+    },
+    {
+      "number": 32,
+      "date": "July 7th, 2021",
+      "title": "Azure Sentinel SOC Process Framework",
+      "file": "Episode032.json"
+    },
+    {
+      "number": 31,
+      "date": "June 23rd, 2021",
+      "title": "Automating Security",
+      "file": "Episode031.json"
+    },
+    {
+      "number": 30,
+      "date": "June 9th, 2021",
+      "title": "Microsoft Threat Intelligence Center - MSTIC",
+      "file": "Episode030.json"
+    },
+    {
+      "number": 29,
+      "date": "June 1st, 2021",
+      "title": "Azure Data Explorer",
+      "file": "Episode029.json"
+    },
+    {
+      "number": 28,
+      "date": "May 12th, 2021",
+      "title": "Azure Purview",
+      "file": "Episode028.json"
+    },
+    {
+      "number": 27,
+      "date": "April 28th, 2021",
+      "title": "Applied Data Science, AI and Machine Learning in Security",
+      "file": "Episode027.json"
+    },
+    {
+      "number": 26,
+      "date": "April 14th, 2021",
+      "title": "Azure Bastion",
+      "file": "Episode026.json"
+    },
+    {
+      "number": 25,
+      "date": "March 31st, 2021",
+      "title": "Azure Security Questions",
+      "file": "Episode025.json"
+    },
+    {
+      "number": 24,
+      "date": "March 17th, 2021",
+      "title": "Security News Dump from Ignite",
+      "file": "Episode024.json"
+    },
+    {
+      "number": 23,
+      "date": "March 5th, 2021",
+      "title": "Network Security",
+      "file": "Episode023.json"
+    },
+    {
+      "number": 21,
+      "date": "February 3rd, 2021",
+      "title": "Azure Sentinel",
+      "file": "Episode021.json"
+    },
+    {
+      "number": 20,
+      "date": "January 20th, 2021",
+      "title": "An Inside look at Securing Azure",
+      "file": "Episode020.json"
+    },
+    {
+      "number": 19,
+      "date": "January 6th, 2021",
+      "title": "Azure Firewall",
+      "file": "Episode019.json"
+    },
+    {
+      "number": 18,
+      "date": "December 10th, 2020",
+      "title": "Security and Compliance with Microsoft 365",
+      "file": "Episode018.json"
+    },
+    {
+      "number": 17,
+      "date": "November 25th, 2020",
+      "title": "Azure Datacenters",
+      "file": "Episode017.json"
+    },
+    {
+      "number": 16,
+      "date": "November 11th, 2020",
+      "title": "Azure Policy",
+      "file": "Episode016.json"
+    },
+    {
+      "number": 15,
+      "date": "October 28th, 2020",
+      "title": "Azure Top 10 Security Practices",
+      "file": "Episode015.json"
+    },
+    {
+      "number": 14,
+      "date": "October 14th, 2020",
+      "title": "Azure Security Benchmark",
+      "file": "Episode014.json"
+    },
+    {
+      "number": 13,
+      "date": "October 7th, 2020",
+      "title": "Azure Security News from Microsoft IGNITE 2020",
+      "file": "Episode013.json"
+    },
+    {
+      "number": 12,
+      "date": "September 30th, 2020",
+      "title": "Confidential Computing",
+      "file": "Episode012.json"
+    },
+    {
+      "number": 11,
+      "date": "September 16th, 2020",
+      "title": "Microsoft Graph",
+      "file": "Episode011.json"
+    },
+    {
+      "number": 10,
+      "date": "September 2nd, 2020",
+      "title": "Threat Hunting with Microsoft Threat Protection",
+      "file": "Episode010.json"
+    },
+    {
+      "number": 9,
+      "date": "August 19th, 2020",
+      "title": "Cybersecurity Maturity Model Certification",
+      "file": "Episode009.json"
+    },
+    {
+      "number": 8,
+      "date": "August 5th, 2020",
+      "title": "Azure Network Isolation",
+      "file": "Episode008.json"
+    },
+    {
+      "number": 7,
+      "date": "July 22nd, 2020",
+      "title": "Identity",
+      "file": "Episode007.json"
+    },
+    {
+      "number": 6,
+      "date": "July 8th, 2020",
+      "title": "Incident Response and Compromise Recovery",
+      "file": "Episode006.json"
+    },
+    {
+      "number": 5,
+      "date": "June 24th, 2020",
+      "title": "Azure Security Questions",
+      "file": "Episode005.json"
+    },
+    {
+      "number": 4,
+      "date": "June 10th, 2020",
+      "title": "CosmosDB Security",
+      "file": "Episode004.json"
+    },
+    {
+      "number": 3,
+      "date": "May 27th, 2020",
+      "title": "Azure Security Center",
+      "file": "Episode003.json"
+    },
+    {
+      "number": 2,
+      "date": "May 13th, 2020",
+      "title": "Container Security",
+      "file": "Episode002.json"
+    },
+    {
+      "number": 1,
+      "date": "April 30th, 2020",
+      "title": "Hello, World!",
+      "file": "Episode001.json"
+    }
+  ]
+}

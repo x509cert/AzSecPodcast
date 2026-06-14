@@ -5,6 +5,8 @@
 .DESCRIPTION
     Prompts for episode details (number, date, title, guest, description,
     RSS ID, and links), then can prepend the episode to data\episodes.json.
+    The script also refreshes data\episodes-index.json and data\EpisodeNNN.json
+    files used by the site for lazy-loading episode content.
 
     Pass the optional edit argument to add one news link to an existing
     episode in data\episodes.json.
@@ -58,6 +60,39 @@ function ConvertTo-HtmlAttributeValue {
     )
 
     return [System.Net.WebUtility]::HtmlEncode($Value)
+}
+
+function Get-EpisodeFileName {
+    param(
+        [Parameter(Mandatory = $true)]
+        [int]$EpisodeNumber
+    )
+
+    $pad = if ($EpisodeNumber -ge 100) { '{0:D4}' -f $EpisodeNumber } else { '{0:D3}' -f $EpisodeNumber }
+    return "Episode$pad.json"
+}
+
+function Sync-EpisodeDataFiles {
+    $dataPath = Join-Path $repoRoot "data"
+    $jsonPath = Join-Path $dataPath "episodes.json"
+    $indexPath = Join-Path $dataPath "episodes-index.json"
+    $json = Get-Content $jsonPath -Raw -Encoding utf8 | ConvertFrom-Json
+    $episodes = @($json.episodes)
+
+    $indexEpisodes = foreach ($episode in $episodes) {
+        $episodeNumber = [int]$episode.number
+        $episodeFileName = Get-EpisodeFileName -EpisodeNumber $episodeNumber
+        $episode | ConvertTo-Json -Depth 10 | Set-Content (Join-Path $dataPath $episodeFileName) -Encoding utf8
+
+        [PSCustomObject]@{
+            number = $episodeNumber
+            date   = $episode.date
+            title  = $episode.title
+            file   = $episodeFileName
+        }
+    }
+
+    [PSCustomObject]@{ episodes = @($indexEpisodes) } | ConvertTo-Json -Depth 10 | Set-Content $indexPath -Encoding utf8
 }
 
 function Add-NewsItemToEpisodesJson {
@@ -127,9 +162,10 @@ function Add-NewsItemToEpisodesJson {
     $episodes[$episodeIndex].contentHtml = $updatedContentHtml
 
     [PSCustomObject]@{ episodes = $episodes } | ConvertTo-Json -Depth 10 | Set-Content $jsonPath -Encoding utf8
+    Sync-EpisodeDataFiles
 
     Write-Host ""
-    Write-Host "✓ Added news item to data\episodes.json" -ForegroundColor Green
+    Write-Host "✓ Added news item to data\episodes.json and refreshed lazy-load data files" -ForegroundColor Green
 }
 
 if ($Mode -eq "edit") {
@@ -332,8 +368,7 @@ $newEpisode = [PSCustomObject]@{
     contentHtml = $contentHtml
 }
 
-$pad = if ($episodeNumber -ge 100) { '{0:D4}' -f $episodeNumber } else { '{0:D3}' -f $episodeNumber }
-$outputFile = Join-Path $repoRoot "data\Episode$pad.json"
+$outputFile = Join-Path $repoRoot ("data\" + (Get-EpisodeFileName -EpisodeNumber $episodeNumber))
 
 $newEpisode | ConvertTo-Json -Depth 10 | Set-Content $outputFile -Encoding utf8
 
@@ -358,9 +393,9 @@ if ($addToJson -eq 'y' -or $addToJson -eq 'Y') {
     $episodes = @($json.episodes)
     $updatedEpisodes = @($newEpisode) + $episodes
     [PSCustomObject]@{ episodes = $updatedEpisodes } | ConvertTo-Json -Depth 10 | Set-Content $jsonPath -Encoding utf8
-    Remove-Item $outputFile
+    Sync-EpisodeDataFiles
     Write-Host ""
-    Write-Host "✓ Added to episodes.json (deleted $outputFile)" -ForegroundColor Green
+    Write-Host "✓ Added to episodes.json and refreshed lazy-load data files" -ForegroundColor Green
 } else {
     Write-Host "Skipped. You can add it later by merging $outputFile into episodes.json." -ForegroundColor Yellow
 }
