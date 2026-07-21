@@ -9,17 +9,21 @@
     files used by the site for lazy-loading episode content.
 
     Pass the optional edit argument to add one news link to an existing
-    episode in data\episodes.json.
+    episode in data\episodes.json, or sync to regenerate episode data and
+    share-link pages.
 
 .EXAMPLE
     .\New-Episode.ps1
 
 .EXAMPLE
     .\New-Episode.ps1 edit
+
+.EXAMPLE
+    .\New-Episode.ps1 sync
 #>
 
 param(
-    [ValidateSet("edit")]
+    [ValidateSet("edit", "sync")]
     [string]$Mode,
 
     [switch]$Help
@@ -72,6 +76,89 @@ function Get-EpisodeFileName {
     return "Episode$pad.json"
 }
 
+function Write-EpisodeLinkPage {
+    param(
+        [Parameter(Mandatory = $true)]
+        [object]$Episode
+    )
+
+    $episodeNumber = [int]$Episode.number
+    $episodeFileName = Get-EpisodeFileName -EpisodeNumber $episodeNumber
+    $pageFileName = [System.IO.Path]::ChangeExtension($episodeFileName, ".html")
+    $pageDirectory = Join-Path $repoRoot "episodes"
+    $pagePath = Join-Path $pageDirectory $pageFileName
+    $pad = if ($episodeNumber -ge 100) { '{0:D4}' -f $episodeNumber } else { '{0:D3}' -f $episodeNumber }
+    $anchorId = "ep$pad"
+    $episodeTitle = [System.Net.WebUtility]::HtmlEncode([string]$Episode.title)
+    $episodeDate = [System.Net.WebUtility]::HtmlEncode([string]$Episode.date)
+    $episodeContent = [string]$Episode.contentHtml
+    $pageTitle = "The Azure Security Podcast - $episodeTitle"
+    $episodeUrl = "https://azsecuritypodcast.net/episodes/$pageFileName"
+    $homepageUrl = "../#$anchorId"
+
+    if (-not (Test-Path $pageDirectory)) {
+        New-Item -ItemType Directory -Path $pageDirectory | Out-Null
+    }
+
+    $pageHtml = @"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>$pageTitle</title>
+   <meta name="description" content="Episode $episodeNumber of The Azure Security Podcast: $episodeTitle">
+   <meta property="og:title" content="$pageTitle">
+   <meta property="og:description" content="Episode $episodeNumber of The Azure Security Podcast.">
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="$episodeUrl">
+   <meta property="og:image" content="https://azsecuritypodcast.net/images/logo2.png">
+   <meta name="twitter:card" content="summary">
+   <meta name="twitter:site" content="@AzureSecPod">
+   <meta name="twitter:title" content="$pageTitle">
+   <meta name="twitter:description" content="Episode $episodeNumber of The Azure Security Podcast.">
+   <meta name="twitter:image" content="https://azsecuritypodcast.net/images/logo2.png">
+   <link rel="canonical" href="$episodeUrl">
+   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+   <link rel="preconnect" href="https://player.rss.com" crossorigin>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin>
+   <link rel="stylesheet" href="../css/styles.css?v=4">
+   <link rel="shortcut icon" href="../images/favicon-aznew.ico">
+</head>
+<body>
+   <section id="hero">
+      <div class="row">
+         <div class="twelve columns">
+            <div class="hero-text">
+               <h1><a href="../">The Azure Security Podcast</a></h1>
+            </div>
+         </div>
+      </div>
+   </section>
+   <main>
+      <section id="features">
+         <article>
+            <div class="row add-bottom">
+               <div class="nine columns offset-2">
+                  <h3 class="Heading">
+                     <span style="font-weight:bold">Episode $episodeNumber</span> - $episodeDate - [$episodeTitle]
+                     <a href="$homepageUrl" title="View this episode on the podcast homepage"><i class="fa-solid fa-link" style="font-size: 0.8em; color: #666;"></i></a>
+                  </h3>
+                  <div class="EpisodeContent">
+$episodeContent
+                  </div>
+               </div>
+            </div>
+         </article>
+      </section>
+   </main>
+</body>
+</html>
+"@
+
+    Set-Content $pagePath -Value $pageHtml -Encoding utf8
+}
+
 function Sync-EpisodeDataFiles {
     $dataPath = Join-Path $repoRoot "data"
     $jsonPath = Join-Path $dataPath "episodes.json"
@@ -83,6 +170,7 @@ function Sync-EpisodeDataFiles {
         $episodeNumber = [int]$episode.number
         $episodeFileName = Get-EpisodeFileName -EpisodeNumber $episodeNumber
         $episode | ConvertTo-Json -Depth 10 | Set-Content (Join-Path $dataPath $episodeFileName) -Encoding utf8
+        Write-EpisodeLinkPage -Episode $episode
 
         [PSCustomObject]@{
             number = $episodeNumber
@@ -166,6 +254,12 @@ function Add-NewsItemToEpisodesJson {
 
     Write-Host ""
     Write-Host "✓ Added news item to data\episodes.json and refreshed lazy-load data files" -ForegroundColor Green
+}
+
+if ($Mode -eq "sync") {
+    Sync-EpisodeDataFiles
+    Write-Host "Refreshed lazy-load data files and episode share-link pages." -ForegroundColor Green
+    return
 }
 
 if ($Mode -eq "edit") {

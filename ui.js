@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
    var container = document.getElementById("episodes-container");
    if (!container) return;
 
+   var podcastTitle = "The Azure Security Podcast";
    var episodesByNumber = {};
    var fullEpisodesPromise = null;
 
@@ -12,6 +13,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
    function getEpisodeFile(ep) {
       return ep.file || ('Episode' + padEpisodeNumber(ep.number) + '.json');
+   }
+
+   function getEpisodePage(ep) {
+      return 'episodes/' + getEpisodeFile(ep).replace(/\.json$/i, '.html');
    }
 
    function renderEpisode(ep) {
@@ -27,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
          + '<h3 class="Heading" id="' + headingId + '">'
          + '&nbsp;<img id="ColExp-' + headingId + '" class="ColExpIcon" width="16" height="16" src="images/Expand.png" alt=""> '
          + '<span style="font-weight:bold">Episode ' + n + '</span> - ' + ep.date + ' - [<span id="' + anchorId + '">' + ep.title + '</span>] '
-         + '<a href="#' + anchorId + '" title="Link to this section"><i class="fa-solid fa-link" style="font-size: 0.8em; color: #666;"></i></a>'
+         + '<a href="' + getEpisodePage(ep) + '" title="Link to this episode"><i class="fa-solid fa-link" style="font-size: 0.8em; color: #666;"></i></a>'
          + '</h3>'
          + '<div class="EpisodeContent" id="' + contentId + '" hidden></div>'
          + '</div></div></article>';
@@ -90,6 +95,25 @@ document.addEventListener("DOMContentLoaded", function() {
    function getEpisodeFromHeading(h3) {
       var number = parseInt(h3.id.replace(/^Ep/, ''), 10);
       return episodesByNumber[number];
+   }
+
+   function updatePageTitle() {
+      var title = podcastTitle;
+      var hash = window.location.hash;
+
+      if (hash) {
+         var target = document.getElementById(hash.substring(1));
+         var heading = target && target.closest("h3.Heading");
+         var ep = heading && getEpisodeFromHeading(heading);
+         if (ep) title += " - " + ep.title;
+      }
+
+      document.title = title;
+
+      var openGraphTitle = document.querySelector('meta[property="og:title"]');
+      var twitterTitle = document.querySelector('meta[name="twitter:title"]');
+      if (openGraphTitle) openGraphTitle.setAttribute("content", title);
+      if (twitterTitle) twitterTitle.setAttribute("content", title);
    }
 
    function openEpisode(h3) {
@@ -175,6 +199,7 @@ document.addEventListener("DOMContentLoaded", function() {
          });
 
          container.innerHTML = episodes.map(renderEpisode).join('\n');
+         updatePageTitle();
 
          var initialHeading = getInitialHeading();
          if (initialHeading) {
@@ -185,4 +210,6 @@ document.addEventListener("DOMContentLoaded", function() {
          console.error("Failed to load episodes:", err);
          container.innerHTML = '<div class="row add-bottom"><div class="nine columns offset-2"><p>Failed to load episodes. Please refresh.</p></div></div>';
       });
+
+   window.addEventListener("hashchange", updatePageTitle);
 });
