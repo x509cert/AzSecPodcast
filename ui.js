@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
          var target = document.getElementById(hash.substring(1));
          var heading = target && target.closest("h3.Heading");
          var ep = heading && getEpisodeFromHeading(heading);
-         if (ep) title += " - " + ep.title;
+         if (ep) title += " - Episode " + ep.number + " - " + ep.title;
       }
 
       document.title = title;
