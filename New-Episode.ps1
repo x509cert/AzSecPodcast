@@ -92,7 +92,7 @@ function Write-EpisodeLinkPage {
     $episodeTitle = [System.Net.WebUtility]::HtmlEncode([string]$Episode.title)
     $episodeDate = [System.Net.WebUtility]::HtmlEncode([string]$Episode.date)
     $episodeContent = [string]$Episode.contentHtml
-    $pageTitle = "The Azure Security Podcast - $episodeTitle"
+    $pageTitle = "The Azure Security Podcast - Episode $episodeNumber - $episodeTitle"
     $episodeUrl = "https://azsecuritypodcast.net/episodes/$pageFileName"
     $homepageUrl = "../#$anchorId"
 
