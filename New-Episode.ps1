@@ -66,6 +66,77 @@ function ConvertTo-HtmlAttributeValue {
     return [System.Net.WebUtility]::HtmlEncode($Value)
 }
 
+function Test-HttpUrl {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Value
+    )
+
+    if ([string]::IsNullOrWhiteSpace($Value) -or $Value -match '\s') {
+        return $false
+    }
+
+    $uri = $null
+    return [System.Uri]::TryCreate($Value, [System.UriKind]::Absolute, [ref]$uri) -and
+        $uri.Scheme -in @("http", "https") -and
+        -not [string]::IsNullOrWhiteSpace($uri.Host)
+}
+
+function Test-ContainsUrl {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Value
+    )
+
+    return $Value -match '(?i)(?:https?://|www\.)\S+'
+}
+
+function Read-RequiredHttpUrl {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Prompt
+    )
+
+    while ($true) {
+        $value = Read-Host $Prompt
+        if ([string]::IsNullOrWhiteSpace($value)) {
+            Write-Host "$Prompt is required." -ForegroundColor Red
+            continue
+        }
+
+        $value = $value.Trim()
+        if (-not (Test-HttpUrl -Value $value)) {
+            Write-Host "Enter one complete HTTP or HTTPS URL with no spaces." -ForegroundColor Red
+            continue
+        }
+
+        return $value
+    }
+}
+
+function Read-RequiredLinkTitle {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Prompt
+    )
+
+    while ($true) {
+        $value = Read-Host $Prompt
+        if ([string]::IsNullOrWhiteSpace($value)) {
+            Write-Host "A title is required." -ForegroundColor Red
+            continue
+        }
+
+        $value = $value.Trim()
+        if (Test-ContainsUrl -Value $value) {
+            Write-Host "The title must not contain another URL." -ForegroundColor Red
+            continue
+        }
+
+        return $value
+    }
+}
+
 function Get-EpisodeFileName {
     param(
         [Parameter(Mandatory = $true)]
@@ -221,17 +292,8 @@ function Add-NewsItemToEpisodesJson {
     Write-Host "Adding news item to episode $($episode.number): $($episode.title)" -ForegroundColor Yellow
     Write-Host ""
 
-    $url = Read-RequiredValue -Prompt "News item URL"
-    if (-not $url) { return }
-    $url = $url.Trim()
-    if (-not $url) {
-        Write-Host "News item URL is required." -ForegroundColor Red
-        return
-    }
-    $title = Read-Host "News item title [$url]"
-    if (-not $title) { $title = $url }
-    $title = $title.Trim()
-    if (-not $title) { $title = $url }
+    $url = Read-RequiredHttpUrl -Prompt "News item URL"
+    $title = Read-RequiredLinkTitle -Prompt "News item title"
 
     $encodedUrl = ConvertTo-HtmlAttributeValue -Value $url
     $encodedTitle = [System.Net.WebUtility]::HtmlEncode($title)
@@ -383,16 +445,25 @@ Write-Host ""
 $links = @()
 while ($true) {
     $linkInput = Read-Host "Link (blank to finish)"
-    if (-not $linkInput) { break }
+    if ([string]::IsNullOrWhiteSpace($linkInput)) { break }
 
-    $spaceIdx = $linkInput.IndexOf(' ')
-    if ($spaceIdx -gt 0) {
-        $url  = $linkInput.Substring(0, $spaceIdx).Trim()
-        $text = $linkInput.Substring($spaceIdx + 1).Trim()
-    } else {
-        $url  = $linkInput.Trim()
-        $text = $url
+    $linkMatch = [System.Text.RegularExpressions.Regex]::Match($linkInput, '^\s*(\S+)\s+(.+?)\s*$')
+    if (-not $linkMatch.Success) {
+        Write-Host "Enter both a URL and a title, separated by a space." -ForegroundColor Red
+        continue
     }
+
+    $url = $linkMatch.Groups[1].Value
+    $text = $linkMatch.Groups[2].Value
+    if (-not (Test-HttpUrl -Value $url)) {
+        Write-Host "The first value must be one complete HTTP or HTTPS URL." -ForegroundColor Red
+        continue
+    }
+    if (Test-ContainsUrl -Value $text) {
+        Write-Host "Only the first value may be a URL; the title must not contain a URL." -ForegroundColor Red
+        continue
+    }
+
     $links += @{ url = $url; text = $text }
     Write-Host "  ✓ Added: $text" -ForegroundColor Green
 }
@@ -447,7 +518,9 @@ if ($newsDescription) {
 [void]$sb.Append("                     <li><a target=`"_blank`" rel=`"noreferrer`" href='https://rss.com/podcasts/azsecpodcast/${rssId}/#transcript'>Transcript <i class=`"fa-solid fa-book`"></i></a></li>`n")
 
 foreach ($link in $links) {
-    [void]$sb.Append("                     <li><a target=`"_blank`" rel=`"noreferrer`" href=`"$($link.url)`">$($link.text)</a></li>`n")
+    $encodedUrl = ConvertTo-HtmlAttributeValue -Value $link.url
+    $encodedText = [System.Net.WebUtility]::HtmlEncode([string]$link.text)
+    [void]$sb.Append("                     <li><a target=`"_blank`" rel=`"noreferrer`" href=`"$encodedUrl`">$encodedText</a></li>`n")
 }
 
 [void]$sb.Append("                  </ul>")
@@ -463,6 +536,12 @@ $newEpisode = [PSCustomObject]@{
 }
 
 $outputFile = Join-Path $repoRoot ("data\" + (Get-EpisodeFileName -EpisodeNumber $episodeNumber))
+
+if (Test-Path -LiteralPath $outputFile) {
+    Write-Host "Episode file already exists: $outputFile" -ForegroundColor Red
+    Write-Host "Choose a different episode number or remove the existing episode first." -ForegroundColor Red
+    return
+}
 
 $newEpisode | ConvertTo-Json -Depth 10 | Set-Content $outputFile -Encoding utf8
 
@@ -491,6 +570,17 @@ if ($addToJson -eq 'y' -or $addToJson -eq 'Y') {
     Write-Host ""
     Write-Host "✓ Added to episodes.json and refreshed lazy-load data files" -ForegroundColor Green
 } else {
-    Write-Host "Skipped. You can add it later by merging $outputFile into episodes.json." -ForegroundColor Yellow
+    $keepEpisode = Read-Host "Keep the standalone episode file? (Y/n)"
+    if ($keepEpisode -eq 'n' -or $keepEpisode -eq 'N') {
+        $confirmDelete = Read-Host "Delete ${outputFile}? This cannot be undone. (y/N)"
+        if ($confirmDelete -eq 'y' -or $confirmDelete -eq 'Y') {
+            Remove-Item -LiteralPath $outputFile
+            Write-Host "Discarded the generated episode." -ForegroundColor Yellow
+        } else {
+            Write-Host "Kept $outputFile. It was not added to episodes.json." -ForegroundColor Yellow
+        }
+    } else {
+        Write-Host "Kept $outputFile. You can add it later by merging it into episodes.json." -ForegroundColor Yellow
+    }
 }
 Write-Host ""
