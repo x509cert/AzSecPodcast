@@ -4,7 +4,8 @@
 
 .DESCRIPTION
     Prompts for episode details (number, date, title, guest, description,
-    RSS ID, and links), then can prepend the episode to data\episodes.json.
+    RSS ID, and links), then can prepend the episode to data\episodes.json
+    and optionally commit and push the generated episode files to GitHub.
     The script also refreshes data\episodes-index.json and data\EpisodeNNN.json
     files used by the site for lazy-loading episode content.
 
@@ -145,6 +146,82 @@ function Get-EpisodeFileName {
 
     $pad = if ($EpisodeNumber -ge 100) { '{0:D4}' -f $EpisodeNumber } else { '{0:D3}' -f $EpisodeNumber }
     return "Episode$pad.json"
+}
+
+function Publish-EpisodeToGitHub {
+    param(
+        [Parameter(Mandatory = $true)]
+        [int]$EpisodeNumber,
+
+        [Parameter(Mandatory = $true)]
+        [string]$EpisodeTitle,
+
+        [string]$GuestNames
+    )
+
+    $publish = Read-Host "Commit and push this episode to GitHub? (y/N)"
+    if ($publish -ne 'y' -and $publish -ne 'Y') {
+        Write-Host "Changes were not committed or pushed." -ForegroundColor Yellow
+        return
+    }
+
+    if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
+        Write-Host "Git is required to commit and push the episode." -ForegroundColor Red
+        return
+    }
+
+    & git -C $repoRoot rev-parse --is-inside-work-tree *> $null
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "$repoRoot is not a Git repository." -ForegroundColor Red
+        return
+    }
+
+    $episodeFileName = Get-EpisodeFileName -EpisodeNumber $EpisodeNumber
+    $episodePageName = [System.IO.Path]::ChangeExtension($episodeFileName, ".html")
+    $episodePaths = @(
+        "data\episodes.json"
+        "data\episodes-index.json"
+        "data\$episodeFileName"
+        "episodes\$episodePageName"
+    )
+
+    $gitArguments = @("-C", $repoRoot, "add", "--") + $episodePaths
+    & git @gitArguments
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "Unable to stage the episode files." -ForegroundColor Red
+        return
+    }
+
+    $diffArguments = @("-C", $repoRoot, "diff", "--cached", "--quiet", "--") + $episodePaths
+    & git @diffArguments
+    if ($LASTEXITCODE -eq 0) {
+        Write-Host "There are no episode changes to commit or push." -ForegroundColor Yellow
+        return
+    }
+    if ($LASTEXITCODE -ne 1) {
+        Write-Host "Unable to inspect the staged episode files." -ForegroundColor Red
+        return
+    }
+
+    $commitTitle = "Episode $EpisodeNumber - $EpisodeTitle"
+    if (-not [string]::IsNullOrWhiteSpace($GuestNames)) {
+        $commitTitle += " with $GuestNames"
+    }
+
+    $commitArguments = @("-C", $repoRoot, "commit", "-m", $commitTitle, "--") + $episodePaths
+    & git @commitArguments
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "Unable to commit the episode files." -ForegroundColor Red
+        return
+    }
+
+    & git -C $repoRoot push
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "The episode was committed, but the push failed. Run 'git push' after resolving the error." -ForegroundColor Red
+        return
+    }
+
+    Write-Host "✓ Committed and pushed: $commitTitle" -ForegroundColor Green
 }
 
 function Write-EpisodeLinkPage {
@@ -569,6 +646,9 @@ if ($addToJson -eq 'y' -or $addToJson -eq 'Y') {
     Sync-EpisodeDataFiles
     Write-Host ""
     Write-Host "✓ Added to episodes.json and refreshed lazy-load data files" -ForegroundColor Green
+    Write-Host ""
+    $commitGuestNames = if ($guests.Count -gt 0) { $guestString } else { "" }
+    Publish-EpisodeToGitHub -EpisodeNumber $episodeNumber -EpisodeTitle $episodeTitle -GuestNames $commitGuestNames
 } else {
     $keepEpisode = Read-Host "Keep the standalone episode file? (Y/n)"
     if ($keepEpisode -eq 'n' -or $keepEpisode -eq 'N') {

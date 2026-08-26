@@ -1,6 +1,12 @@
 {
   "episodes": [
     {
+      "number": 132,
+      "date": "August 26th, 2026",
+      "title": "Windows Server 2025 Security",
+      "file": "Episode0132.json"
+    },
+    {
       "number": 131,
       "date": "July 27th, 2026",
       "title": "What is MDASH?",
