@@ -1,6 +1,12 @@
 {
   "episodes": [
     {
+      "number": 133,
+      "date": "September 22nd, 2026",
+      "title": "News about the Azure Key Vault Family",
+      "file": "Episode0133.json"
+    },
+    {
       "number": 132,
       "date": "August 26th, 2026",
       "title": "Windows Server 2025 Security",
