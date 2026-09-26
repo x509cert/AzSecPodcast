@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
          + '&nbsp;<img id="ColExp-' + headingId + '" class="ColExpIcon" width="16" height="16" src="images/Expand.png" alt=""> '
          + '<span style="font-weight:bold">Episode ' + n + '</span> - ' + ep.date + ' - [<span id="' + anchorId + '">' + ep.title + '</span>] '
          + '</button>'
-         + '<a href="' + getEpisodePage(ep) + '" title="Link to this episode"><i class="fa-solid fa-link" style="font-size: 0.8em; color: #666;"></i></a>'
+         + '<a href="' + getEpisodePage(ep) + '" title="Link to episode ' + n + '"><i class="fa-solid fa-link" style="font-size: 0.8em; color: #666;"></i></a>'
          + '</h3>'
          + '<div class="EpisodeContent" id="' + contentId + '" hidden></div>'
          + '</div></div></article>';
