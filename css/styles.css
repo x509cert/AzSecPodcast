@@ -906,8 +906,23 @@ footer .copyright {
     border: 1px solid #f0f0f0;
 }
 
-h3.Heading {
+.EpisodeToggle {
+    appearance: none;
+    background: none;
+    border: 0;
+    color: inherit;
     cursor: pointer;
+    font: inherit;
+    letter-spacing: inherit;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.EpisodeToggle:focus-visible {
+    outline: 2px solid #005fcc;
+    outline-offset: 2px;
 }
 
 #episodes-container .add-bottom {

@@ -30,8 +30,10 @@ document.addEventListener("DOMContentLoaded", function() {
          + '<div class="row add-bottom">'
          + '<div class="nine columns offset-2">'
          + '<h3 class="Heading" id="' + headingId + '">'
+         + '<button type="button" class="EpisodeToggle" aria-expanded="false" aria-controls="' + contentId + '">'
          + '&nbsp;<img id="ColExp-' + headingId + '" class="ColExpIcon" width="16" height="16" src="images/Expand.png" alt=""> '
          + '<span style="font-weight:bold">Episode ' + n + '</span> - ' + ep.date + ' - [<span id="' + anchorId + '">' + ep.title + '</span>] '
+         + '</button>'
          + '<a href="' + getEpisodePage(ep) + '" title="Link to this episode"><i class="fa-solid fa-link" style="font-size: 0.8em; color: #666;"></i></a>'
          + '</h3>'
          + '<div class="EpisodeContent" id="' + contentId + '" hidden></div>'
@@ -119,8 +121,11 @@ document.addEventListener("DOMContentLoaded", function() {
    function openEpisode(h3) {
       var content = document.getElementById("Content-" + h3.id);
       var icon = document.getElementById("ColExp-" + h3.id);
+      var toggle = h3.querySelector("button.EpisodeToggle");
       var ep = getEpisodeFromHeading(h3);
       if (!content || !ep) return Promise.resolve();
+
+      if (toggle) toggle.setAttribute("aria-expanded", "true");
 
       if (content.dataset.loaded === "true") {
          content.hidden = false;
@@ -151,8 +156,10 @@ document.addEventListener("DOMContentLoaded", function() {
    function closeEpisode(h3) {
       var content = document.getElementById("Content-" + h3.id);
       var icon = document.getElementById("ColExp-" + h3.id);
+      var toggle = h3.querySelector("button.EpisodeToggle");
       if (content) content.hidden = true;
       if (icon) icon.src = "images/Expand.png";
+      if (toggle) toggle.setAttribute("aria-expanded", "false");
    }
 
    function getInitialHeading() {
@@ -170,9 +177,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
    // Event delegation: single listener handles all expand/collapse clicks
    container.addEventListener("click", function(e) {
-      var h3 = e.target.closest("h3.Heading");
-      if (!h3) return;
+      var toggle = e.target.closest("button.EpisodeToggle");
+      if (!toggle) return;
 
+      var h3 = toggle.closest("h3.Heading");
       var content = document.getElementById("Content-" + h3.id);
       if (!content) return;
 
