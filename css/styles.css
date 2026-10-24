@@ -352,6 +352,70 @@ img.resize23 {
    max-height:23%;
  }
 
+.book-covers {
+   clear: both;
+   width: 100%;
+   max-width: 686px;
+   margin: 0 auto;
+   table-layout: fixed;
+   border-collapse: separate;
+   border-spacing: 6px 8px;
+}
+
+.book-covers td {
+   text-align: center;
+   vertical-align: middle;
+}
+
+.book-covers img {
+   width: 130px;
+   height: 180px;
+   object-fit: contain;
+   border: 1px solid black;
+}
+
+.person-bio {
+   margin-bottom: 12px;
+   border: 1px solid #e3eaf0;
+   border-radius: 6px;
+}
+
+.person-bio summary {
+   padding: 14px 18px;
+   background: #e3eaf0;
+   cursor: pointer;
+}
+
+.person-bio summary h3 {
+   display: inline;
+   margin: 0;
+   background: transparent;
+}
+
+.person-bio summary:focus-visible {
+   outline: 2px solid #005fcc;
+   outline-offset: 2px;
+}
+
+.bio-content {
+   display: flow-root;
+   padding: 18px;
+}
+
+.bio-content p:last-child {
+   margin-bottom: 0;
+}
+
+.bio-links {
+   display: flex;
+   gap: 12px;
+   margin-bottom: 12px;
+}
+
+#current {
+   margin-bottom: 30px;
+}
+
 /* ------------------------------------------------------------------ */
 /* d. Grid
 --------------------------------------------------------------------- */
