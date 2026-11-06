@@ -1,6 +1,12 @@
 {
   "episodes": [
     {
+      "number": 134,
+      "date": "November 6th, 2026",
+      "title": "Post Quantum Crypto TLS 1.3 in Azure Front Door",
+      "file": "Episode0134.json"
+    },
+    {
       "number": 133,
       "date": "September 22nd, 2026",
       "title": "News about the Azure Key Vault Family",
